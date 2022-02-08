@@ -15,7 +15,8 @@
 |ApiKeyName|[API KEY NAME]|Will be passed in the header  :  the file name of the config.
 |AppName| [APPLICATION NAME]| This is the name of the Function App, used in log analytics|
 |StorageAcctName|[STORAGE ACCOUNT NAME]|Example  "AzureWebJobsStorage"|
-|ServiceBusConnectionAppSetting|[SERVICE BUS CONNECTION STRING]|Example  "ServiceBusConnectionAppSetting"|
+|ServiceBusConnection|[SERVICE BUS CONNECTION STRING]|Example  "ServiceBusConnectionAppSetting".  Recommmended to store in Key vault.|
+|DatabaseConnection|[DATABASE CONNECTION STRING]|Example  "DatabaseConnection". Recommmended to store in Key vault.|
 
 
 > **Note:**  Look at the configuration file in the **Config** Folder and created a Table to record information.
