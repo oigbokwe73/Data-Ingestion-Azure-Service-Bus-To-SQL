@@ -1,5 +1,5 @@
 ﻿{
-  "Id": "ServiceBusTrigger",
+  "Id": "BlobTriggerPayload",
   "LineOfBusinessProcessData": [
     {
       "Key": "object",
@@ -41,38 +41,26 @@
       ]
     },
     {
-      "Key": "MessageBuilderProcess",
-      "Type": "Xenhey.BPM.Core.Processes.MessageBuilderProcess",
+      "Key": "SendMesagesToService",
+      "Type": "Xenhey.BPM.Core.Processes.ServiceBusProcess",
       "Async": "false",
       "IsEnable": "true",
       "DataFlowProcessParameters": [
         {
-          "Key": "BuildArrayMessageWithRootNode",
-          "Value": "Yes"
-        },
-        {
-          "Key": "RootName",
-          "Value": "Table"
-        }
-      ]
-    },
-    {
-      "Key": "SendMesagesToEventHub",
-      "Type": "Xenhey.BPM.Core.Processes.EventHubProcess",
-      "Async": "false",
-      "IsEnable": "true",
-      "DataFlowProcessParameters": [
-        {
-          "Key": "CallSingleRecordEventHub",
+          "Key": "CallServiceBusTopicsWithContentTypeFlag",
           "Value": "yes"
         },
         {
-          "Key": "EventHubName",
-          "Value": "training20220202"
+          "Key": "TopicName",
+          "Value": "xmlpayload"
         },
         {
-          "Key": "EventHubConnectionString",
-          "Value": "EventHubConnectionAppSetting"
+          "Key": "ServiceBusConnectionString",
+          "Value": "ServiceBusConnectionString"
+        },
+        {
+          "Key": "Content-Type",
+          "Value": "application/xml"
         }
       ]
     }

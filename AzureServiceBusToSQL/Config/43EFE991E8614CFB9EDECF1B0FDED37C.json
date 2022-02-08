@@ -1,5 +1,5 @@
 ﻿{
-  "Id": "SearchTableStorage",
+  "Id": "ServiceBusTrigger",
   "LineOfBusinessProcessData": [
     {
       "Key": "object",
@@ -9,30 +9,26 @@
   "Type": "",
   "DataFlowProcess": [
     {
-      "Key": "Azure_Table_Storage",
-      "Type": "Xenhey.BPM.Core.Processes.AzureTableStorageProcess",
+      "Key": "ReceiveMessageFromServieBus",
+      "Type": "Xenhey.BPM.Core.Processes.ConnectToDatabaseBulkInsertFromMessage",
       "Async": "false",
       "IsEnable": "true",
       "DataFlowProcessParameters": [
         {
-          "Key": "SimpleTableSearch",
+          "Key": "BulkInsertFromMessage",
           "Value": "yes"
         },
         {
-          "Key": "QueryField",
-          "Value": "search"
+          "Key": "DatabaseTableName",
+          "Value": "DatabaseTableName"
         },
         {
-          "Key": "StorageAccount",
-          "Value": "AzureWebJobsStorage"
+          "Key": "ConnectionString",
+          "Value": "DatabaseConnection"
         },
         {
-          "Key": "TableName",
-          "Value": "training20220202"
-        },
-        {
-          "Key": "DefaultResult",
-          "Value": "No Records Found"
+          "Key": "datatable",
+          "Value": "DatabaseTableName"
         }
       ]
     }

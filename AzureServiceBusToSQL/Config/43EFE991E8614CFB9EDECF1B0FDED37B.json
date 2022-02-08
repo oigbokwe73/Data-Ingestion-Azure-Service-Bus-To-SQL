@@ -1,5 +1,5 @@
 ﻿{
-  "Id": "EventHubTrigger",
+  "Id": "ServiceBusTrigger",
   "LineOfBusinessProcessData": [
     {
       "Key": "object",
@@ -9,26 +9,26 @@
   "Type": "",
   "DataFlowProcess": [
     {
-      "Key": "Write-To-Storage",
-      "Type": "Xenhey.BPM.Core.Processes.AzureTableStorageProcess",
+      "Key": "ReceiveMessageFromServieBus", 
+      "Type": "Xenhey.BPM.Core.Processes.ConnectToDatabaseBulkInsertFromMessage",
       "Async": "false",
       "IsEnable": "true",
       "DataFlowProcessParameters": [
         {
-          "Key": "CreateRecordForAzureTableBatch",
+          "Key": "BulkInsertFromMessage",
           "Value": "yes"
         },
         {
-          "Key": "BatchSize",
-          "Value": "100"
+          "Key": "DatabaseTableName",
+          "Value": "DatabaseTableName"
         },
         {
-          "Key": "StorageAccount",
-          "Value": "AzureWebJobsStorage"
+          "Key": "ConnectionString",
+          "Value": "DatabaseConnection"
         },
         {
-          "Key": "TableName",
-          "Value": "training20220202"
+          "Key": "datatable",
+          "Value": "DatabaseTableName"
         }
       ]
     }

@@ -361,3 +361,7 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/AzureServiceBusToSQL/.vscode/tasks.json
+/AzureServiceBusToSQL/.vscode/settings.json
+/AzureServiceBusToSQL/.vscode/launch.json
+/AzureServiceBusToSQL/.vscode/extensions.json

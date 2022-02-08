@@ -72,23 +72,27 @@
         }
       ]
     },
-    {
-      "Key": "SendMesagesToEventHub",
-      "Type": "Xenhey.BPM.Core.Processes.EventHubProcess",
+   {
+      "Key": "SendMesagesToService",
+      "Type": "Xenhey.BPM.Core.Processes.ServiceBusProcess",
       "Async": "false",
       "IsEnable": "true",
       "DataFlowProcessParameters": [
         {
-          "Key": "CallSingleRecordEventHub",
+          "Key": "CallServiceBusTopicsWithContentTypeFlag",
           "Value": "yes"
         },
         {
-          "Key": "EventHubName",
-          "Value": "training20220202"
+          "Key": "TopicName",
+          "Value": "jsonpayload"
         },
         {
-          "Key": "EventHubConnectionString",
-          "Value": "EventHubConnectionAppSetting"
+          "Key": "ServiceBusConnectionString",
+          "Value": "ServiceBusConnection"
+        },
+        {
+          "Key": "Content-Type",
+          "Value": "application/json"
         }
       ]
     }

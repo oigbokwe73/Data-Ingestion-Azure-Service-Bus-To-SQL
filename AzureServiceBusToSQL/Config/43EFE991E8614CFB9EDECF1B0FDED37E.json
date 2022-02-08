@@ -1,5 +1,5 @@
 ﻿{
-  "Id": "BlobTrigger",
+  "Id": "BlobTriggerPayload",
   "LineOfBusinessProcessData": [
     {
       "Key": "object",
@@ -8,22 +8,6 @@
   ],
   "Type": "",
   "DataFlowProcess": [
-    {
-      "Key": "Read-Uploaded-File",
-      "Type": "Xenhey.BPM.Core.Processes.CSVProcess",
-      "Async": "false",
-      "IsEnable": "true",
-      "DataFlowProcessParameters": [
-        {
-          "Key": "ReadCsvAsStreamv2",
-          "Value": "yes"
-        },
-        {
-          "Key": "messageformat",
-          "Value": "application/json"
-        }
-      ]
-    },
     {
       "Key": "TransformCsvPayload",
       "Type": "Xenhey.BPM.Core.Processes.TransformationProcess",
@@ -57,38 +41,26 @@
       ]
     },
     {
-      "Key": "MessageBuilderProcess",
-      "Type": "Xenhey.BPM.Core.Processes.MessageBuilderProcess",
+      "Key": "SendMesagesToService",
+      "Type": "Xenhey.BPM.Core.Processes.ServiceBusProcess",
       "Async": "false",
       "IsEnable": "true",
       "DataFlowProcessParameters": [
         {
-          "Key": "BuildArrayMessageWithRootNode",
-          "Value": "Yes"
-        },
-        {
-          "Key": "RootName",
-          "Value": "Table"
-        }
-      ]
-    },
-    {
-      "Key": "SendMesagesToEventHub",
-      "Type": "Xenhey.BPM.Core.Processes.EventHubProcess",
-      "Async": "false",
-      "IsEnable": "true",
-      "DataFlowProcessParameters": [
-        {
-          "Key": "CallSingleRecordEventHub",
+          "Key": "CallServiceBusTopicsWithContentTypeFlag",
           "Value": "yes"
         },
         {
-          "Key": "EventHubName",
+          "Key": "TopicName",
           "Value": "training20220202"
         },
         {
-          "Key": "EventHubConnectionString",
-          "Value": "EventHubConnectionAppSetting"
+          "Key": "ServiceBusConnectionString",
+          "Value": "ServiceBusConnectionString"
+        },
+        {
+          "Key": "Content-Type",
+          "Value": "application/xml"
         }
       ]
     }
