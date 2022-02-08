@@ -13,9 +13,9 @@
 |AzureWebJobsStorage|[CONNECTION STRING]|RECOMMENDATION :  store in AzureKey Vault.|
 |ConfigurationPath| [CONFIGURATION FOLDER PATH] |Folder is optional
 |ApiKeyName|[API KEY NAME]|Will be passed in the header  :  the file name of the config.
-|AppName| [APPLICATION NAME]| This is the name of the Function App. Used in log analytics|
+|AppName| [APPLICATION NAME]| This is the name of the Function App, used in log analytics|
 |StorageAcctName|[STORAGE ACCOUNT NAME]|Example  "AzureWebJobsStorage"|
-|ServiceBusConnectionAppSetting|[EVENT HUB CONNECTION STRING]|Example  "EventHubConnectionAppSetting"|
+|ServiceBusConnectionAppSetting|[SERVICE BUS CONNECTION STRING]|Example  "ServiceBusConnectionAppSetting"|
 
 
 > **Note:**  Look at the configuration file in the **Config** Folder and created a Table to record information.
