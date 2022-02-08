@@ -1,12 +1,9 @@
-# AzureServiceBusToSQL
+# Azure Service Bus To SQL
 
 
 ## Architecture Diagram
 
-![image](https://user-images.githubusercontent.com/15838780/152089372-b0b851eb-8da5-4e02-81f1-f8f784028940.png)
-
-## Training video
-https://meetings.dialpad.com/getmp4/fe6535ae848411ecbdb47d69f386681c.mp4?amp_device_id=CI3O9y4s6k53rNaBj6DzK0![image](https://user-images.githubusercontent.com/15838780/152278381-1d0a18e5-32df-4fb9-81e8-76ec7575d106.png)
+![image](https://user-images.githubusercontent.com/15838780/152911729-e86ae271-8fc0-4ef5-b2cf-0198dc14ae5b.png)
 
 
 ## Appplication Setting 
