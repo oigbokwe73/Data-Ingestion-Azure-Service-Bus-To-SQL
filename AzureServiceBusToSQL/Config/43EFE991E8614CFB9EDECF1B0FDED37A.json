@@ -1,0 +1,52 @@
+﻿{
+  "Id": "CsvProcess",
+  "LineOfBusinessProcessData": [
+    {
+      "Key": "object",
+      "Type": "Xenhey.BPM.Core.Processes.ProcessData"
+    }
+  ],
+  "Type": "",
+  "DataFlowProcess": [
+    {
+      "Key": "CreateCSVBatchFilesForProcessing",
+      "Type": "Xenhey.BPM.Core.Processes.CSVProcess",
+      "Async": "false",
+      "IsEnable": "true",
+      "DataFlowProcessParameters": [
+        {
+          "Key": "StorageAccount",
+          "Value": "AzureWebJobsStorage"
+        },
+        {
+          "Key": "WriteCsvToStorageAsBatch",
+          "Value": "Yes"
+        },
+        {
+          "Key": "BatchSize",
+          "Value": "501"
+        },
+        {
+          "Key": "FolderName",
+          "Value": "CSVFiles"
+        },
+        {
+          "Key": "TableName",
+          "Value": "csvbatchfiles"
+        },
+        {
+          "Key": "Container",
+          "Value": "processed"
+        },
+        {
+          "Key": "FileExtension",
+          "Value": ".csv"
+        },
+        {
+          "Key": "ContentType",
+          "Value": "csv/text"
+        }
+      ]
+    }
+  ]
+}

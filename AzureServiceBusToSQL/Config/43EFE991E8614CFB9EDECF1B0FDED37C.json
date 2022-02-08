@@ -1,0 +1,40 @@
+﻿{
+  "Id": "SearchTableStorage",
+  "LineOfBusinessProcessData": [
+    {
+      "Key": "object",
+      "Type": "Xenhey.BPM.Core.Processes.ProcessData"
+    }
+  ],
+  "Type": "",
+  "DataFlowProcess": [
+    {
+      "Key": "Azure_Table_Storage",
+      "Type": "Xenhey.BPM.Core.Processes.AzureTableStorageProcess",
+      "Async": "false",
+      "IsEnable": "true",
+      "DataFlowProcessParameters": [
+        {
+          "Key": "SimpleTableSearch",
+          "Value": "yes"
+        },
+        {
+          "Key": "QueryField",
+          "Value": "search"
+        },
+        {
+          "Key": "StorageAccount",
+          "Value": "AzureWebJobsStorage"
+        },
+        {
+          "Key": "TableName",
+          "Value": "training20220202"
+        },
+        {
+          "Key": "DefaultResult",
+          "Value": "No Records Found"
+        }
+      ]
+    }
+  ]
+}

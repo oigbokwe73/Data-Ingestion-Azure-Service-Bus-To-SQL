@@ -1,0 +1,96 @@
+﻿{
+  "Id": "BlobTrigger",
+  "LineOfBusinessProcessData": [
+    {
+      "Key": "object",
+      "Type": "Xenhey.BPM.Core.Processes.ProcessData"
+    }
+  ],
+  "Type": "",
+  "DataFlowProcess": [
+    {
+      "Key": "Read-Uploaded-File",
+      "Type": "Xenhey.BPM.Core.Processes.CSVProcess",
+      "Async": "false",
+      "IsEnable": "true",
+      "DataFlowProcessParameters": [
+        {
+          "Key": "ReadCsvAsStreamv2",
+          "Value": "yes"
+        },
+        {
+          "Key": "messageformat",
+          "Value": "application/json"
+        }
+      ]
+    },
+    {
+      "Key": "TransformCsvPayload",
+      "Type": "Xenhey.BPM.Core.Processes.TransformationProcess",
+      "Async": "false",
+      "IsEnable": "true",
+      "DataFlowProcessParameters": [
+        {
+          "Key": "messageformatin",
+          "Value": "application/json"
+        },
+        {
+          "Key": "StorageAccount",
+          "Value": "AzureWebJobsStorage"
+        },
+        {
+          "Key": "FolderName",
+          "Value": "config"
+        },
+        {
+          "Key": "FileName",
+          "Value": "FileTransformData.xsl"
+        },
+        {
+          "Key": "TransformPayload",
+          "Value": "yes"
+        },
+        {
+          "Key": "messageformatout",
+          "Value": "application/json"
+        }
+      ]
+    },
+    {
+      "Key": "MessageBuilderProcess",
+      "Type": "Xenhey.BPM.Core.Processes.MessageBuilderProcess",
+      "Async": "false",
+      "IsEnable": "true",
+      "DataFlowProcessParameters": [
+        {
+          "Key": "BuildArrayMessageWithRootNode",
+          "Value": "Yes"
+        },
+        {
+          "Key": "RootName",
+          "Value": "Table"
+        }
+      ]
+    },
+    {
+      "Key": "SendMesagesToEventHub",
+      "Type": "Xenhey.BPM.Core.Processes.EventHubProcess",
+      "Async": "false",
+      "IsEnable": "true",
+      "DataFlowProcessParameters": [
+        {
+          "Key": "CallSingleRecordEventHub",
+          "Value": "yes"
+        },
+        {
+          "Key": "EventHubName",
+          "Value": "training20220202"
+        },
+        {
+          "Key": "EventHubConnectionString",
+          "Value": "EventHubConnectionAppSetting"
+        }
+      ]
+    }
+  ]
+}
