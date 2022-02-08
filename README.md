@@ -15,7 +15,7 @@
 |ApiKeyName|[API KEY NAME]|Will be passed in the header  :  the file name of the config.
 |AppName| [APPLICATION NAME]| This is the name of the Function App. Used in log analytics|
 |StorageAcctName|[STORAGE ACCOUNT NAME]|Example  "AzureWebJobsStorage"|
-|EventHubConnectionAppSetting|[EVENT HUB CONNECTION STRING]|Example  "EventHubConnectionAppSetting"|
+|ServiceBusConnectionAppSetting|[EVENT HUB CONNECTION STRING]|Example  "EventHubConnectionAppSetting"|
 
 
 > **Note:**  Look at the configuration file in the **Config** Folder and created a Table to record information.
