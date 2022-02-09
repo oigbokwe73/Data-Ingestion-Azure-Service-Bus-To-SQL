@@ -31,6 +31,7 @@
 |43EFE991E8614CFB9EDECF1B0FDED37C.json| **Service Bus Trigger XML Payload** | Pull XML payload off Service Bus -->  Send records to SQL DB|
 |43EFE991E8614CFB9EDECF1B0FDED37D.json| **Service Bus Trigger JSON Payload** | Pull JSON payload off Service Bus --> Write Azure Table|
 |43EFE991E8614CFB9EDECF1B0FDED37E.json| **Blob Trigger** Parse batched CSV file. Covert to JSON/XML --> Send to Service Bus|
+|43EFE991E8614CFB9EDECF1B0FDED37b.json| **Search Resullt from  DB ** |
 
 ## Upload Configuration to Storage
 Go to created storage Account.. Click On "Blob Service" 
