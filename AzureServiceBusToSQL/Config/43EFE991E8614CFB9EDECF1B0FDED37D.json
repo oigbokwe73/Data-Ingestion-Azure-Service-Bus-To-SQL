@@ -1,5 +1,5 @@
 ﻿{
-  "Id": "BlobTrigger",
+  "Id": "ServiceBusTrigger",
   "LineOfBusinessProcessData": [
     {
       "Key": "object",
@@ -9,90 +9,58 @@
   "Type": "",
   "DataFlowProcess": [
     {
-      "Key": "Read-Uploaded-File",
-      "Type": "Xenhey.BPM.Core.Processes.CSVProcess",
+      "Key": "WriteMessageToStorage",
+      "Type": "Xenhey.BPM.Core.Processes.BlobStorageWriteProcess",
       "Async": "false",
       "IsEnable": "true",
       "DataFlowProcessParameters": [
         {
-          "Key": "ReadCsvAsStreamv2",
+          "Key": "WriteToStorage",
           "Value": "yes"
         },
         {
-          "Key": "messageformat",
-          "Value": "application/json"
-        }
-      ]
-    },
-    {
-      "Key": "TransformCsvPayload",
-      "Type": "Xenhey.BPM.Core.Processes.TransformationProcess",
-      "Async": "false",
-      "IsEnable": "true",
-      "DataFlowProcessParameters": [
-        {
-          "Key": "messageformatin",
-          "Value": "application/json"
-        },
-        {
-          "Key": "StorageAccount",
+          "Key": "BlobStorageConnectionString",
           "Value": "AzureWebJobsStorage"
         },
         {
-          "Key": "FolderName",
-          "Value": "config"
+          "Key": "container",
+          "Value": "receivedmessages"
         },
         {
-          "Key": "FileName",
-          "Value": "FileTransformData.xsl"
+          "Key": "folderName",
+          "Value": "JsonMessageFromServiceBus"
         },
         {
-          "Key": "TransformPayload",
-          "Value": "yes"
+          "Key": "extension",
+          "Value": "json"
         },
         {
-          "Key": "messageformatout",
+          "Key": "ContentType",
           "Value": "application/json"
         }
       ]
     },
     {
-      "Key": "MessageBuilderProcess",
-      "Type": "Xenhey.BPM.Core.Processes.MessageBuilderProcess",
+      "Key": "ReceiveMessageFromServieBus",
+      "Type": "Xenhey.BPM.Core.Processes.ConnectToDBProcess",
       "Async": "false",
       "IsEnable": "true",
       "DataFlowProcessParameters": [
         {
-          "Key": "BuildArrayMessageWithRootNode",
-          "Value": "Yes"
-        },
-        {
-          "Key": "RootName",
-          "Value": "Table"
-        }
-      ]
-    },
-   {
-      "Key": "SendMesagesToService",
-      "Type": "Xenhey.BPM.Core.Processes.ServiceBusProcess",
-      "Async": "false",
-      "IsEnable": "true",
-      "DataFlowProcessParameters": [
-        {
-          "Key": "CallServiceBusTopicsWithContentTypeFlag",
+          "Key": "BulkInsertFromMessage",
           "Value": "yes"
         },
         {
-          "Key": "TopicName",
-          "Value": "jsonpayload"
+          "Key": "DatabaseTableName",
+          "Value": "College"
         },
         {
-          "Key": "ServiceBusConnectionString",
-          "Value": "ServiceBusConnection"
+          "Key": "ConnectionString",
+          "Value": "DatabaseConnection"
         },
         {
-          "Key": "Content-Type",
-          "Value": "application/json"
+          "Key": "datatable",
+          "Value": "College"
         }
       ]
     }

@@ -1,5 +1,5 @@
 ﻿{
-  "Id": "ServiceBusTrigger",
+  "Id": "ConnectToDatabaseToSearch",
   "LineOfBusinessProcessData": [
     {
       "Key": "object",
@@ -9,26 +9,74 @@
   "Type": "",
   "DataFlowProcess": [
     {
-      "Key": "ReceiveMessageFromServieBus", 
-      "Type": "Xenhey.BPM.Core.Processes.ConnectToDatabaseBulkInsertFromMessage",
+      "Key": "SearchDatabaseForResults",
+      "Type": "Xenhey.BPM.Core.Processes.ConnectToDBProcess",
       "Async": "false",
       "IsEnable": "true",
       "DataFlowProcessParameters": [
         {
-          "Key": "BulkInsertFromMessage",
+          "Key": "connectodatabase",
+          "Value": "Yes"
+        },
+        {
+          "Key": "SearchTerm",
+          "Value": "search"
+        },
+        {
+          "Key": "connectionstring",
+          "Value": "ConnectionString"
+        },
+        {
+          "Key": "messageformat",
+          "Value": "application/json"
+        }
+      ]
+    },
+		{
+      "Key": "TransformCsvPayload",
+      "Type": "Xenhey.BPM.Core.Processes.TransformationProcess",
+      "Async": "false",
+      "IsEnable": "true",
+      "DataFlowProcessParameters": [
+        {
+          "Key": "messageformatin",
+          "Value": "application/json"
+        },
+        {
+          "Key": "StorageAccount",
+          "Value": "AzureWebJobsStorage"
+        },
+        {
+          "Key": "FolderName",
+          "Value": "config"
+        },
+        {
+          "Key": "FileName",
+          "Value": "FileTransformData.xsl"
+        },
+        {
+          "Key": "TransformPayload",
           "Value": "yes"
         },
         {
-          "Key": "DatabaseTableName",
-          "Value": "DatabaseTableName"
+          "Key": "messageformatout",
+          "Value": "application/json"
+        }
+      ]
+    },
+		{
+      "Key": "MessageBuilderProcess",
+      "Type": "Xenhey.BPM.Core.Processes.MessageBuilderProcess",
+      "Async": "false",
+      "IsEnable": "true",
+      "DataFlowProcessParameters": [
+        {
+          "Key": "BuildArrayMessageWithRootNode",
+          "Value": "Yes"
         },
         {
-          "Key": "ConnectionString",
-          "Value": "DatabaseConnection"
-        },
-        {
-          "Key": "datatable",
-          "Value": "DatabaseTableName"
+          "Key": "RootName",
+          "Value": "Table"
         }
       ]
     }

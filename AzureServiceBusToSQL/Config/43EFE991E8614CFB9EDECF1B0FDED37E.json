@@ -8,15 +8,31 @@
   ],
   "Type": "",
   "DataFlowProcess": [
-    {
-      "Key": "TransformCsvPayload",
-      "Type": "Xenhey.BPM.Core.Processes.TransformationProcess",
+		   {
+      "Key": "Read-Uploaded-File",
+      "Type": "Xenhey.BPM.Core.Processes.CSVProcess",
       "Async": "false",
       "IsEnable": "true",
       "DataFlowProcessParameters": [
         {
+          "Key": "ReadCsvAsStreamv2",
+          "Value": "yes"
+        },
+        {
+          "Key": "messageformat",
+          "Value": "application/xml"
+        }
+      ]
+    },
+    {
+      "Key": "TransformCsvPayload",
+      "Type": "Xenhey.BPM.Core.Processes.TransformationProcess",
+      "Async": "false",
+      "IsEnable": "false",
+      "DataFlowProcessParameters": [
+        {
           "Key": "messageformatin",
-          "Value": "application/json"
+          "Value": "application/xml"
         },
         {
           "Key": "StorageAccount",
@@ -36,7 +52,23 @@
         },
         {
           "Key": "messageformatout",
-          "Value": "application/json"
+          "Value": "application/xml"
+        }
+      ]
+    },
+		{
+      "Key": "MessageBuilderProcess",
+      "Type": "Xenhey.BPM.Core.Processes.MessageBuilderProcess",
+      "Async": "false",
+      "IsEnable": "false",
+      "DataFlowProcessParameters": [
+        {
+          "Key": "BuildArrayMessageWithRootNode",
+          "Value": "Yes"
+        },
+        {
+          "Key": "RootName",
+          "Value": "Table"
         }
       ]
     },
@@ -52,15 +84,15 @@
         },
         {
           "Key": "TopicName",
-          "Value": "training20220202"
+          "Value": "xmlpayloadtest"
         },
         {
           "Key": "ServiceBusConnectionString",
           "Value": "ServiceBusConnectionString"
         },
         {
-          "Key": "Content-Type",
-          "Value": "application/xml"
+          "Key": "ContentType",
+          "Value": "application/json"
         }
       ]
     }
