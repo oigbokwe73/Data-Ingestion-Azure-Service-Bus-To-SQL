@@ -15,7 +15,7 @@
 |ApiKeyName|[API KEY NAME]|Will be passed in the header  :  the file name of the config.
 |AppName| [APPLICATION NAME]| This is the name of the Function App, used in log analytics|
 |StorageAcctName|[STORAGE ACCOUNT NAME]|Example  "AzureWebJobsStorage"|
-|ServiceBusConnection|[SERVICE BUS CONNECTION STRING]|Example  "ServiceBusConnectionAppSetting".  Recommmended to store in Key vault.|
+|ServiceBusConnectionString|[SERVICE BUS CONNECTION STRING]|Example  "ServiceBusConnectionString".  Recommmended to store in Key vault.|
 |DatabaseConnection|[DATABASE CONNECTION STRING]|Example  "DatabaseConnection". Recommmended to store in Key vault.|
 
 
@@ -28,9 +28,9 @@
 |FileName|Description|
 |:----|:----|
 |43EFE991E8614CFB9EDECF1B0FDED37A.json| **Upload File** Parse CSV file --> Write Batched Files To Storage|
-|43EFE991E8614CFB9EDECF1B0FDED37D.json| **Blob Trigger** Read Parsed CSV files --> Converts To JSON --> Sends To Event Hub|
-|43EFE991E8614CFB9EDECF1B0FDED37B.json| **Event Hub Trigger** Read JSON Array from Event Hub --> Writes to a NoSQL DB|
-|43EFE991E8614CFB9EDECF1B0FDED37C.json| **Search** NoSQL DB for ingested records|
+|43EFE991E8614CFB9EDECF1B0FDED37C.json| **Service Bus Trigger XML Payload** | Pull XML payload off Service Bus -->  Send records to SQL DB|
+|43EFE991E8614CFB9EDECF1B0FDED37D.json| **Service Bus Trigger JSON Payload** | Pull JSON payload off Service Bus --> Write Azure Table|
+|43EFE991E8614CFB9EDECF1B0FDED37E.json| **Blob Trigger** Parse batched CSV file. Covert to JSON/XML --> Send to Service Bus|
 
 ## Upload Configuration to Storage
 Go to created storage Account.. Click On "Blob Service" 
