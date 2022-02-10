@@ -24,7 +24,7 @@
         },
         {
           "Key": "connectionstring",
-          "Value": "ConnectionString"
+          "Value": "DatabaseConnection"
         },
         {
           "Key": "messageformat",

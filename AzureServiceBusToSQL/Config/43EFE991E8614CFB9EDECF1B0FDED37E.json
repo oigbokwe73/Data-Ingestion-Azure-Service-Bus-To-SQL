@@ -12,7 +12,7 @@
       "Key": "Read-Uploaded-File",
       "Type": "Xenhey.BPM.Core.Processes.CSVProcess",
       "Async": "false",
-      "IsEnable": "true",
+      "IsEnable": "false",
       "DataFlowProcessParameters": [
         {
           "Key": "ReadCsvAsStreamv2",
@@ -84,7 +84,7 @@
         },
         {
           "Key": "TopicName",
-          "Value": "xmlpayloadtest"
+          "Value": "xmlpayload"
         },
         {
           "Key": "ServiceBusConnectionString",
@@ -92,7 +92,7 @@
         },
         {
           "Key": "ContentType",
-          "Value": "application/json"
+          "Value": "application/xml"
         }
       ]
     }
