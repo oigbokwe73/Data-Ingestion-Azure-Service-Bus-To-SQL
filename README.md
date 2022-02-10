@@ -6,6 +6,10 @@
 ![image](https://user-images.githubusercontent.com/15838780/152911729-e86ae271-8fc0-4ef5-b2cf-0198dc14ae5b.png)
 
 
+## Session Recorded 
+
+https://meetings.dialpad.com/getmp4/01c3b68c8a0511ec96cb7ba9575109da.mp4
+
 ## Appplication Setting 
 
 |Key|Value | Comment|
