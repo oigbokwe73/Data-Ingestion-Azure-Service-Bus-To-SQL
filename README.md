@@ -6,6 +6,10 @@
 ![image](https://user-images.githubusercontent.com/15838780/152911729-e86ae271-8fc0-4ef5-b2cf-0198dc14ae5b.png)
 
 
+## Session Recorded 
+
+https://meetings.dialpad.com/getmp4/01c3b68c8a0511ec96cb7ba9575109da.mp4
+
 ## Appplication Setting 
 
 |Key|Value | Comment|
@@ -31,6 +35,7 @@
 |43EFE991E8614CFB9EDECF1B0FDED37C.json| **Service Bus Trigger XML Payload** | Pull XML payload off Service Bus -->  Send records to SQL DB|
 |43EFE991E8614CFB9EDECF1B0FDED37D.json| **Service Bus Trigger JSON Payload** | Pull JSON payload off Service Bus --> Write Azure Table|
 |43EFE991E8614CFB9EDECF1B0FDED37E.json| **Blob Trigger** Parse batched CSV file. Covert to JSON/XML --> Send to Service Bus|
+|43EFE991E8614CFB9EDECF1B0FDED37b.json| **Search Resullt from  DB ** |
 
 ## Upload Configuration to Storage
 Go to created storage Account.. Click On "Blob Service" 
