@@ -3,7 +3,7 @@
 
 ## Architecture Diagram
 
-![image](https://user-images.githubusercontent.com/15838780/152911729-e86ae271-8fc0-4ef5-b2cf-0198dc14ae5b.png)
+![image](https://user-images.githubusercontent.com/15838780/226928604-4340b682-0e13-44bc-b239-6b91a29f678a.png)
 
 
 ## Session Recorded 
