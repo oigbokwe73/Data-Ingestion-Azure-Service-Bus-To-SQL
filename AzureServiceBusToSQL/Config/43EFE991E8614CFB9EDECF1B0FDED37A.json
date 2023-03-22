@@ -1,16 +1,16 @@
 ﻿{
-  "Id": "CsvProcess",
+  "Id": "UploadFileProcess",
   "LineOfBusinessProcessData": [
     {
       "Key": "object",
-      "Type": "Xenhey.BPM.Core.Processes.ProcessData"
+      "Type": "Xenhey.BPM.Core.Net6.Processes.ProcessData"
     }
   ],
   "Type": "",
   "DataFlowProcess": [
     {
       "Key": "CreateCSVBatchFilesForProcessing",
-      "Type": "Xenhey.BPM.Core.Processes.CSVProcess",
+      "Type": "Xenhey.BPM.Core.Net6.Processes.CSVProcess",
       "Async": "false",
       "IsEnable": "true",
       "DataFlowProcessParameters": [
@@ -24,7 +24,7 @@
         },
         {
           "Key": "BatchSize",
-          "Value": "501"
+          "Value": "101"
         },
         {
           "Key": "FolderName",
@@ -41,62 +41,11 @@
         {
           "Key": "FileExtension",
           "Value": ".csv"
-        },{
-          "Id": "CsvProcess",
-          "LineOfBusinessProcessData": [
-            {
-              "Key": "object",
-              "Type": "Xenhey.BPM.Core.Processes.ProcessData"
-            }
-          ],
-          "Type": "",
-          "DataFlowProcess": [
-            {
-              "Key": "CreateCSVBatchFilesForProcessing",
-              "Type": "Xenhey.BPM.Core.Processes.CSVProcess",
-              "Async": "false",
-              "IsEnable": "true",
-              "DataFlowProcessParameters": [
-                {
-                  "Key": "StorageAccount",
-                  "Value": "AzureWebJobsStorage"
-                },
-                {
-                  "Key": "WriteCsvToStorageAsBatch",
-                  "Value": "Yes"
-                },
-                {
-                  "Key": "BatchSize",
-                  "Value": "501"
-                },
-                {
-                  "Key": "FolderName",
-                  "Value": "CSVFiles"
-                },
-                {
-                  "Key": "TableName",
-                  "Value": "csvbatchfiles"
-                },
-                {
-                  "Key": "Container",
-                  "Value": "processed"
-                },
-                {
-                  "Key": "FileExtension",
-                  "Value": ".csv"
-                },
-                {
-                  "Key": "ContentType",
-                  "Value": "csv/text"
-                }
-              ]
-            }
-          ]
-        }
-        {
+        },
+         {
           "Key": "ContentType",
           "Value": "csv/text"
-        }
+        }	
       ]
     }
   ]

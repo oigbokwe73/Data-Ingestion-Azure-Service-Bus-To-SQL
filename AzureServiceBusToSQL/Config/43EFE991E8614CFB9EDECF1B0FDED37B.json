@@ -3,14 +3,14 @@
   "LineOfBusinessProcessData": [
     {
       "Key": "object",
-      "Type": "Xenhey.BPM.Core.Processes.ProcessData"
+      "Type": "Xenhey.BPM.Core.Net6.Processes.ProcessData"
     }
   ],
   "Type": "",
   "DataFlowProcess": [
     {
       "Key": "SearchDatabaseForResults",
-      "Type": "Xenhey.BPM.Core.Processes.ConnectToDBProcess",
+      "Type": "Xenhey.BPM.Core.Net6.Processes.ConnectToDBProcess",
       "Async": "false",
       "IsEnable": "true",
       "DataFlowProcessParameters": [
@@ -34,7 +34,7 @@
     },
 		{
       "Key": "TransformCsvPayload",
-      "Type": "Xenhey.BPM.Core.Processes.TransformationProcess",
+      "Type": "Xenhey.BPM.Core.Net6.Processes.TransformationProcess",
       "Async": "false",
       "IsEnable": "true",
       "DataFlowProcessParameters": [
@@ -66,7 +66,7 @@
     },
 		{
       "Key": "MessageBuilderProcess",
-      "Type": "Xenhey.BPM.Core.Processes.MessageBuilderProcess",
+      "Type": "Xenhey.BPM.Core.Net6.Processes.MessageBuilderProcess",
       "Async": "false",
       "IsEnable": "true",
       "DataFlowProcessParameters": [

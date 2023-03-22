@@ -3,14 +3,14 @@
   "LineOfBusinessProcessData": [
     {
       "Key": "object",
-      "Type": "Xenhey.BPM.Core.Processes.ProcessData"
+      "Type": "Xenhey.BPM.Core.Net6.Processes.ProcessData"
     }
   ],
   "Type": "",
   "DataFlowProcess": [
     {
       "Key": "WriteMessageToStorage",
-      "Type": "Xenhey.BPM.Core.Processes.BlobStorageWriteProcess",
+      "Type": "Xenhey.BPM.Core.Net6.Processes.BlobStorageProcess",
       "Async": "false",
       "IsEnable": "true",
       "DataFlowProcessParameters": [
@@ -42,7 +42,7 @@
     },
     {
       "Key": "ReceiveMessageFromServieBus",
-      "Type": "Xenhey.BPM.Core.Processes.ConnectToDBProcess",
+      "Type": "Xenhey.BPM.Core.Net6.Processes.ConnectToDBProcess",
       "Async": "false",
       "IsEnable": "true",
       "DataFlowProcessParameters": [

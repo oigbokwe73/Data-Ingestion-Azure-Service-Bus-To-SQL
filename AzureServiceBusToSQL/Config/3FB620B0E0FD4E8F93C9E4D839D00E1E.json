@@ -1,0 +1,72 @@
+﻿{
+  "Id": "CopyFilesAndCreateBatchFiles",
+  "LineOfBusinessProcessData": [
+    {
+      "Key": "object",
+      "Type": "Xenhey.BPM.Core.Net6.Processes.ProcessData"
+    }
+  ],
+  "Type": "",
+  "DataFlowProcess": [
+    {
+      "Key": "FileShareCopyProcess",
+      "Type": "Xenhey.BPM.Core.Net6.Processes.FileShareCopyProcess",
+      "Async": "false",
+      "IsEnable": "true",
+      "DataFlowProcessParameters": [
+        {
+          "Key": "StorageAccount",
+          "Value": "AzureWebJobsStorage"
+        },
+        {
+          "Key": "DownloadFileFromShare",
+          "Value": "Yes"
+        },
+        {
+          "Key": "FileExtension",
+          "Value": ".csv"
+        },
+        {
+          "Key": "IncludeFolderName",
+          "Value": "yes"
+        },
+        {
+          "Key": "FileShareName",
+          "Value": "training20230315"
+        },
+        {
+          "Key": "Container",
+          "Value": "pickup"
+        },
+        {
+          "Key": "FolderName",
+          "Value": "ForProcessing"
+        },
+        {
+          "Key": "ContentType",
+          "Value": "text/csv"
+        }
+      ]
+    },
+    {
+      "Key": "FileShareCopyProcess",
+      "Type": "Xenhey.BPM.Core.Net6.Processes.FileShareCopyProcess",
+      "Async": "false",
+      "IsEnable": "true",
+      "DataFlowProcessParameters": [
+        {
+          "Key": "StorageAccount",
+          "Value": "AzureWebJobsStorage"
+        },
+        {
+          "Key": "DeleteFileFromShare",
+          "Value": "Yes"
+        },
+        {
+          "Key": "FileShareName",
+          "Value": "training20230315"
+        }
+      ]
+    }
+  ]
+}

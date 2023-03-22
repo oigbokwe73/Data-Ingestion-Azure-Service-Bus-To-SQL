@@ -1,10 +1,9 @@
 using System;
 using System.Collections.Specialized;
 using Microsoft.Azure.WebJobs;
-using Microsoft.Azure.WebJobs.Host;
 using Microsoft.Extensions.Logging;
-using Xenhey.BPM.Core;
-using Xenhey.BPM.Core.Implementation;
+using Xenhey.BPM.Core.Net6;
+using Xenhey.BPM.Core.Net6.Implementation;
 
 namespace AzureServiceBusToSQL
 {
@@ -17,7 +16,7 @@ namespace AzureServiceBusToSQL
             log.LogInformation("C# blob trigger function processed a request.");
             NameValueCollection nvc = new NameValueCollection();
             nvc.Add(ApiKeyName, "43EFE991E8614CFB9EDECF1B0FDED37C");
-            IOrchrestatorService orchrestatorService = new ManagedOrchestratorService(nvc);
+            IOrchestrationService orchrestatorService = new ManagedOrchestratorService(nvc);
             var processFiles = orchrestatorService.Run(mySbMsg);
             log.LogInformation($"EnqueuedTimeUtc={enqueuedTimeUtc}");
             log.LogInformation($"DeliveryCount={deliveryCount}");

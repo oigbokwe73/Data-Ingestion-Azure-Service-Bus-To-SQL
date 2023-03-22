@@ -3,20 +3,24 @@
   "LineOfBusinessProcessData": [
     {
       "Key": "object",
-      "Type": "Xenhey.BPM.Core.Processes.ProcessData"
+      "Type": "Xenhey.BPM.Core.Net6.Processes.ProcessData"
     }
   ],
   "Type": "",
   "DataFlowProcess": [
-		   {
+    {
       "Key": "Read-Uploaded-File",
-      "Type": "Xenhey.BPM.Core.Processes.CSVProcess",
+      "Type": "Xenhey.BPM.Core.Net6.Processes.CSVProcess",
       "Async": "false",
-      "IsEnable": "false",
+      "IsEnable": "true",
       "DataFlowProcessParameters": [
         {
-          "Key": "ReadCsvAsStreamv2",
+          "Key": "GetRecordsFromCSV",
           "Value": "yes"
+        },
+        {
+          "Key": "RootElement",
+          "Value": "Table"
         },
         {
           "Key": "messageformat",
@@ -25,40 +29,40 @@
       ]
     },
     {
-      "Key": "TransformCsvPayload",
-      "Type": "Xenhey.BPM.Core.Processes.TransformationProcess",
+      "Key": "WriteMessageToStorage",
+      "Type": "Xenhey.BPM.Core.Net6.Processes.BlobStorageProcess",
       "Async": "false",
-      "IsEnable": "false",
+      "IsEnable": "true",
       "DataFlowProcessParameters": [
         {
-          "Key": "messageformatin",
-          "Value": "application/xml"
-        },
-        {
-          "Key": "StorageAccount",
-          "Value": "AzureWebJobsStorage"
-        },
-        {
-          "Key": "FolderName",
-          "Value": "config"
-        },
-        {
-          "Key": "FileName",
-          "Value": "FileTransformData.xsl"
-        },
-        {
-          "Key": "TransformPayload",
+          "Key": "WriteToStorage",
           "Value": "yes"
         },
         {
-          "Key": "messageformatout",
+          "Key": "BlobStorageConnectionString",
+          "Value": "AzureWebJobsStorage"
+        },
+        {
+          "Key": "container",
+          "Value": "receivedmessages"
+        },
+        {
+          "Key": "folderName",
+          "Value": "XmlMessageFromServiceBus"
+        },
+        {
+          "Key": "extension",
+          "Value": "xml"
+        },
+        {
+          "Key": "ContentType",
           "Value": "application/xml"
         }
       ]
     },
-		{
+    {
       "Key": "MessageBuilderProcess",
-      "Type": "Xenhey.BPM.Core.Processes.MessageBuilderProcess",
+      "Type": "Xenhey.BPM.Core.Net6.Processes.MessageBuilderProcess",
       "Async": "false",
       "IsEnable": "false",
       "DataFlowProcessParameters": [
@@ -74,7 +78,7 @@
     },
     {
       "Key": "SendMesagesToService",
-      "Type": "Xenhey.BPM.Core.Processes.ServiceBusProcess",
+      "Type": "Xenhey.BPM.Core.Net6.Processes.ServiceBusProcess",
       "Async": "false",
       "IsEnable": "true",
       "DataFlowProcessParameters": [

@@ -4,24 +4,25 @@ using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
-using Xenhey.BPM.Core.Implementation;
-using Xenhey.BPM.Core;
 using System.Collections.Specialized;
 using System.Linq;
+using Xenhey.BPM.Core.Net6.Implementation;
+using Xenhey.BPM.Core.Net6;
 
 namespace AzureServiceBusToSQL
 {
-   public class UploadFile
+    public class UploadFile
     {
         private HttpRequest _req;
         private NameValueCollection nvc = new NameValueCollection();
-        [FunctionName("uploadfile")]
+        [FunctionName("UploadFile")]
         public async Task<IActionResult> Run([HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = null)]
             HttpRequest req, ILogger log)
         {
             _req = req;
 
             log.LogInformation("C# HTTP trigger function processed a request.");
+            _req.Headers.ToList().ForEach(item => { nvc.Add(item.Key, item.Value.FirstOrDefault()); });
             var results = orchrestatorService.Run(_req.Body);
             return resultSet(results);
 
@@ -30,22 +31,19 @@ namespace AzureServiceBusToSQL
         private ActionResult resultSet(string reponsePayload)
         {
             var returnContent = new ContentResult();
-            var mediaSelectedtype = _req.Headers.Where(x => x.Key.Equals("Content-Type")).FirstOrDefault();
+            var mediaSelectedtype = nvc.Get("Content-Type");
             returnContent.Content = reponsePayload;
-            returnContent.ContentType = mediaSelectedtype.Value;
+            returnContent.ContentType = mediaSelectedtype;
             return returnContent;
         }
-        private IOrchrestatorService orchrestatorService
+        private IOrchestrationService orchrestatorService
         {
             get
             {
 
-                _req.Headers.ToList().ForEach(item =>
-                {
-                    nvc.Add(item.Key, item.Value.FirstOrDefault());
-                });
                 return new ManagedOrchestratorService(nvc);
             }
         }
+
     }
-    }
+}
