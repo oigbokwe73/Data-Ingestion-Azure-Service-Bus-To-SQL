@@ -34,7 +34,7 @@ https://meetings.dialpad.com/getmp4/01c3b68c8a0511ec96cb7ba9575109da.mp4
 |43EFE991E8614CFB9EDECF1B0FDED37A.json| **Upload File** Parse CSV file --> Write Batched Files To Storage|
 |43EFE991E8614CFB9EDECF1B0FDED37C.json| **Service Bus Trigger XML Payload** | Pull XML payload off Service Bus -->  Send records to SQL DB|
 |43EFE991E8614CFB9EDECF1B0FDED37D.json| **Service Bus Trigger JSON Payload** | Pull JSON payload off Service Bus --> Write Azure Table|
-|43EFE991E8614CFB9EDECF1B0FDED37E.json| **Blob Trigger** Parse batched CSV file. Covert to JSON/XML --> Send to Service Bus|
+|43EFE991E8614CFB9EDECF1B0FDED37E.json| **Blob Trigger** Parse batched CSV file. Covert to JSON --> Send to Service Bus|
 |43EFE991E8614CFB9EDECF1B0FDED37b.json| **Search Resullt from  DB ** |
 
 
@@ -47,8 +47,21 @@ https://meetings.dialpad.com/getmp4/01c3b68c8a0511ec96cb7ba9575109da.mp4
 |processed|These are files the have been parsed and dropped in th processed container|
 |readymesagesforservicebus|XML Files that are ready to be placed on the service bus|
 
-|ContainerName|Description|
+|Table|Description|
 |:----|:----|
+|csvbatchfiles|Track the CSV parsed files|
+
+
+|Share|Description|
+|:----|:----|
+|training[YYYYMMDD]|Create a share location for SFTP to drop files|
+
+## Create Azure Container Instance for SFTP
+> User the following link to create a Azure Container Instance(ACI for SFTP)
+> 
+https://docs.microsoft.com/en-us/samples/azure-samples/sftp-creation-template/sftp-on-azure
+
+
 
 
 ## Service Bus Pricing
