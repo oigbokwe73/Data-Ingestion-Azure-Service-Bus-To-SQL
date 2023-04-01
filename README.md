@@ -21,6 +21,7 @@ https://meetings.dialpad.com/getmp4/01c3b68c8a0511ec96cb7ba9575109da.mp4
 |StorageAcctName|[STORAGE ACCOUNT NAME]|Example  "AzureWebJobsStorage"|
 |ServiceBusConnectionString|[SERVICE BUS CONNECTION STRING]|Example  "ServiceBusConnectionString".  Recommmended to store in Key vault.|
 |DatabaseConnection|[DATABASE CONNECTION STRING]|Example  "DatabaseConnection". Recommmended to store in Key vault.|
+|TimerInterval|[TIMER_INTERVAL]|Example  "0 */1 * * * *" 1 MIN|
 
 
 > **Note:**  Look at the configuration file in the **Config** Folder and created a Table to record information.
