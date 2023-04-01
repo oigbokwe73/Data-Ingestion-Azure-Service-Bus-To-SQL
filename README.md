@@ -64,7 +64,13 @@ https://meetings.dialpad.com/getmp4/01c3b68c8a0511ec96cb7ba9575109da.mp4
 https://docs.microsoft.com/en-us/samples/azure-samples/sftp-creation-template/sftp-on-azure
 
 
+> Kusto Queries used for Application Insights
 
+```
+search "ReceiveMessageFromServieBus"
+| summarize count() by bin(timestamp, 1h)
+| order by timestamp desc
+```
 
 ## Service Bus Pricing
 
