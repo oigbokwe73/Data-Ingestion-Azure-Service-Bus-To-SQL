@@ -44,6 +44,7 @@ https://meetings.dialpad.com/getmp4/01c3b68c8a0511ec96cb7ba9575109da.mp4
 
 |ContainerName|Description|
 |:----|:----|
+|config|Location for the configuration files|
 |pickup|Thes are files that are copied from the SFTP share and dropped in the pickup container |
 |processed|These are files the have been parsed and dropped in th processed container|
 |readymesagesforservicebus|XML Files that are ready to be placed on the service bus|
