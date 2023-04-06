@@ -3,7 +3,7 @@
 
 ## Architecture Diagram
 
-![image](https://user-images.githubusercontent.com/15838780/152911729-e86ae271-8fc0-4ef5-b2cf-0198dc14ae5b.png)
+![image](https://user-images.githubusercontent.com/15838780/226928604-4340b682-0e13-44bc-b239-6b91a29f678a.png)
 
 
 ## Session Recorded 
@@ -21,6 +21,7 @@ https://meetings.dialpad.com/getmp4/01c3b68c8a0511ec96cb7ba9575109da.mp4
 |StorageAcctName|[STORAGE ACCOUNT NAME]|Example  "AzureWebJobsStorage"|
 |ServiceBusConnectionString|[SERVICE BUS CONNECTION STRING]|Example  "ServiceBusConnectionString".  Recommmended to store in Key vault.|
 |DatabaseConnection|[DATABASE CONNECTION STRING]|Example  "DatabaseConnection". Recommmended to store in Key vault.|
+|TimerInterval|[TIMER_INTERVAL]|Example  "0 */1 * * * *" 1 MIN|
 
 
 > **Note:**  Look at the configuration file in the **Config** Folder and created a Table to record information.
@@ -34,17 +35,42 @@ https://meetings.dialpad.com/getmp4/01c3b68c8a0511ec96cb7ba9575109da.mp4
 |43EFE991E8614CFB9EDECF1B0FDED37A.json| **Upload File** Parse CSV file --> Write Batched Files To Storage|
 |43EFE991E8614CFB9EDECF1B0FDED37C.json| **Service Bus Trigger XML Payload** | Pull XML payload off Service Bus -->  Send records to SQL DB|
 |43EFE991E8614CFB9EDECF1B0FDED37D.json| **Service Bus Trigger JSON Payload** | Pull JSON payload off Service Bus --> Write Azure Table|
-|43EFE991E8614CFB9EDECF1B0FDED37E.json| **Blob Trigger** Parse batched CSV file. Covert to JSON/XML --> Send to Service Bus|
+|43EFE991E8614CFB9EDECF1B0FDED37E.json| **Blob Trigger** Parse batched CSV file. Covert to JSON --> Send to Service Bus|
 |43EFE991E8614CFB9EDECF1B0FDED37b.json| **Search Resullt from  DB ** |
 
-## Upload Configuration to Storage
-Go to created storage Account.. Click On "Blob Service" 
-![image](https://user-images.githubusercontent.com/15838780/147958072-4a6058d2-d320-44a0-9d11-58449d527cd3.png)
 
-Click on **"Container"**
-![image](https://user-images.githubusercontent.com/15838780/147958201-71df0f21-e4e8-46c0-93be-728f1dbc2a43.png)
-![image](https://user-images.githubusercontent.com/15838780/147963170-1a2f2a64-7ba2-44ce-9f5d-30d490529711.png)
 
+> Create the following blob containers and share in azure storage.
+
+|ContainerName|Description|
+|:----|:----|
+|config|Location for the configuration files|
+|pickup|Thes are files that are copied from the SFTP share and dropped in the pickup container |
+|processed|These are files the have been parsed and dropped in th processed container|
+|readymesagesforservicebus|XML Files that are ready to be placed on the service bus|
+
+|Table|Description|
+|:----|:----|
+|csvbatchfiles|Track the CSV parsed files|
+
+
+|Share|Description|
+|:----|:----|
+|training[YYYYMMDD]|Create a share location for SFTP to drop files|
+
+## Create Azure Container Instance for SFTP
+> User the following link to create a Azure Container Instance(ACI for SFTP)
+> 
+https://docs.microsoft.com/en-us/samples/azure-samples/sftp-creation-template/sftp-on-azure
+
+
+> Kusto Queries used for Application Insights
+
+```
+search "ReceiveMessageFromServieBus"
+| summarize count() by bin(timestamp, 1h)
+| order by timestamp desc
+```
 
 ## Service Bus Pricing
 
