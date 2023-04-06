@@ -9,7 +9,7 @@
   "Type": "",
   "DataFlowProcess": [
     {
-      "Key": "Read-Uploaded-File",
+      "Key": "ReadParsedFile",
       "Type": "Xenhey.BPM.Core.Net6.Processes.CSVProcess",
       "Async": "false",
       "IsEnable": "true",
@@ -29,10 +29,10 @@
       ]
     },
     {
-      "Key": "WriteMessageToStorage",
+      "Key": "WriteMessageToStorageToBeProcessedByServiceBus",
       "Type": "Xenhey.BPM.Core.Net6.Processes.BlobStorageProcess",
       "Async": "false",
-      "IsEnable": "true",
+      "IsEnable": "false",
       "DataFlowProcessParameters": [
         {
           "Key": "WriteToStorage",
@@ -44,7 +44,7 @@
         },
         {
           "Key": "container",
-          "Value": "receivedmessages"
+          "Value": "readymesagesforservicebus"
         },
         {
           "Key": "folderName",
@@ -57,22 +57,6 @@
         {
           "Key": "ContentType",
           "Value": "application/xml"
-        }
-      ]
-    },
-    {
-      "Key": "MessageBuilderProcess",
-      "Type": "Xenhey.BPM.Core.Net6.Processes.MessageBuilderProcess",
-      "Async": "false",
-      "IsEnable": "false",
-      "DataFlowProcessParameters": [
-        {
-          "Key": "BuildArrayMessageWithRootNode",
-          "Value": "Yes"
-        },
-        {
-          "Key": "RootName",
-          "Value": "Table"
         }
       ]
     },
