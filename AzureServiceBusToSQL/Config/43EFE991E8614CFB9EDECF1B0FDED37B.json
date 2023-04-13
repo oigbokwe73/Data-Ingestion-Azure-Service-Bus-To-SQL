@@ -36,7 +36,7 @@
       "Key": "TransformCsvPayload",
       "Type": "Xenhey.BPM.Core.Net6.Processes.TransformationProcess",
       "Async": "false",
-      "IsEnable": "true",
+      "IsEnable": "false", 
       "DataFlowProcessParameters": [
         {
           "Key": "messageformatin",
@@ -71,12 +71,12 @@
       "IsEnable": "true",
       "DataFlowProcessParameters": [
         {
-          "Key": "BuildArrayMessageWithRootNode",
+          "Key": "BuildArrayFromComplexObject",
           "Value": "Yes"
         },
         {
-          "Key": "RootName",
-          "Value": "Table"
+          "Key": "TableName",
+          "Value": "Table1"
         }
       ]
     }
