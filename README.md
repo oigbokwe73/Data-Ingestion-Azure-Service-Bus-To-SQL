@@ -8,7 +8,8 @@
 
 ## Session Recorded 
 
-https://meetings.dialpad.com/getmp4/01c3b68c8a0511ec96cb7ba9575109da.mp4
+[Session Video[(https://storageaccountparknb028.blob.core.windows.net/training/traininginfo/video1910447954.mp4?sp=r&st=2023-04-16T02:33:29Z&se=2024-04-16T10:33:29Z&spr=https&sv=2021-12-02&sr=b&sig=YN7SnRVnsOXW0ybvhf9%2FLFImdiH%2BgFfPEZj5wMrf0Bc%3D)
+
 
 ## Appplication Setting 
 
