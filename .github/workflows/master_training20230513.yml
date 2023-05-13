@@ -39,4 +39,4 @@ jobs:
           app-name: 'training20230513'
           slot-name: 'Production'
           package: '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/output'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_6E38340C913A48269E4A566611F5E9BB }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_2DCDCB661727447CBC9431209F3124A4 }}
