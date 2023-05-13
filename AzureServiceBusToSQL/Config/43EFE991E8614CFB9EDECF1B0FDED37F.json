@@ -1,0 +1,36 @@
+﻿{
+  "Id": "NoSQLTrigger",
+  "LineOfBusinessProcessData": [
+    {
+      "Key": "object",
+      "Type": "Xenhey.BPM.Core.Net6.Processes.ProcessData"
+    }
+  ],
+  "Type": "",
+  "DataFlowProcess": [
+    {
+      "Key": "ReceiveMessageFromServieBus",
+      "Type": "Xenhey.BPM.Core.Net6.Processes.ConnectToDBProcess",
+      "Async": "false",
+      "IsEnable": "true",
+      "DataFlowProcessParameters": [
+        {
+          "Key": "BulkInsertFromMessage",
+          "Value": "yes"
+        },
+        {
+          "Key": "DatabaseTableName",
+          "Value": "College"
+        },
+        {
+          "Key": "ConnectionString",
+          "Value": "DatabaseConnection"
+        },
+        {
+          "Key": "datatable",
+          "Value": "College"
+        }
+      ]
+    }
+  ]
+}

@@ -9,6 +9,38 @@
   "Type": "",
   "DataFlowProcess": [
     {
+      "Key": "WriteMessageToStorageToBeProcessedByServiceBus",
+      "Type": "Xenhey.BPM.Core.Net6.Processes.BlobStorageProcess",
+      "Async": "false",
+      "IsEnable": "false",
+      "DataFlowProcessParameters": [
+        {
+          "Key": "WriteToStorage",
+          "Value": "yes"
+        },
+        {
+          "Key": "BlobStorageConnectionString",
+          "Value": "AzureWebJobsStorage"
+        },
+        {
+          "Key": "container",
+          "Value": "readymesagesforservicebus"
+        },
+        {
+          "Key": "folderName",
+          "Value": "XmlMessageFromServiceBus"
+        },
+        {
+          "Key": "extension",
+          "Value": "xml"
+        },
+        {
+          "Key": "ContentType",
+          "Value": "application/xml"
+        }
+      ]
+    },
+    {
       "Key": "ReceiveMessageFromServieBus",
       "Type": "Xenhey.BPM.Core.Net6.Processes.ConnectToDBProcess",
       "Async": "false",

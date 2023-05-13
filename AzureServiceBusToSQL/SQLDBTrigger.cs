@@ -7,9 +7,9 @@ using Xenhey.BPM.Core.Net6.Implementation;
 
 namespace AzureServiceBusToSQL
 {
-    public static class ServiceBusTriggerXML
+    public static class SQLDBTrigger
     {
-        [FunctionName("ServiceBusTriggerXML")]
+        [FunctionName("SQLDBTrigger")]
         public static void Run([ServiceBusTrigger("xmlpayload", "messages", Connection = "ServiceBusConnectionString")] string mySbMsg, Int32 deliveryCount, DateTime enqueuedTimeUtc, string messageId, ILogger log)
         {
             string ApiKeyName = "x-api-key";
