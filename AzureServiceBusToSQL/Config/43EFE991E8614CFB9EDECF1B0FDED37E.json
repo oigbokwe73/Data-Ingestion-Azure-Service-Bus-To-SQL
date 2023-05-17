@@ -9,25 +9,49 @@
   "Type": "",
   "DataFlowProcess": [
     {
-      "Key": "ReadParsedFile",
-      "Type": "Xenhey.BPM.Core.Net6.Processes.CSVProcess",
+      "Key": "ReadStreamToText",
+      "Type": "Xenhey.BPM.Core.Net6.Processes.MessageBuilderProcess",
       "Async": "false",
       "IsEnable": "true",
       "DataFlowProcessParameters": [
         {
-          "Key": "GetRecordsFromCSV",
+          "Key": "ReadStreamToText",
           "Value": "yes"
-        },
-        {
-          "Key": "RootElement",
-          "Value": "Table"
-        },
-        {
-          "Key": "messageformat",
-          "Value": "application/xml"
         }
       ]
     },
+				{
+			"Key": "WriteMessageToStorageToBeProcessedByServiceBus",
+			"Type": "Xenhey.BPM.Core.Net6.Processes.BlobStorageProcess",
+			"Async": "false",
+			"IsEnable": "true",
+			"DataFlowProcessParameters": [
+				{
+					"Key": "WriteToStorage",
+					"Value": "yes"
+				},
+				{
+					"Key": "BlobStorageConnectionString",
+					"Value": "AzureWebJobsStorage"
+				},
+				{
+					"Key": "container",
+					"Value": "jsonpayload"
+				},
+				{
+					"Key": "folderName",
+					"Value": "csvmessages1"
+				},
+				{
+					"Key": "extension",
+					"Value": "csv"
+				},
+				{
+					"Key": "ContentType",
+					"Value": "text/csv"
+				}
+			]
+		},
     {
       "Key": "SendMesagesToService",
       "Type": "Xenhey.BPM.Core.Net6.Processes.ServiceBusProcess",
@@ -40,7 +64,7 @@
         },
         {
           "Key": "TopicName",
-          "Value": "xmlpayload"
+          "Value": "request"
         },
         {
           "Key": "ServiceBusConnectionString",
@@ -48,7 +72,7 @@
         },
         {
           "Key": "ContentType",
-          "Value": "application/xml"
+          "Value": "text/plain"
         }
       ]
     }

@@ -1,36 +1,52 @@
 ﻿{
-  "Id": "NoSQLTrigger",
-  "LineOfBusinessProcessData": [
-    {
-      "Key": "object",
-      "Type": "Xenhey.BPM.Core.Net6.Processes.ProcessData"
-    }
-  ],
-  "Type": "",
-  "DataFlowProcess": [
-    {
-      "Key": "ReceiveMessageFromServieBus",
-      "Type": "Xenhey.BPM.Core.Net6.Processes.ConnectToDBProcess",
-      "Async": "false",
-      "IsEnable": "true",
-      "DataFlowProcessParameters": [
-        {
-          "Key": "BulkInsertFromMessage",
-          "Value": "yes"
-        },
-        {
-          "Key": "DatabaseTableName",
-          "Value": "College"
-        },
-        {
-          "Key": "ConnectionString",
-          "Value": "DatabaseConnection"
-        },
-        {
-          "Key": "datatable",
-          "Value": "College"
-        }
-      ]
-    }
-  ]
+	"Id": "NoSQLTrigger",
+	"LineOfBusinessProcessData": [
+		{
+			"Key": "object",
+			"Type": "Xenhey.BPM.Core.Net6.Processes.ProcessData"
+		}
+	],
+	"Type": "",
+	"DataFlowProcess": [
+		{
+			"Key": "ConvertCSVToJson",
+			"Type": "Xenhey.BPM.Core.Net6.Processes.CSVProcess",
+			"Async": "false",
+			"IsEnable": "true",
+			"DataFlowProcessParameters": [
+				{
+					"Key": "ReadCSVAsPlainText",
+					"Value": "yes"
+				},
+				{
+					"Key": "messageformat",
+					"Value": "application/json"
+				}
+			]
+		},
+		{
+			"Key": "Write-To-Storage",
+			"Type": "Xenhey.BPM.Core.Net6.Processes.AzureTableStorageProcess",
+			"Async": "false",
+			"IsEnable": "true",
+			"DataFlowProcessParameters": [
+				{
+					"Key": "CreateRecordForAzureTableBatch",
+					"Value": "yes"
+				},
+				{
+					"Key": "BatchSize",
+					"Value": "100"
+				},
+				{
+					"Key": "StorageAccount",
+					"Value": "AzureWebJobsStorage"
+				},
+				{
+					"Key": "TableName",
+					"Value": "training20230517"
+				}
+			]
+		}
+	]
 }

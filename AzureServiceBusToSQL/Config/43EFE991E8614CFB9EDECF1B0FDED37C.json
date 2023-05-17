@@ -8,39 +8,27 @@
   ],
   "Type": "",
   "DataFlowProcess": [
-    {
-      "Key": "WriteMessageToStorageToBeProcessedByServiceBus",
-      "Type": "Xenhey.BPM.Core.Net6.Processes.BlobStorageProcess",
+		  {
+      "Key": "ReadMessageAndConvertToXML",
+      "Type": "Xenhey.BPM.Core.Net6.Processes.CSVProcess",
       "Async": "false",
-      "IsEnable": "false",
+      "IsEnable": "true",
       "DataFlowProcessParameters": [
         {
-          "Key": "WriteToStorage",
+          "Key": "ReadCSVAsPlainText",
           "Value": "yes"
         },
         {
-          "Key": "BlobStorageConnectionString",
-          "Value": "AzureWebJobsStorage"
+          "Key": "RootElement",
+          "Value": "FootBall"
         },
-        {
-          "Key": "container",
-          "Value": "readymesagesforservicebus"
-        },
-        {
-          "Key": "folderName",
-          "Value": "XmlMessageFromServiceBus"
-        },
-        {
-          "Key": "extension",
-          "Value": "xml"
-        },
-        {
-          "Key": "ContentType",
+				{
+          "Key": "messageformat",
           "Value": "application/xml"
-        }
+        } 
       ]
     },
-    {
+   {
       "Key": "ReceiveMessageFromServieBus",
       "Type": "Xenhey.BPM.Core.Net6.Processes.ConnectToDBProcess",
       "Async": "false",
@@ -52,15 +40,15 @@
         },
         {
           "Key": "DatabaseTableName",
-          "Value": "College"
+          "Value": "FootBall"
         },
-        {
+         {
           "Key": "ConnectionString",
           "Value": "DatabaseConnection"
         },
-        {
+       {
           "Key": "datatable",
-          "Value": "College"
+          "Value": "FootBall"
         }
       ]
     }
