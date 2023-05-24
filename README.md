@@ -34,11 +34,15 @@
 |FileName|Description|
 |:----|:----|
 |43EFE991E8614CFB9EDECF1B0FDED37A.json| **Upload File** Parse CSV file --> Write Batched Files To Storage|
-|43EFE991E8614CFB9EDECF1B0FDED37C.json| **Service Bus Trigger XML Payload** | Pull XML payload off Service Bus -->  Send records to SQL DB|
-|43EFE991E8614CFB9EDECF1B0FDED37D.json| **Service Bus Trigger JSON Payload** | Pull JSON payload off Service Bus --> Write Azure Table|
-|43EFE991E8614CFB9EDECF1B0FDED37E.json| **Blob Trigger** Parse batched CSV file. Covert to JSON --> Send to Service Bus|
-|43EFE991E8614CFB9EDECF1B0FDED37b.json| **Search Resullt from  DB ** |
+|43EFE991E8614CFB9EDECF1B0FDED37C.json| **Service Bus Trigger for SQL DB** | Receive JSON payload and insert into SQL DB|
+|43EFE991E8614CFB9EDECF1B0FDED37F.json| **Service Bus Trigger for No SQL DB** | Receive JSON payload and insert into NO SQL DB|
+|43EFE991E8614CFB9EDECF1B0FDED37E.json| **Blob Trigger** Send parsed/sharded file  to Send to Service Bus|
+|43EFE991E8614CFB9EDECF1B0FDED37B.json| **Search Resullt from NO SQLDB** |
+|43EFE991E8614CFB9EDECF1B0FDED37F.json| **Search SQL DB. Return resultset** |
+|3FB620B0E0FD4E8F93C9E4D839D00E1E.json| **Copy File from SFT from into the pickup folder** |
 
+
+       
 
 
 > Create the following blob containers and share in azure storage.
@@ -48,11 +52,11 @@
 |config|Location for the configuration files|
 |pickup|Thes are files that are copied from the SFTP share and dropped in the pickup container |
 |processed|These are files the have been parsed and dropped in th processed container|
-|readymesagesforservicebus|XML Files that are ready to be placed on the service bus|
 
 |Table|Description|
 |:----|:----|
 |csvbatchfiles|Track the CSV parsed files|
+|training[YYYYMMDD]|N0 SQL DataStore|
 
 
 |Share|Description|
