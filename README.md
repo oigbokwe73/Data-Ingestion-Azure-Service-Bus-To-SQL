@@ -39,7 +39,7 @@
 |43EFE991E8614CFB9EDECF1B0FDED37E.json| **Blob Trigger** Send parsed/sharded file  to Send to Service Bus|
 |43EFE991E8614CFB9EDECF1B0FDED37B.json| **Search Resullt from NO SQLDB** |
 |43EFE991E8614CFB9EDECF1B0FDED37F.json| **Search SQL DB. Return resultset** |
-|3FB620B0E0FD4E8F93C9E4D839D00E1E.json| **Copy File from SFT from into the pickup folder** |
+|3FB620B0E0FD4E8F93C9E4D839D00E1E.json| **Copy File from SFTP into the pickup folder** |
 
 
        
