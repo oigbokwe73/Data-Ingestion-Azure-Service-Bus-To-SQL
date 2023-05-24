@@ -9,7 +9,7 @@
   "Type": "",
   "DataFlowProcess": [
 		  {
-      "Key": "ReadMessageAndConvertToXML",
+      "Key": "ReadFileConvertToJsonforSQLDb",
       "Type": "Xenhey.BPM.Core.Net6.Processes.CSVProcess",
       "Async": "false",
       "IsEnable": "true",
@@ -18,13 +18,9 @@
           "Key": "ReadCSVAsPlainText",
           "Value": "yes"
         },
-        {
-          "Key": "RootElement",
-          "Value": "FootBall"
-        },
-				{
+  			{
           "Key": "messageformat",
-          "Value": "application/xml"
+          "Value": "application/json"
         } 
       ]
     },

@@ -1,84 +1,40 @@
 ﻿{
-  "Id": "ConnectToDatabaseToSearch",
-  "LineOfBusinessProcessData": [
-    {
-      "Key": "object",
-      "Type": "Xenhey.BPM.Core.Net6.Processes.ProcessData"
-    }
-  ],
-  "Type": "",
-  "DataFlowProcess": [
-    {
-      "Key": "SearchDatabaseForResults",
-      "Type": "Xenhey.BPM.Core.Net6.Processes.ConnectToDBProcess",
-      "Async": "false",
-      "IsEnable": "true",
-      "DataFlowProcessParameters": [
-        {
-          "Key": "connectodatabase",
-          "Value": "Yes"
-        },
-        {
-          "Key": "SearchTerm",
-          "Value": "search"
-        },
-        {
-          "Key": "connectionstring",
-          "Value": "DatabaseConnection"
-        },
-        {
-          "Key": "messageformat",
-          "Value": "application/json"
-        }
-      ]
-    },
-		{
-      "Key": "TransformCsvPayload",
-      "Type": "Xenhey.BPM.Core.Net6.Processes.TransformationProcess",
-      "Async": "false",
-      "IsEnable": "false", 
-      "DataFlowProcessParameters": [
-        {
-          "Key": "messageformatin",
-          "Value": "application/json"
-        },
-        {
-          "Key": "StorageAccount",
-          "Value": "AzureWebJobsStorage"
-        },
-        {
-          "Key": "FolderName",
-          "Value": "config"
-        },
-        {
-          "Key": "FileName",
-          "Value": "FileTransformData.xsl"
-        },
-        {
-          "Key": "TransformPayload",
-          "Value": "yes"
-        },
-        {
-          "Key": "messageformatout",
-          "Value": "application/json"
-        }
-      ]
-    },
-		{
-      "Key": "MessageBuilderProcess",
-      "Type": "Xenhey.BPM.Core.Net6.Processes.MessageBuilderProcess",
-      "Async": "false",
-      "IsEnable": "true",
-      "DataFlowProcessParameters": [
-        {
-          "Key": "BuildArrayFromComplexObject",
-          "Value": "Yes"
-        },
-        {
-          "Key": "TableName",
-          "Value": "Table1"
-        }
-      ]
-    }
-  ]
-}
+	"Id": "SearchTableStorage",
+	"LineOfBusinessProcessData": [
+	  {
+		"Key": "object",
+		"Type": "Xenhey.BPM.Core.Net6.Processes.ProcessData"
+	  }
+	],
+	"Type": "",
+	"DataFlowProcess": [
+	  {
+		"Key": "Azure_Table_Storage",
+		"Type": "Xenhey.BPM.Core.Net6.Processes.AzureTableStorageProcess",
+		"Async": "false",
+		"IsEnable": "true",
+		"DataFlowProcessParameters": [
+		  {
+			"Key": "SimpleTableSearch",
+			"Value": "yes"
+		  },
+		  {
+			"Key": "QueryField",
+			"Value": "search"
+		  },
+		  {
+			"Key": "StorageAccount",
+			"Value": "AzureWebJobsStorage"
+		  },
+		  {
+			"Key": "TableName",
+			"Value": "training20230524"
+		  },
+		  {
+			"Key": "DefaultResult",
+			"Value": "No Records Found"
+		  }
+		]
+	  }
+	]
+  }

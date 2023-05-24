@@ -20,38 +20,6 @@
         }
       ]
     },
-				{
-			"Key": "WriteMessageToStorageToBeProcessedByServiceBus",
-			"Type": "Xenhey.BPM.Core.Net6.Processes.BlobStorageProcess",
-			"Async": "false",
-			"IsEnable": "true",
-			"DataFlowProcessParameters": [
-				{
-					"Key": "WriteToStorage",
-					"Value": "yes"
-				},
-				{
-					"Key": "BlobStorageConnectionString",
-					"Value": "AzureWebJobsStorage"
-				},
-				{
-					"Key": "container",
-					"Value": "jsonpayload"
-				},
-				{
-					"Key": "folderName",
-					"Value": "csvmessages1"
-				},
-				{
-					"Key": "extension",
-					"Value": "csv"
-				},
-				{
-					"Key": "ContentType",
-					"Value": "text/csv"
-				}
-			]
-		},
     {
       "Key": "SendMesagesToService",
       "Type": "Xenhey.BPM.Core.Net6.Processes.ServiceBusProcess",
@@ -72,7 +40,7 @@
         },
         {
           "Key": "ContentType",
-          "Value": "text/plain"
+          "Value": "text/csv"
         }
       ]
     }
