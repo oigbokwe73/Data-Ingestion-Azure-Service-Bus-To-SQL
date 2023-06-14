@@ -1,0 +1,116 @@
+{
+  "Id": "GetReports",
+  "LineOfBusinessProcessData": [
+    {
+      "Key": "object",
+      "Type": "Xenhey.BPM.Core.Net6.Processes.ProcessData"
+    }
+  ],
+  "Type": "",
+  "DataFlowProcess": [
+    {
+      "Key": "DecodeMessageFromRequest",
+      "Type": "Xenhey.BPM.Core.Net6.Processes.MessageBuilderProcess",
+      "Async": "false",
+      "IsEnable": "true",
+      "DataFlowProcessParameters": [
+        {
+          "Key": "DecodeFromJson",
+          "Value": "yes"
+        },
+        {
+          "Key": "PropertyName",
+          "Value": "query"
+        }
+      ]
+    },
+		{
+      "Key": "GetStatementFromStorageExecuteInSQLDB",
+      "Type": "Xenhey.BPM.Core.Net6.Processes.MessageBuilderProcess",
+      "Async": "false",
+      "IsEnable": "true",
+      "DataFlowProcessParameters": [
+        {
+          "Key": "BuildStatementFromFile",
+          "Value": "yes"
+        },
+				{
+          "Key": "FileName",
+          "Value": "filename"
+        },
+				{
+          "Key": "filetype",
+          "Value": "filetype"
+        },
+				{
+          "Key": "Container",
+          "Value": "script"
+        },
+				{
+          "Key": "StorageAccount",
+          "Value": "AzureWebJobsStorage"
+        }
+      ]
+    },
+		{
+      "Key": "PrepareStatementForSQLDatabase",
+      "Type": "Xenhey.BPM.Core.Net6.Processes.MessageBuilderProcess",
+      "Async": "false",
+      "IsEnable": "true",
+      "DataFlowProcessParameters": [
+        {
+          "Key": "QueryBuilderPayload",
+          "Value": "yes"
+        }
+      ]
+    },
+    {
+      "Key": "SerchforResultSet",
+      "Type": "Xenhey.BPM.Core.Net6.Processes.ConnectToDBProcess",
+      "Async": "false",
+      "IsEnable": "true",
+      "DataFlowProcessParameters": [
+        {
+          "Key": "connectodatabase",
+          "Value": "yes"
+        },
+        {
+          "Key": "connectionstring",
+          "Value": "connectionstring"
+        },
+        {
+          "Key": "SearchTerm",
+          "Value": "query"
+        },
+        {
+          "Key": "validatefornulls",
+          "Value": "yes"
+        },
+        {
+          "Key": "messageformat",
+          "Value": "application/json"
+        },
+        {
+          "Key": "FormatNotIndented",
+          "Value": "yes"
+        }
+      ]
+    },
+    {
+      "Key": "FormatResultSet",
+      "Type": "Xenhey.BPM.Core.Net6.Processes.MessageBuilderProcess",
+      "Async": "false",
+      "IsEnable": "true",
+      "DataFlowProcessParameters": [
+        {
+          "Key": "BuildArrayFromComplexObject",
+          "Value": "yes"
+        },
+        {
+          "Key": "TableName",
+          "Value": "Table1"
+        }
+      ]
+    }
+  ]
+}
