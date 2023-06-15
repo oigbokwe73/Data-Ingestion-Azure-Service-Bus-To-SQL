@@ -38,7 +38,7 @@
 |43EFE991E8614CFB9EDECF1B0FDED37F.json| **Service Bus Trigger for No SQL DB** | Receive JSON payload and insert into NO SQL DB|
 |43EFE991E8614CFB9EDECF1B0FDED37E.json| **Blob Trigger** Send parsed/sharded file  to Send to Service Bus|
 |43EFE991E8614CFB9EDECF1B0FDED37B.json| **Search Resullt from NO SQLDB** |
-|43EFE991E8614CFB9EDECF1B0FDED37F.json| **Search SQL DB. Return resultset** |
+|43EFE991E8614CFB9EDECF1B0FDED37G.json| **Search SQL DB. Return resultset** |
 |3FB620B0E0FD4E8F93C9E4D839D00E1E.json| **Copy File from SFTP into the pickup folder** |
 |CC244934898F46789734A9437B6F76CA.json| Encode Payload Request |
 |6B427917E36A4DA281D57F9A64AD9D55.json| Get reports from DB  |
