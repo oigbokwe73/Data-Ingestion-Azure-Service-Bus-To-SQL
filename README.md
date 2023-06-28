@@ -1,8 +1,8 @@
 
 
 # Table of Contents
-1. [Example](#example)
-2. [Example2](#example2)
+1. [Appplication Setting](#Appplication Setting)
+2. [Function App  Configuration ](#Function App  Configuration )
 3. [Third Example](#third-example)
 4. [Fourth Example](#fourth-examplehttpwwwfourthexamplecom)
 # Azure Service Bus To SQL
