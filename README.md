@@ -95,14 +95,7 @@ search "ReceiveMessageFromServieBus"
 |VsCode| https://visualstudio.microsoft.com/downloads/ |  Required extensions. Azure Functions, Azure Account
 |VS Studio Community Edition |https://visualstudio.microsoft.com/downloads/| Recommended. Nice intergration with Azure. software is free.
 
-  
-  
-  ## Contact
-  
-For questions related to this project, can be reached via email :- support@xenhey.com
-
-
-﻿## Configuration-driven development
+  ## Configuration-driven development
  
  "Configuration-driven development," refers to an approach in software development where the behavior and functionality of an application are primarily controlled through configuration files, rather than writing code. It focuses on separating application logic from configuration parameters, allowing developers to easily modify the behavior of the software without the need for extensive code changes.  [Xenhey.BPM.Core.Net6](https://www.nuget.org/packages/Xenhey.BPM.Core.Net6) offers a orchrestration pipeline using configuration to drive the execution of business logic, providing a tailored solution for each Line Of Business(LOB). The following are some benefits. 
 
@@ -116,3 +109,11 @@ For questions related to this project, can be reached via email :- support@xenhe
 
 5. Domain-Specific Customization: Configuration-driven development enables domain-specific customization by providing options and settings tailored to specific use cases. This empowers non-technical users or administrators to configure the application according to their specific requirements without the need for coding expertise
 
+  
+  
+  ## Contact
+  
+For questions related to this project, can be reached via email :- support@xenhey.com
+
+
+﻿
