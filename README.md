@@ -1,9 +1,9 @@
 
 
 # Table of Contents
-1.[Appplication Setting](#Appplication-Setting)
-[Function App  Configuration ](#Configuration-Files)
-[Products](#Products)
+1. [Appplication Setting](#Appplication-Setting)
+1. [Function App  Configuration ](#Configuration-Files)
+1. [Products](#Products)
 # Azure Service Bus To SQL
 
 
