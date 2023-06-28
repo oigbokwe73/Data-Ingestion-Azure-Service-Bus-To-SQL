@@ -1,8 +1,8 @@
 
 
 # Table of Contents
-1. [Appplication Setting](#Appplication Setting)
-2. [Function App  Configuration ](#Function App  Configuration )
+1. [Appplication Setting](#Appplication-Setting)
+2. [Function App  Configuration ](#Function-App-Configuration)
 3. [Third Example](#third-example)
 4. [Fourth Example](#fourth-examplehttpwwwfourthexamplecom)
 # Azure Service Bus To SQL
@@ -34,7 +34,7 @@
 
 > **Note:**  Look at the configuration file in the **Config** Folder and created a Table to record information.
 
-## Function App  Configuration 
+## Function App Configuration 
 
 > **Note:** The **Configuration** is located in the  FunctionApp  in a **Config** Folder.
 
