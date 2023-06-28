@@ -1,10 +1,9 @@
 
 
 # Table of Contents
-1. [Appplication Setting](#Appplication-Setting)
-2. [Function App  Configuration ](#Function-App-Configuration)
-3. [Third Example](#third-example)
-4. [Fourth Example](#fourth-examplehttpwwwfourthexamplecom)
+[Appplication Setting](#Appplication-Setting)
+[Function App  Configuration ](#Configuration-Files)
+[Products](#Products)
 # Azure Service Bus To SQL
 
 
@@ -34,7 +33,7 @@
 
 > **Note:**  Look at the configuration file in the **Config** Folder and created a Table to record information.
 
-## Function App Configuration 
+## Configuration Files 
 
 > **Note:** The **Configuration** is located in the  FunctionApp  in a **Config** Folder.
 
@@ -88,33 +87,9 @@ search "ReceiveMessageFromServieBus"
 
 ![image](https://user-images.githubusercontent.com/15838780/153060922-c0052b81-c571-410e-b587-8aa83b633223.png)
 
-## Upload CSV File
-
-|Key|Value|Comments|
-|:----|:----|:----|
-|ReadCsvAsStream|Yes| Required to parse the csv file while uploading|
-|messageformat|application/json OR application/xml| required|
-|FolderName||OPTIONAL:This is required for additonal XSL transformation |
-|FileName||OPTIONAL:This is required for additonal XSL transformation |
-|TableName|<AZURE TABLE NAME>| REQUIRED Create table add records|
-|StorageAccount|<STORAGE ACCOUNT KEY>| Name of the  storage account key in AppSettings.|
-|StorageAccount|<STORAGE ACCOUNT KEY>| Name of the  storage account key in AppSettings.|
-
-
-
-## Search Record
-
-|Key|Value|Comments|
-|:----|:----|:----|
-|SimpleTableSearch|Yes| Indicates the method in the process to use the API|
-|PartitionKey|<PROPERTY NAME >|OPTIONAL : Identity the  Field/Key in the JSON payload as a Partition Key|
-|QueryField|<SEARCH PROPERTY NAME>|Provide the search property name to be used in the search
-|DefaultResult| <CUSTOM MESSAGE> | OPTIONAL :  No  results return then a default message
-|TableName|<AZURE TABLE NAME>| REQUIRED : Create a Table |
-|Container|<CONTAINER NAME>|  REQUIRED : Create a container name eg "csvprocessed".|
   
   
-  ## Products
+## Products
 
 |products|links|Comments|
 |:----|:----|:----|
