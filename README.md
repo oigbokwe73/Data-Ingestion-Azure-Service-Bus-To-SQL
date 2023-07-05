@@ -1,3 +1,4 @@
+
 # Azure Service Bus To SQL
 
 
@@ -27,7 +28,7 @@
 
 > **Note:**  Look at the configuration file in the **Config** Folder and created a Table to record information.
 
-## Function App  Configuration 
+## Configuration Files 
 
 > **Note:** The **Configuration** is located in the  FunctionApp  in a **Config** Folder.
 
@@ -38,14 +39,14 @@
 |43EFE991E8614CFB9EDECF1B0FDED37F.json| **Service Bus Trigger for No SQL DB** | Receive JSON payload and insert into NO SQL DB|
 |43EFE991E8614CFB9EDECF1B0FDED37E.json| **Blob Trigger** Send parsed/sharded file  to Send to Service Bus|
 |43EFE991E8614CFB9EDECF1B0FDED37B.json| **Search Resullt from NO SQLDB** |
-|43EFE991E8614CFB9EDECF1B0FDED37F.json| **Search SQL DB. Return resultset** |
+|43EFE991E8614CFB9EDECF1B0FDED37G.json| **Search SQL DB. Return resultset** |
 |3FB620B0E0FD4E8F93C9E4D839D00E1E.json| **Copy File from SFTP into the pickup folder** |
+|3FB620B0E0FD4E8F93C9E4D839D00E1F.json| **Create a new Record in NoSQL Database** |
+|CC244934898F46789734A9437B6F76CA.json| Encode Payload Request |
+|6B427917E36A4DA281D57F9A64AD9D55.json| Get reports from DB  |
 
 
-       
-
-
-> Create the following blob containers and share in azure storage.
+> Create the following blob containers and share in azure storage
 
 |ContainerName|Description|
 |:----|:----|
@@ -81,33 +82,9 @@ search "ReceiveMessageFromServieBus"
 
 ![image](https://user-images.githubusercontent.com/15838780/153060922-c0052b81-c571-410e-b587-8aa83b633223.png)
 
-## Upload CSV File
-
-|Key|Value|Comments|
-|:----|:----|:----|
-|ReadCsvAsStream|Yes| Required to parse the csv file while uploading|
-|messageformat|application/json OR application/xml| required|
-|FolderName||OPTIONAL:This is required for additonal XSL transformation |
-|FileName||OPTIONAL:This is required for additonal XSL transformation |
-|TableName|<AZURE TABLE NAME>| REQUIRED Create table add records|
-|StorageAccount|<STORAGE ACCOUNT KEY>| Name of the  storage account key in AppSettings.|
-|StorageAccount|<STORAGE ACCOUNT KEY>| Name of the  storage account key in AppSettings.|
-
-
-
-## Search Record
-
-|Key|Value|Comments|
-|:----|:----|:----|
-|SimpleTableSearch|Yes| Indicates the method in the process to use the API|
-|PartitionKey|<PROPERTY NAME >|OPTIONAL : Identity the  Field/Key in the JSON payload as a Partition Key|
-|QueryField|<SEARCH PROPERTY NAME>|Provide the search property name to be used in the search
-|DefaultResult| <CUSTOM MESSAGE> | OPTIONAL :  No  results return then a default message
-|TableName|<AZURE TABLE NAME>| REQUIRED : Create a Table |
-|Container|<CONTAINER NAME>|  REQUIRED : Create a container name eg "csvprocessed".|
   
   
-  ## Products
+## Products
 
 |products|links|Comments|
 |:----|:----|:----|
@@ -118,8 +95,25 @@ search "ReceiveMessageFromServieBus"
 |VsCode| https://visualstudio.microsoft.com/downloads/ |  Required extensions. Azure Functions, Azure Account
 |VS Studio Community Edition |https://visualstudio.microsoft.com/downloads/| Recommended. Nice intergration with Azure. software is free.
 
+  ## Configuration-driven development
+ 
+ "Configuration-driven development," refers to an approach in software development where the behavior and functionality of an application are primarily controlled through configuration files, rather than writing code. It focuses on separating application logic from configuration parameters, allowing developers to easily modify the behavior of the software without the need for extensive code changes.  [Xenhey.BPM.Core.Net6](https://www.nuget.org/packages/Xenhey.BPM.Core.Net6) offers a orchrestration pipeline using configuration to drive the execution of business logic, providing a tailored solution for each Line Of Business(LOB). The following are some benefits. 
+
+ 1. Flexibility: By using configuration files, developers can easily tweak and adjust the application's behavior without modifying the underlying code. It allows for quick customization and adaptation to different scenarios or client requirements.
+
+2. Maintenance: Separating configuration from code simplifies maintenance processes. Updates and modifications can be made by adjusting the configuration files, reducing the risk of introducing bugs or breaking existing functionality. It also facilitates version control and collaboration, as changes to configuration can be tracked separately from code changes.
+
+3. Scalability: Configuration-driven development promotes scalability by enabling the application to handle different environments, configurations, or user preferences. It allows for seamless deployment across multiple instances or environments with minimal code changes.
+
+4. Testing and Validation: Configuration-driven development enhances testing and validation processes. Since configuration changes are isolated from the codebase, it becomes easier to verify the impact of different configurations on the application's behavior. It also facilitates A/B testing or experimentation by quickly switching between different configurations.
+
+5. Domain-Specific Customization: Configuration-driven development enables domain-specific customization by providing options and settings tailored to specific use cases. This empowers non-technical users or administrators to configure the application according to their specific requirements without the need for coding expertise
+
   
   
   ## Contact
   
 For questions related to this project, can be reached via email :- support@xenhey.com
+
+
+﻿
