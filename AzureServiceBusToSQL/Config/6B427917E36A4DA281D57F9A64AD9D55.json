@@ -20,51 +20,11 @@
         },
         {
           "Key": "PropertyName",
-          "Value": "query"
+          "Value": "reportid"
         }
       ]
     },
 		{
-      "Key": "GetStatementFromStorageExecuteInSQLDB",
-      "Type": "Xenhey.BPM.Core.Net6.Processes.MessageBuilderProcess",
-      "Async": "false",
-      "IsEnable": "true",
-      "DataFlowProcessParameters": [
-        {
-          "Key": "BuildStatementFromFile",
-          "Value": "yes"
-        },
-				{
-          "Key": "FileName",
-          "Value": "filename"
-        },
-				{
-          "Key": "filetype",
-          "Value": "filetype"
-        },
-				{
-          "Key": "Container",
-          "Value": "script"
-        },
-				{
-          "Key": "StorageAccount",
-          "Value": "AzureWebJobsStorage"
-        }
-      ]
-    },
-		{
-      "Key": "PrepareStatementForSQLDatabase",
-      "Type": "Xenhey.BPM.Core.Net6.Processes.MessageBuilderProcess",
-      "Async": "false",
-      "IsEnable": "true",
-      "DataFlowProcessParameters": [
-        {
-          "Key": "QueryBuilderPayload",
-          "Value": "yes"
-        }
-      ]
-    },
-    {
       "Key": "SerchforResultSet",
       "Type": "Xenhey.BPM.Core.Net6.Processes.ConnectToDBProcess",
       "Async": "false",

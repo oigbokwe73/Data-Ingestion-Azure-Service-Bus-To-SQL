@@ -31,12 +31,12 @@
       "IsEnable": "true",
       "DataFlowProcessParameters": [
         {
-          "Key": "BulkInsertFromMessage",
+          "Key": "ConnectToDatabaseBulkInsertFromCSVToDB",
           "Value": "yes"
         },
         {
           "Key": "DatabaseTableName",
-          "Value": "FootBall"
+          "Value": "College"
         },
          {
           "Key": "ConnectionString",
@@ -44,7 +44,7 @@
         },
        {
           "Key": "datatable",
-          "Value": "FootBall"
+          "Value": "College"
         }
       ]
     }

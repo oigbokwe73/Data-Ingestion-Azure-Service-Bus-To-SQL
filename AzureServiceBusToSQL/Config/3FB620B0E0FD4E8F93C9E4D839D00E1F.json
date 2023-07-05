@@ -1,0 +1,32 @@
+﻿﻿{
+  "Id": "CreateRecordinNoSQLDB",
+  "LineOfBusinessProcessData": [
+    {
+      "Key": "object",
+      "Type": "Xenhey.BPM.Core.Net6.Processes.ProcessData"
+    }
+  ],
+  "Type": "",
+  "DataFlowProcess": [
+    {
+      "Key": "Write-To-Storage",
+      "Type": "Xenhey.BPM.Core.Net6.Processes.AzureTableStorageProcess",
+      "Async": "false",
+      "IsEnable": "true",
+      "DataFlowProcessParameters": [
+        {
+          "Key": "CreateRecordForAzureTable",
+          "Value": "yes"
+        },
+        {
+          "Key": "StorageAccount",
+          "Value": "AzureWebJobsStorage"
+        },
+        {
+          "Key": "TableName",
+          "Value": "training06282023"
+        }
+      ]
+    }
+  ]
+}

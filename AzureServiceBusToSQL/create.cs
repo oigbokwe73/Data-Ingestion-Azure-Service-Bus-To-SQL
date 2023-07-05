@@ -13,11 +13,11 @@ using Newtonsoft.Json;
 
 namespace AzureServiceBusToSQL
 {
-    public class reports
+    public class create
     {
         private HttpRequest _req;
         private NameValueCollection nvc = new NameValueCollection();
-        [FunctionName("reports")]
+        [FunctionName("create")]
         public IActionResult Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "report/{reportid}")]
             HttpRequest req, string reportid, ILogger log)
         {
