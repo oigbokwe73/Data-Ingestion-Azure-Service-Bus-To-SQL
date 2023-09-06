@@ -32,7 +32,7 @@
         },
         {
           "Key": "FileShareName",
-          "Value": "training20230719"
+          "Value": "training20230906"
         },
         {
           "Key": "Container",
@@ -64,7 +64,7 @@
         },
         {
           "Key": "FileShareName",
-          "Value": "training20230719"
+          "Value": "training20230906"
         }
       ]
     }

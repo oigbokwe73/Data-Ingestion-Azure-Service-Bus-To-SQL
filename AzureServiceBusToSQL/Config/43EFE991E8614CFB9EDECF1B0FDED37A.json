@@ -42,10 +42,10 @@
           "Key": "FileExtension",
           "Value": ".csv"
         },
-         {
+        {
           "Key": "ContentType",
           "Value": "csv/text"
-        }	
+        }
       ]
     }
   ]
