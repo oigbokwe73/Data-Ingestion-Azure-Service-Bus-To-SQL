@@ -9,7 +9,51 @@
 
 ## Session Recorded 
 
-[Session Video](https://storageaccountparknb028.blob.core.windows.net/training/traininginfo/video1910447954.mp4?sp=r&st=2023-04-16T02:33:29Z&se=2024-04-16T10:33:29Z&spr=https&sv=2021-12-02&sr=b&sig=YN7SnRVnsOXW0ybvhf9%2FLFImdiH%2BgFfPEZj5wMrf0Bc%3D)
+[Session Video - 06/04/2023](https://storageaccountparknb028.blob.core.windows.net/training/traininginfo/video1910447954.mp4?sp=r&st=2023-04-16T02:33:29Z&se=2024-04-16T10:33:29Z&spr=https&sv=2021-12-02&sr=b&sig=YN7SnRVnsOXW0ybvhf9%2FLFImdiH%2BgFfPEZj5wMrf0Bc%3D)
+
+
+
+[Session Video - 07/05/2023](https://pbsdatastore.blob.core.windows.net/training/TrainingInfo/video1944747398.mp4?sp=r&st=2023-07-19T22:57:55Z&se=2024-07-20T06:57:55Z&spr=https&sv=2022-11-02&sr=b&sig=hfuhIKhzVAnYPH8dJckzKVx%2BqMUqaSf6alYkfeniNb0%3D)
+
+[Session Video - 08/24/2023](https://pbsdatastore.blob.core.windows.net/training/TrainingInfo/video1985794332.mp4?sp=r&st=2023-08-24T16:42:08Z&se=2024-08-25T00:42:08Z&spr=https&sv=2022-11-02&sr=b&sig=9B0W%2F%2BHHm%2BpUvwpNviRbjUahuwUAUtDCyDdpmUg6YOI%3D
+)
+
+
+Set Up Steps 
+
+Creating a serverless API using Azure that leverages Service Bus to communicate with an SQL Database involves several steps. Here's a high-level overview of how you can set this up:
+
+1. **Set Up Azure SQL Database**:
+   - Create an Azure SQL Database instance.
+   - Set up the necessary tables and schemas you'll need for your application.
+
+2. **Create Azure Service Bus**:
+   - Set up an Azure Service Bus namespace.
+   - Within the namespace, create a queue or topic (based on your requirement).
+
+3. **Develop Serverless API using Azure Functions**:
+   - Create a new Azure Function App.
+   - Develop an HTTP-triggered function that will act as your API endpoint.
+   - In this function, when data is received, send a message to the Service Bus queue or topic.
+
+4. **Develop a Service Bus Triggered Function**:
+   - Create another Azure Function that is triggered by the Service Bus queue or topic.
+   - This function will read the message from the Service Bus and process it. The processing might involve parsing the message and inserting the data into the Azure SQL Database.
+
+5. **Implement Error Handling**:
+   - Ensure that you have error handling in place. If there's a failure in processing the message and inserting it into the database, you might want to log the error or move the message to a dead-letter queue.
+
+6. **Secure Your Functions**:
+   - Ensure that your HTTP-triggered function (API endpoint) is secured, possibly using Azure Active Directory or function keys.
+
+7. **Optimize & Monitor**:
+   - Monitor the performance of your functions using Azure Monitor and Application Insights.
+   - Optimize the performance, scalability, and cost by adjusting the function's plan (Consumption Plan, Premium Plan, etc.) and tweaking the configurations.
+
+8. **Deployment**:
+   - Deploy your functions to the Azure environment. You can use CI/CD pipelines using tools like Azure DevOps or GitHub Actions for automated deployments.
+
+By following these steps, you'll have a serverless API in Azure that uses Service Bus as a mediator to process data and store it in an SQL Database. This architecture ensures decoupling between data ingestion and processing, adding a layer of resilience and scalability to your solution.
 
 
 ## Appplication Setting 
