@@ -108,6 +108,13 @@ By following these steps, you'll have a serverless API in Azure that uses Servic
 |:----|:----|
 |training[YYYYMMDD]|Create a share location for SFTP to drop files|
 
+## Service Bus Subscription information
+
+|Subscription Name|Description|
+|:----|:----|
+|nosqlmessage|Receive messages and store in NoSQL DB|
+|sqlmessage|Receive messages and store in SQL DB|
+
 ## Create Azure Container Instance for SFTP
 > User the following link to create a Azure Container Instance(ACI for SFTP)
 > 
