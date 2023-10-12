@@ -15,7 +15,7 @@
       "IsEnable": "true",
       "DataFlowProcessParameters": [
         {
-          "Key": "EncodeMessageTo64",
+          "Key": "Base64EncodeMessage",
           "Value": "yes"
         }
       ]

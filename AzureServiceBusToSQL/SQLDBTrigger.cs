@@ -11,7 +11,7 @@ namespace AzureServiceBusToSQL
     public static class SQLDBTrigger
     {
         [FunctionName("SQLDBTrigger")]
-        public static void Run([ServiceBusTrigger("request", "sqlmesssage", Connection = "ServiceBusConnectionString")] string mySbMsg, Int32 deliveryCount, DateTime enqueuedTimeUtc, string messageId, ILogger log)
+        public static void Run([ServiceBusTrigger("request", "sqlmessage", Connection = "ServiceBusConnectionString")] string mySbMsg, Int32 deliveryCount, DateTime enqueuedTimeUtc, string messageId, ILogger log)
         {
             string ApiKeyName = "x-api-key";
             log.LogInformation("C# blob trigger function processed a request.");
