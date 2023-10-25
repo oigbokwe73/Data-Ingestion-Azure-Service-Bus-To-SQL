@@ -30,26 +30,30 @@ Creating a serverless API using Azure that leverages Service Bus to communicate 
    - Set up an Azure Service Bus namespace.
    - Within the namespace, create a queue or topic (based on your requirement).
 
-3. **Develop Serverless API using Azure Functions**:
+3. **Deploy Serverless API using Azure Functions**:
    - Create a new Azure Function App.
    - Develop an HTTP-triggered function that will act as your API endpoint.
    - In this function, when data is received, send a message to the Service Bus queue or topic.
 
-4. **Develop a Service Bus Triggered Function**:
+4. **Deploy 2 Service Bus Triggered Function**:
    - Create another Azure Function that is triggered by the Service Bus queue or topic.
    - This function will read the message from the Service Bus and process it. The processing might involve parsing the message and inserting the data into the Azure SQL Database.
 
-5. **Implement Error Handling**:
+5. **Deploy a Timer Triggered Function**:
+   - Create another Azure Function that is triggered when a file is dropped in a container.
+   - This function will stream in a file, read it and place on the service bus topic.
+
+6. **Implement Error Handling**:
    - Ensure that you have error handling in place. If there's a failure in processing the message and inserting it into the database, you might want to log the error or move the message to a dead-letter queue.
 
-6. **Secure Your Functions**:
+7. **Secure Your Functions**:
    - Ensure that your HTTP-triggered function (API endpoint) is secured, possibly using Azure Active Directory or function keys.
 
-7. **Optimize & Monitor**:
+8. **Optimize & Monitor**:
    - Monitor the performance of your functions using Azure Monitor and Application Insights.
    - Optimize the performance, scalability, and cost by adjusting the function's plan (Consumption Plan, Premium Plan, etc.) and tweaking the configurations.
 
-8. **Deployment**:
+9. **Deployment**:
    - Deploy your functions to the Azure environment. You can use CI/CD pipelines using tools like Azure DevOps or GitHub Actions for automated deployments.
 
 By following these steps, you'll have a serverless API in Azure that uses Service Bus as a mediator to process data and store it in an SQL Database. This architecture ensures decoupling between data ingestion and processing, adding a layer of resilience and scalability to your solution.
