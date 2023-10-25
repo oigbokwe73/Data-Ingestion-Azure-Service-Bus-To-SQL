@@ -11,13 +11,12 @@
 
 [Session Video - 06/04/2023](https://storageaccountparknb028.blob.core.windows.net/training/traininginfo/video1910447954.mp4?sp=r&st=2023-04-16T02:33:29Z&se=2024-04-16T10:33:29Z&spr=https&sv=2021-12-02&sr=b&sig=YN7SnRVnsOXW0ybvhf9%2FLFImdiH%2BgFfPEZj5wMrf0Bc%3D)
 
-
-
 [Session Video - 07/05/2023](https://pbsdatastore.blob.core.windows.net/training/TrainingInfo/video1944747398.mp4?sp=r&st=2023-07-19T22:57:55Z&se=2024-07-20T06:57:55Z&spr=https&sv=2022-11-02&sr=b&sig=hfuhIKhzVAnYPH8dJckzKVx%2BqMUqaSf6alYkfeniNb0%3D)
 
 [Session Video - 08/24/2023](https://pbsdatastore.blob.core.windows.net/training/TrainingInfo/video1985794332.mp4?sp=r&st=2023-08-24T16:42:08Z&se=2024-08-25T00:42:08Z&spr=https&sv=2022-11-02&sr=b&sig=9B0W%2F%2BHHm%2BpUvwpNviRbjUahuwUAUtDCyDdpmUg6YOI%3D
 )
 
+[Session Video - 10/11/2023](https://pbsdatastore.blob.core.windows.net/training/TrainingInfo/video1584605133.mp4?sp=r&st=2023-10-25T21:21:26Z&se=2024-10-26T05:21:26Z&spr=https&sv=2022-11-02&sr=b&sig=qi2vWGpXxx1IoTWPqY71q9hlRyQFpVq%2BDNu8w9vCR5k%3D)
 
 Set Up Steps 
 
@@ -107,6 +106,13 @@ By following these steps, you'll have a serverless API in Azure that uses Servic
 |Share|Description|
 |:----|:----|
 |training[YYYYMMDD]|Create a share location for SFTP to drop files|
+
+## Service Bus Subscription information
+
+|Subscription Name|Description|
+|:----|:----|
+|nosqlmessage|Receive messages and store in NoSQL DB|
+|sqlmessage|Receive messages and store in SQL DB|
 
 ## Create Azure Container Instance for SFTP
 > User the following link to create a Azure Container Instance(ACI for SFTP)
