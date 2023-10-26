@@ -18,6 +18,11 @@
 
 [Session Video - 10/11/2023](https://pbsdatastore.blob.core.windows.net/training/TrainingInfo/video1584605133.mp4?sp=r&st=2023-10-25T21:21:26Z&se=2024-10-26T05:21:26Z&spr=https&sv=2022-11-02&sr=b&sig=qi2vWGpXxx1IoTWPqY71q9hlRyQFpVq%2BDNu8w9vCR5k%3D)
 
+[Session Video - 10/25/2023](https://pbsdatastore.blob.core.windows.net/training/TrainingInfo/video1029088020.mp4?sp=r&st=2023-10-26T22:01:35Z&se=2024-10-27T06:01:35Z&spr=https&sv=2022-11-02&sr=b&sig=lpaBwJdyKzTLSs6cRggG4109o46Ycz9Lgi1vJegPxxY%3D)
+
+
+
+
 Set Up Steps 
 
 Creating a serverless API using Azure that leverages Service Bus to communicate with an SQL Database involves several steps. Here's a high-level overview of how you can set this up:
