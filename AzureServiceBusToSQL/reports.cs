@@ -17,7 +17,7 @@ namespace AzureServiceBusToSQL
     {
         private HttpRequest _req;
         private NameValueCollection nvc = new NameValueCollection();
-        [FunctionName("reports")]
+        [FunctionName("reports")]  
         public IActionResult Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "report/{reportid}")]
             HttpRequest req, string reportid, ILogger log)
         {
