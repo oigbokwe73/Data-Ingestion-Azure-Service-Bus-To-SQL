@@ -1,8 +1,8 @@
 using System.Collections.Specialized;
-using Microsoft.Azure.WebJobs;
 using Microsoft.Extensions.Logging;
-using Xenhey.BPM.Core.Net6.Implementation;
-using Xenhey.BPM.Core.Net6;
+using Xenhey.BPM.Core.Net8.Implementation;
+using Xenhey.BPM.Core.Net8;
+using Microsoft.Azure.Functions.Worker;
 
 namespace AzureServiceBusToSQL
 {
@@ -10,7 +10,7 @@ namespace AzureServiceBusToSQL
     {
         private NameValueCollection nvc = new NameValueCollection();
 
-        [FunctionName("FileChecker")]
+        [Function("FileChecker")]
         public void Run([TimerTrigger("%TimerInterval%")] TimerInfo myTimer, ILogger log)
         {
             log.LogInformation("C# HTTP trigger function processed a request.");

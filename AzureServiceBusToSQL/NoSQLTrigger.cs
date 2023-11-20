@@ -1,26 +1,33 @@
 using System;
 using System.Collections.Specialized;
-using Microsoft.Azure.WebJobs;
 using Microsoft.Extensions.Logging;
-using Xenhey.BPM.Core.Net6;
-using Xenhey.BPM.Core.Net6.Implementation;
+using Xenhey.BPM.Core.Net8;
+using Xenhey.BPM.Core.Net8.Implementation;
+using Microsoft.Azure.Functions.Worker;
 
 namespace AzureServiceBusToSQL
 {
-    public static class NoSQLTrigger
+    public class NoSQLTrigger
     {
-        [FunctionName("NoSQLTrigger")]
-        public static void Run([ServiceBusTrigger("request", "nosqlmessage", Connection = "ServiceBusConnectionString")] string mySbMsg, Int32 deliveryCount, DateTime enqueuedTimeUtc, string messageId, ILogger log)
+        private readonly ILogger _logger;
+
+        public NoSQLTrigger(ILogger<NoSQLTrigger> logger)
+        {
+            _logger = logger;
+        }
+
+        [Function("NoSQLTrigger")]
+        public void Run([ServiceBusTrigger("request", "nosqlmessage", Connection = "ServiceBusConnectionString")] string mySbMsg, Int32 deliveryCount, DateTime enqueuedTimeUtc, string messageId)
         {
             string ApiKeyName = "x-api-key";
-            log.LogInformation("C# blob trigger function processed a request.");
+            _logger.LogInformation("C# blob trigger function processed a request.");
             NameValueCollection nvc = new NameValueCollection();
             nvc.Add(ApiKeyName, "43EFE991E8614CFB9EDECF1B0FDED37F");
             IOrchestrationService orchrestatorService = new ManagedOrchestratorService(nvc);
             var processFiles = orchrestatorService.Run(mySbMsg);
-            log.LogInformation($"EnqueuedTimeUtc={enqueuedTimeUtc}");
-            log.LogInformation($"DeliveryCount={deliveryCount}");
-            log.LogInformation($"MessageId={messageId}");
+            _logger.LogInformation($"EnqueuedTimeUtc={enqueuedTimeUtc}");
+            _logger.LogInformation($"DeliveryCount={deliveryCount}");
+            _logger.LogInformation($"MessageId={messageId}");
         }
     }
 }

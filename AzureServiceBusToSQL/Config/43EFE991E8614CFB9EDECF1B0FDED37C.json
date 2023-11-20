@@ -3,14 +3,14 @@
   "LineOfBusinessProcessData": [
     {
       "Key": "object",
-      "Type": "Xenhey.BPM.Core.Net6.Processes.ProcessData"
+      "Type": "Xenhey.BPM.Core.Net8.Processes.ProcessData"
     }
   ],
   "Type": "",
   "DataFlowProcess": [
 		  {
       "Key": "ReadFileConvertToJsonforSQLDb",
-      "Type": "Xenhey.BPM.Core.Net6.Processes.CSVProcess",
+      "Type": "Xenhey.BPM.Core.Net8.Processes.CSVProcess",
       "Async": "false",
       "IsEnable": "true",
       "DataFlowProcessParameters": [
@@ -26,7 +26,7 @@
     },
    {
       "Key": "ReceiveMessageFromServieBus",
-      "Type": "Xenhey.BPM.Core.Net6.Processes.ConnectToDBProcess",
+      "Type": "Xenhey.BPM.Core.Net8.Processes.ConnectToDBProcess",
       "Async": "false",
       "IsEnable": "true",
       "DataFlowProcessParameters": [

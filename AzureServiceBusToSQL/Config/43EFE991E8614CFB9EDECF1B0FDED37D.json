@@ -3,14 +3,14 @@
   "LineOfBusinessProcessData": [
     {
       "Key": "object",
-      "Type": "Xenhey.BPM.Core.Net6.Processes.ProcessData"
+      "Type": "Xenhey.BPM.Core.Net8.Processes.ProcessData"
     }
   ],
   "Type": "",
   "DataFlowProcess": [
     {
       "Key": "ReadJsonAsStream",
-      "Type": "Xenhey.BPM.Core.Net6.Processes.MessageBuilderProcess",
+      "Type": "Xenhey.BPM.Core.Net8.Processes.MessageBuilderProcess",
       "Async": "false",
       "IsEnable": "true",
       "DataFlowProcessParameters": [
@@ -26,7 +26,7 @@
     },
     {
       "Key": "Read-Uploaded-File",
-      "Type": "Xenhey.BPM.Core.Net6.Processes.CSVProcess",
+      "Type": "Xenhey.BPM.Core.Net8.Processes.CSVProcess",
       "Async": "false",
       "IsEnable": "false",
       "DataFlowProcessParameters": [
@@ -46,7 +46,7 @@
     },
 		{
 			"Key": "Write-To-Storage",
-			"Type": "Xenhey.BPM.Core.Net6.Processes.AzureTableStorageProcess",
+			"Type": "Xenhey.BPM.Core.Net8.Processes.AzureTableStorageProcess",
 			"Async": "false",
 			"IsEnable": "true",
 			"DataFlowProcessParameters": [

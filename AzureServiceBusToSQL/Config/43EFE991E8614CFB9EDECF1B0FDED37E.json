@@ -3,14 +3,14 @@
   "LineOfBusinessProcessData": [
     {
       "Key": "object",
-      "Type": "Xenhey.BPM.Core.Net6.Processes.ProcessData"
+      "Type": "Xenhey.BPM.Core.Net8.Processes.ProcessData"
     }
   ],
   "Type": "",
   "DataFlowProcess": [
     {
       "Key": "ReadStreamToText",
-      "Type": "Xenhey.BPM.Core.Net6.Processes.MessageBuilderProcess",
+      "Type": "Xenhey.BPM.Core.Net8.Processes.MessageBuilderProcess",
       "Async": "false",
       "IsEnable": "true",
       "DataFlowProcessParameters": [
@@ -22,7 +22,7 @@
     },
     {
       "Key": "SendMesagesToService",
-      "Type": "Xenhey.BPM.Core.Net6.Processes.ServiceBusProcess",
+      "Type": "Xenhey.BPM.Core.Net8.Processes.ServiceBusProcess",
       "Async": "false",
       "IsEnable": "true",
       "DataFlowProcessParameters": [

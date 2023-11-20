@@ -3,14 +3,14 @@
   "LineOfBusinessProcessData": [
     {
       "Key": "object",
-      "Type": "Xenhey.BPM.Core.Net6.Processes.ProcessData"
+      "Type": "Xenhey.BPM.Core.Net8.Processes.ProcessData"
     }
   ],
   "Type": "",
   "DataFlowProcess": [
     {
       "Key": "DecodeMessageFromRequest",
-      "Type": "Xenhey.BPM.Core.Net6.Processes.MessageBuilderProcess",
+      "Type": "Xenhey.BPM.Core.Net8.Processes.MessageBuilderProcess",
       "Async": "false",
       "IsEnable": "true",
       "DataFlowProcessParameters": [
@@ -26,7 +26,7 @@
     },
 		{
 			"Key": "SearchDatabaseForResults",
-			"Type": "Xenhey.BPM.Core.Net6.Processes.ConnectToDBProcess",
+			"Type": "Xenhey.BPM.Core.Net8.Processes.ConnectToDBProcess",
 			"Async": "false",
 			"IsEnable": "true",
 			"DataFlowProcessParameters": [
@@ -49,7 +49,7 @@
 			]
 		},    {
       "Key": "FormatResultSet",
-      "Type": "Xenhey.BPM.Core.Net6.Processes.MessageBuilderProcess",
+      "Type": "Xenhey.BPM.Core.Net8.Processes.MessageBuilderProcess",
       "Async": "false",
       "IsEnable": "true",
       "DataFlowProcessParameters": [

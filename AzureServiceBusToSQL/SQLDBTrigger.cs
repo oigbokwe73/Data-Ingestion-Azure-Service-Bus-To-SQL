@@ -1,27 +1,34 @@
 using System;
 using System.Collections.Specialized;
 using System.IO;
-using Microsoft.Azure.WebJobs;
 using Microsoft.Extensions.Logging;
-using Xenhey.BPM.Core.Net6;
-using Xenhey.BPM.Core.Net6.Implementation;
+using Xenhey.BPM.Core.Net8;
+using Xenhey.BPM.Core.Net8.Implementation;
+using Microsoft.Azure.Functions.Worker;
 
 namespace AzureServiceBusToSQL
 {
-    public static class SQLDBTrigger
+    public class SQLDBTrigger
     {
-        [FunctionName("SQLDBTrigger")]
-        public static void Run([ServiceBusTrigger("request", "sqlmessage", Connection = "ServiceBusConnectionString")] string mySbMsg, Int32 deliveryCount, DateTime enqueuedTimeUtc, string messageId, ILogger log)
+        private readonly ILogger _logger;
+
+        public SQLDBTrigger(ILogger<SQLDBTrigger> logger)
+        {
+            _logger = logger;
+        }
+
+        [Function("SQLDBTrigger")]
+        public void Run([ServiceBusTrigger("request", "sqlmessage", Connection = "ServiceBusConnectionString")] string mySbMsg, Int32 deliveryCount, DateTime enqueuedTimeUtc, string messageId)
         {
             string ApiKeyName = "x-api-key";
-            log.LogInformation("C# blob trigger function processed a request.");
+            _logger.LogInformation("C# blob trigger function processed a request.");
             NameValueCollection nvc = new NameValueCollection();
             nvc.Add(ApiKeyName, "43EFE991E8614CFB9EDECF1B0FDED37C");
             IOrchestrationService orchrestatorService = new ManagedOrchestratorService(nvc);
             var processFiles = orchrestatorService.Run(mySbMsg);
-            log.LogInformation($"EnqueuedTimeUtc={enqueuedTimeUtc}");
-            log.LogInformation($"DeliveryCount={deliveryCount}");
-            log.LogInformation($"MessageId={messageId}");
+            _logger.LogInformation($"EnqueuedTimeUtc={enqueuedTimeUtc}");
+            _logger.LogInformation($"DeliveryCount={deliveryCount}");
+            _logger.LogInformation($"MessageId={messageId}");
         }
     }
 }

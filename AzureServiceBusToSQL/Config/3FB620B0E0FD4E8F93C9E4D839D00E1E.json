@@ -3,14 +3,14 @@
   "LineOfBusinessProcessData": [
     {
       "Key": "object",
-      "Type": "Xenhey.BPM.Core.Net6.Processes.ProcessData"
+      "Type": "Xenhey.BPM.Core.Net8.Processes.ProcessData"
     }
   ],
   "Type": "",
   "DataFlowProcess": [
     {
       "Key": "FileShareCopyProcess",
-      "Type": "Xenhey.BPM.Core.Net6.Processes.FileShareCopyProcess",
+      "Type": "Xenhey.BPM.Core.Net8.Processes.FileShareCopyProcess",
       "Async": "false",
       "IsEnable": "true",
       "DataFlowProcessParameters": [
@@ -50,7 +50,7 @@
     },
     {
       "Key": "FileShareCopyProcess",
-      "Type": "Xenhey.BPM.Core.Net6.Processes.FileShareCopyProcess",
+      "Type": "Xenhey.BPM.Core.Net8.Processes.FileShareCopyProcess",
       "Async": "false",
       "IsEnable": "true",
       "DataFlowProcessParameters": [

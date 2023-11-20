@@ -3,14 +3,14 @@
 	"LineOfBusinessProcessData": [
 	  {
 		"Key": "object",
-		"Type": "Xenhey.BPM.Core.Net6.Processes.ProcessData"
+		"Type": "Xenhey.BPM.Core.Net8.Processes.ProcessData"
 	  }
 	],
 	"Type": "",
 	"DataFlowProcess": [
 	  {
 		"Key": "Azure_Table_Storage",
-		"Type": "Xenhey.BPM.Core.Net6.Processes.AzureTableStorageProcess",
+		"Type": "Xenhey.BPM.Core.Net8.Processes.AzureTableStorageProcess",
 		"Async": "false",
 		"IsEnable": "true",
 		"DataFlowProcessParameters": [
