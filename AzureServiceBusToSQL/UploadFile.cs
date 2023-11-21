@@ -12,15 +12,21 @@ namespace AzureServiceBusToSQL
 {
     public class UploadFile
     {
+        
+        private readonly ILogger _logger;
+
+        public UploadFile(ILogger<UploadFile> logger)
+        {
+            _logger = logger;
+        }
         private HttpRequest _req;
         private NameValueCollection nvc = new NameValueCollection();
         [Function("UploadFile")]
         public async Task<IActionResult> Run([HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = null)]
-            HttpRequest req, ILogger log)
+            HttpRequest req)
         {
             _req = req;
-
-            log.LogInformation("C# HTTP trigger function processed a request.");
+            _logger.LogInformation("C# blob trigger function processed a request.");
             _req.Headers.ToList().ForEach(item => { nvc.Add(item.Key, item.Value.FirstOrDefault()); });
             var results = orchrestatorService.Run(_req.Body);
             return resultSet(results);

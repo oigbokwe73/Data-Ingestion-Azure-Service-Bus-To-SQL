@@ -13,15 +13,22 @@ namespace AzureServiceBusToSQL
 {
     public class Search
     {
+        private readonly ILogger _logger;
+
+        public Search(ILogger<Search> logger)
+        {
+            _logger = logger;
+        }
+
         private HttpRequest _req;
         private NameValueCollection nvc = new NameValueCollection();
         [Function("search")]
         public async Task<IActionResult> Run([HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = null)]
-            HttpRequest req, ILogger log)
+            HttpRequest req)
         {
             _req = req;
 
-            log.LogInformation("C# HTTP trigger function processed a request.");
+            _logger.LogInformation("C# HTTP trigger function processed a request.");
             string requestBody = await new StreamReader(_req.Body).ReadToEndAsync();
             _req.Headers.ToList().ForEach(item => { nvc.Add(item.Key, item.Value.FirstOrDefault()); });
             var results = orchrestatorService.Run(requestBody);

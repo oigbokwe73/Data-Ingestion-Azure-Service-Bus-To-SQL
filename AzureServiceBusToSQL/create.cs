@@ -14,16 +14,23 @@ namespace AzureServiceBusToSQL
 {
     public class create
     {
+        private readonly ILogger _logger;
+
+        public create(ILogger<create> logger)
+        {
+            _logger = logger;
+        }
+
         private HttpRequest _req;
         private NameValueCollection nvc = new NameValueCollection();
         [Function("create")]
         public IActionResult Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "report/{reportid}")]
-            HttpRequest req, string reportid, ILogger log)
+            HttpRequest req, string reportid)
         {
             var input = JsonConvert.SerializeObject(new { reportid });
             _req = req;
 
-            log.LogInformation("C# HTTP trigger function processed a request.");
+            _logger.LogInformation("C# HTTP trigger function processed a request.");
             string requestBody = input;
             _req.Headers.ToList().ForEach(item => { nvc.Add(item.Key, item.Value.FirstOrDefault()); });
             var results = orchrestatorService.Run(requestBody);
