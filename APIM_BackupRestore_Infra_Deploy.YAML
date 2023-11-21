@@ -1,0 +1,197 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- None
+#- master
+
+resources:
+  repositories:
+    - repository: self
+    - repository: SecureCloudEnablement
+      name: SecureCloudEnablement/Atlas
+      type: git
+      ref: Releases/Current/Latest  
+
+
+stages:
+ 
+    #Deploy to NonProd
+  - stage: Deploy_RG_NonProd
+    displayName: Deploy Resource Group to NonProd
+    pool: 
+      vmImage: 
+      name: 'AtlasHostedAgents'
+    jobs:
+      - deployment: Deploy_NP_Infra
+        displayName: 'Deploy NP Infra'
+        environment: APIM-DEMO
+        variables:
+          - name: SA_NAME
+            value: "saapimbackuprestorenp" 
+          - name: SA_RG_NAME
+            value: "RG-CMFG-NP1-ITPortfolio-APIManager-BackupRestore"
+          - name: SA_CONTAINER_NAME_DEV
+            value: "cmfg-dev-apim"
+          - name: SA_CONTAINER_NAME_DEMO
+            value: "cmfg-demo-apim"
+          - name: PathToFileinRepo
+            value: "$(System.DefaultWorkingDirectory)/APIManager/scripts/Data/StorageAccountAccess_NonProd.json"
+          - name: region
+            value: 'northcentralus'
+          - name: SA_LOCATION
+            value: $(region)
+        strategy:
+          runOnce:
+            deploy:
+              steps:     
+              - checkout: SecureCloudEnablement
+              - checkout: self
+              - task: deployAzureResourceGroup@2
+                displayName: "Deploy RG"
+                #condition: false
+                inputs:
+                  enableForAtlas: atlasFalse
+                  ConnectedServiceNameARM: 'CMFG NonProduction Integrators'
+                  rgType: 'standard'
+                  appDescription: 'ITPortfolio-APIManager-BackupRestore'
+                  environmentCode: 'NP1'
+                  cmdbAssetTag: '000088412'
+                  roleGroup: 'R-App-Api-Gateway-Admin-NP'
+                  location: 'northcentralus'
+              - task: AzurePowerShell@5
+                displayName: 'Deploy Storage Account'
+                #condition: false
+                inputs:
+                  azureSubscription: 'CMFG NonProduction Integrators'
+                  ScriptType: 'FilePath'
+                  ScriptPath: '$(System.DefaultWorkingDirectory)/Atlas/Deploy/StorageAccount/deployStorageAccount.ps1'
+                  ScriptArguments: '-FORCE_NONATLAS_DEPLOY $true'
+                  azurePowerShellVersion: 'LatestVersion'  
+              - task: AzurePowerShell@5
+                displayName: 'Add APIM EastUS2 IP to allow list'
+                inputs:
+                  azureSubscription: 'CMFG NonProduction Integrators'
+                  ScriptType: 'InlineScript'
+                  Inline: |
+                    # You can write your azure powershell scripts inline here. 
+                    # You can also pass predefined and custom variables to this script using arguments
+                    
+                    Add-AzStorageAccountNetworkRule -ResourceGroupName $(SA_RG_NAME) -AccountName $(SA_NAME) -IPAddressOrRange "20.44.72.3"
+                  azurePowerShellVersion: 'LatestVersion'
+              - task: AzurePowerShell@5
+                displayName: 'Deploy Dev Container Account'
+                #condition: false
+                inputs:
+                  azureSubscription: 'CMFG NonProduction Integrators'
+                  ScriptType: 'FilePath'
+                  ScriptPath: '$(System.DefaultWorkingDirectory)/Atlas/Deploy/StorageAccount/operations/deployStorageAccountContainer.ps1'
+                  ScriptArguments: -SA_NAME $(SA_NAME) -SA_CONTAINER_NAME $(SA_CONTAINER_NAME_DEV)
+                  azurePowerShellVersion: 'LatestVersion'
+              - task: AzurePowerShell@5
+                displayName: 'Deploy Access to Dev Container'
+                inputs:
+                  azureSubscription: 'CMFG NonProduction Integrators'
+                  ScriptType: 'FilePath'
+                  ScriptPath: '$(System.DefaultWorkingDirectory)/Atlas/Deploy/StorageAccount/operations/applyStorageAccountPermissions.ps1'
+                  ScriptArguments: -StorageAccountName $(SA_NAME) -Containername $(SA_CONTAINER_NAME_DEV) -PermissionsFile $(PathToFileinRepo)
+                  azurePowerShellVersion: 'LatestVersion'
+              - task: AzurePowerShell@5
+                displayName: 'Deploy Demo Container Account'
+                inputs:
+                  azureSubscription: 'CMFG NonProduction Integrators'
+                  ScriptType: 'FilePath'
+                  ScriptPath: '$(System.DefaultWorkingDirectory)/Atlas/Deploy/StorageAccount/operations/deployStorageAccountContainer.ps1'
+                  ScriptArguments: -SA_NAME $(SA_NAME) -SA_CONTAINER_NAME $(SA_CONTAINER_NAME_DEMO)
+                  azurePowerShellVersion: 'LatestVersion'              
+              - task: AzurePowerShell@5
+                displayName: 'Deploy Access to DEMO Container'
+                inputs:
+                  azureSubscription: 'CMFG NonProduction Integrators'
+                  ScriptType: 'FilePath'
+                  ScriptPath: '$(System.DefaultWorkingDirectory)/Atlas/Deploy/StorageAccount/operations/applyStorageAccountPermissions.ps1'
+                  ScriptArguments: -StorageAccountName $(SA_NAME) -Containername $(SA_CONTAINER_NAME_DEMO) -PermissionsFile $(PathToFileinRepo)
+                  azurePowerShellVersion: 'LatestVersion'
+    
+    #Deploy to Prod
+  - stage: Deploy_RG_Prod
+    displayName: Deploy Resource Group to Prod
+    pool: 
+      vmImage: 
+      name: 'AtlasHostedAgents'
+    jobs:
+      - deployment: Deploy_Prod_Infra
+        displayName: 'Deploy Prod Infra'
+        environment: APIM-DEMO
+        variables:
+          - name: SA_NAME
+            value: "saapimbackuprestorep" 
+          - name: SA_RG_NAME
+            value: "RG-CMFG-P01-ITPortfolio-APIManager-BackupRestore"
+          - name: SA_CONTAINER_NAME_Test
+            value: "cmfg-test-apim"
+          - name: SA_CONTAINER_NAME_Prod
+            value: "cmfg-prod-apim"
+          - name: PathToFileinRepo
+            value: "$(System.DefaultWorkingDirectory)/APIManager/scripts/Data/StorageAccountAccess_Prod.json"
+          - name: region
+            value: 'northcentralus'
+          - name: SA_LOCATION
+            value: $(region)
+        strategy:
+          runOnce:
+            deploy:
+              steps:     
+              - checkout: SecureCloudEnablement
+              - checkout: self
+              - task: deployAzureResourceGroup@2
+                displayName: "Deploy RG"
+                #condition: false
+                inputs:
+                  enableForAtlas: atlasFalse
+                  ConnectedServiceNameARM: 'CMFG Production Integrators'
+                  rgType: 'standard'
+                  appDescription: 'ITPortfolio-APIManager-BackupRestore'
+                  environmentCode: 'P01'
+                  cmdbAssetTag: '000088412'
+                  roleGroup: 'R-App-Api-Gateway-Admin-P'
+                  location: 'northcentralus'
+              - task: AzurePowerShell@5
+                displayName: 'Deploy Storage Account'
+                #condition: false
+                inputs:
+                  azureSubscription: 'CMFG Production Integrators'
+                  ScriptType: 'FilePath'
+                  ScriptPath: '$(System.DefaultWorkingDirectory)/Atlas/Deploy/StorageAccount/deployStorageAccount.ps1'
+                  ScriptArguments: '-FORCE_NONATLAS_DEPLOY $true'
+                  azurePowerShellVersion: 'LatestVersion'  
+              - task: AzurePowerShell@5
+                displayName: 'Add APIM EastUS2 IP to allow list'
+                inputs:
+                  azureSubscription: 'CMFG Production Integrators'
+                  ScriptType: 'InlineScript'
+                  Inline: |
+                    # You can write your azure powershell scripts inline here. 
+                    # You can also pass predefined and custom variables to this script using arguments
+                    
+                    Add-AzStorageAccountNetworkRule -ResourceGroupName $(SA_RG_NAME) -AccountName $(SA_NAME) -IPAddressOrRange "20.44.72.3"
+                  azurePowerShellVersion: 'LatestVersion'
+              - task: AzurePowerShell@5
+                displayName: 'Deploy Test Container Account'
+                #condition: false
+                inputs:
+                  azureSubscription: 'CMFG Production Integrators'
+                  ScriptType: 'FilePath'
+                  ScriptPath: '$(System.DefaultWorkingDirectory)/Atlas/Deploy/StorageAccount/operations/deployStorageAccountContainer.ps1'
+                  ScriptArguments: -SA_NAME $(SA_NAME) -SA_CONTAINER_NAME $(SA_CONTAINER_NAME_Test)
+                  azurePowerShellVersion: 'LatestVersion'
+              - task: AzurePowerShell@5
+                displayName: 'Deploy Prod Container Account'
+                inputs:
+                  azureSubscription: 'CMFG Production Integrators'
+                  ScriptType: 'FilePath'
+                  ScriptPath: '$(System.DefaultWorkingDirectory)/Atlas/Deploy/StorageAccount/operations/deployStorageAccountContainer.ps1'
+                  ScriptArguments: -SA_NAME $(SA_NAME) -SA_CONTAINER_NAME $(SA_CONTAINER_NAME_Prod)
+                  azurePowerShellVersion: 'LatestVersion'
