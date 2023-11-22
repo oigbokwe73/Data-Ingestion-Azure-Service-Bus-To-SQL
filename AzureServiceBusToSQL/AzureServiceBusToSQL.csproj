@@ -13,7 +13,7 @@
     <PackageReference Include="Microsoft.Azure.Functions.Worker.Extensions.Http.AspNetCore" Version="1.1.1" />
     <PackageReference Include="Microsoft.Azure.Functions.Worker.Extensions.ServiceBus" Version="5.14.1" />
     <PackageReference Include="Microsoft.Azure.Functions.Worker.Extensions.Timer" Version="4.3.0" />
-    <PackageReference Include="Xenhey.BPM.Core.Net8" Version="1.0.1" />
+    <PackageReference Include="Xenhey.BPM.Core.Net8" Version="1.0.4" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="DBScript\College.Designer.cs">
@@ -37,5 +37,11 @@
   </ItemGroup>
   <ItemGroup>
     <Using Include="System.Threading.ExecutionContext" Alias="ExecutionContext" />
+  </ItemGroup>
+  <ItemGroup>
+    <EditorConfigFiles Remove="C:\Users\oigbo\source\repos\oigbokwe73\Azure-Service-Bus-To-SQL\AzureServiceBusToSQL\.editorconfig" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\oigbo\source\repos\oigbokwe73\Azure-Service-Bus-To-SQL\AzureServiceBusToSQL\.editorconfig" />
   </ItemGroup>
 </Project>
