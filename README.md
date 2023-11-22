@@ -135,17 +135,17 @@ https://docs.microsoft.com/en-us/samples/azure-samples/sftp-creation-template/sf
 ```
 search "ReceiveMessageFromServieBus"
 | summarize count() by bin(timestamp, 1h)
-| order by timestamp desc
+| order by timestamp desc    
 
+```
+```
 customEvents
 | where isnotnull(customDimensions.ProcessName)
 //| where customDimensions.ProcessName == 'ReceiveMessageFromServieBus'  
 | summarize count() by bin(timestamp, 1m),  Key = tostring(customDimensions.ProcessName) 
 | order by timestamp desc
-| render columnchart     
-
-```
-
+| render columnchart
+``` 
 ## Service Bus Pricing
 
 ![image](https://user-images.githubusercontent.com/15838780/153060922-c0052b81-c571-410e-b587-8aa83b633223.png)
