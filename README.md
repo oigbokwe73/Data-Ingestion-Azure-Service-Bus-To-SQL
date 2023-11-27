@@ -9,7 +9,7 @@
 
 ## Session Recorded 
 
-[Session Video - 10/25/2023](https://pbsdatastore.blob.core.windows.net/training/TrainingInfo/video1200836733.mp4?sp=r&st=2023-11-27T18:00:59Z&se=2024-11-28T02:00:59Z&spr=https&sv=2022-11-02&sr=b&sig=RVsUNFsr22S2LUGszi5GTk8J4bSnn%2B8uKqOLn7KPaFs%3D)
+[Session Video - 11/15/2023](https://pbsdatastore.blob.core.windows.net/training/TrainingInfo/video1200836733.mp4?sp=r&st=2023-11-27T18:00:59Z&se=2024-11-28T02:00:59Z&spr=https&sv=2022-11-02&sr=b&sig=RVsUNFsr22S2LUGszi5GTk8J4bSnn%2B8uKqOLn7KPaFs%3D)
 
 [Session Video - 06/04/2023](https://storageaccountparknb028.blob.core.windows.net/training/traininginfo/video1910447954.mp4?sp=r&st=2023-04-16T02:33:29Z&se=2024-04-16T10:33:29Z&spr=https&sv=2021-12-02&sr=b&sig=YN7SnRVnsOXW0ybvhf9%2FLFImdiH%2BgFfPEZj5wMrf0Bc%3D)
 
@@ -22,7 +22,6 @@
 
 [Session Video - 10/25/2023](https://pbsdatastore.blob.core.windows.net/training/TrainingInfo/video1029088020.mp4?sp=r&st=2023-10-26T22:01:35Z&se=2024-10-27T06:01:35Z&spr=https&sv=2022-11-02&sr=b&sig=lpaBwJdyKzTLSs6cRggG4109o46Ycz9Lgi1vJegPxxY%3D)
 
-[Session Video - 10/25/2023](https://pbsdatastore.blob.core.windows.net/training/TrainingInfo/video1029088020.mp4?sp=r&st=2023-10-26T22:01:35Z&se=2024-10-27T06:01:35Z&spr=https&sv=2022-11-02&sr=b&sig=lpaBwJdyKzTLSs6cRggG4109o46Ycz9Lgi1vJegPxxY%3D)
 
 
 
