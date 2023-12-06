@@ -8,7 +8,7 @@
     "appInsights1": {
       "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/microsoft.insights/components/training20231115",
       "type": "appInsights.azure",
-      "connectionId": "APPLICATIONINSIGHTS_CONNECTION_STRING"
+      "connectionId": "APPINSIGHTS_INSTRUMENTATIONKEY"
     }
   }
 }

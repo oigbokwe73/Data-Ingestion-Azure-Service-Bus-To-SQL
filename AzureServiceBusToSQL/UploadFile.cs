@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using System.Collections.Specialized;
 using System.Linq;
+using System.IO;
 using Xenhey.BPM.Core.Net8.Implementation;
 using Xenhey.BPM.Core.Net8;
 using Microsoft.Azure.Functions.Worker;
@@ -12,23 +13,25 @@ namespace AzureServiceBusToSQL
 {
     public class UploadFile
     {
-        
         private readonly ILogger _logger;
 
         public UploadFile(ILogger<UploadFile> logger)
         {
             _logger = logger;
         }
+
         private HttpRequest _req;
         private NameValueCollection nvc = new NameValueCollection();
-        [Function("UploadFile")]
+        [Function("uploadfile")]
         public async Task<IActionResult> Run([HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = null)]
             HttpRequest req)
         {
             _req = req;
-            _logger.LogInformation("C# blob trigger function processed a request.");
+
+            _logger.LogInformation("C# HTTP trigger function processed a request.");
+            string requestBody = await new StreamReader(_req.Body).ReadToEndAsync();
             _req.Headers.ToList().ForEach(item => { nvc.Add(item.Key, item.Value.FirstOrDefault()); });
-            var results = orchrestatorService.Run(_req.Body);
+            var results = orchrestatorService.Run(requestBody);
             return resultSet(results);
 
         }
@@ -45,7 +48,6 @@ namespace AzureServiceBusToSQL
         {
             get
             {
-
                 return new ManagedOrchestratorService(nvc);
             }
         }

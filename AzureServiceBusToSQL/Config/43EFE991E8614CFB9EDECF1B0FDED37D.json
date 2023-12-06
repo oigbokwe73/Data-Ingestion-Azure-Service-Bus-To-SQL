@@ -1,5 +1,5 @@
 ﻿{
-  "Id": "EncodeMessage",
+  "Id": "GetJsonPayload",
   "LineOfBusinessProcessData": [
     {
       "Key": "object",
@@ -64,7 +64,7 @@
 				},
 				{
 					"Key": "TableName",
-					"Value": "training20231115"
+					"Value": "training20231206"
 				}
 			]
 		}
