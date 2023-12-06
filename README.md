@@ -9,6 +9,8 @@
 
 ## Session Recorded 
 
+[Session Video - 11/15/2023](https://pbsdatastore.blob.core.windows.net/training/TrainingInfo/video1200836733.mp4?sp=r&st=2023-11-27T18:00:59Z&se=2024-11-28T02:00:59Z&spr=https&sv=2022-11-02&sr=b&sig=RVsUNFsr22S2LUGszi5GTk8J4bSnn%2B8uKqOLn7KPaFs%3D)
+
 [Session Video - 06/04/2023](https://storageaccountparknb028.blob.core.windows.net/training/traininginfo/video1910447954.mp4?sp=r&st=2023-04-16T02:33:29Z&se=2024-04-16T10:33:29Z&spr=https&sv=2021-12-02&sr=b&sig=YN7SnRVnsOXW0ybvhf9%2FLFImdiH%2BgFfPEZj5wMrf0Bc%3D)
 
 [Session Video - 07/05/2023](https://pbsdatastore.blob.core.windows.net/training/TrainingInfo/video1944747398.mp4?sp=r&st=2023-07-19T22:57:55Z&se=2024-07-20T06:57:55Z&spr=https&sv=2022-11-02&sr=b&sig=hfuhIKhzVAnYPH8dJckzKVx%2BqMUqaSf6alYkfeniNb0%3D)
@@ -19,6 +21,10 @@
 [Session Video - 10/11/2023](https://pbsdatastore.blob.core.windows.net/training/TrainingInfo/video1584605133.mp4?sp=r&st=2023-10-25T21:21:26Z&se=2024-10-26T05:21:26Z&spr=https&sv=2022-11-02&sr=b&sig=qi2vWGpXxx1IoTWPqY71q9hlRyQFpVq%2BDNu8w9vCR5k%3D)
 
 [Session Video - 10/25/2023](https://pbsdatastore.blob.core.windows.net/training/TrainingInfo/video1029088020.mp4?sp=r&st=2023-10-26T22:01:35Z&se=2024-10-27T06:01:35Z&spr=https&sv=2022-11-02&sr=b&sig=lpaBwJdyKzTLSs6cRggG4109o46Ycz9Lgi1vJegPxxY%3D)
+
+
+
+
 
 
 
@@ -135,9 +141,17 @@ https://docs.microsoft.com/en-us/samples/azure-samples/sftp-creation-template/sf
 ```
 search "ReceiveMessageFromServieBus"
 | summarize count() by bin(timestamp, 1h)
-| order by timestamp desc
-```
+| order by timestamp desc    
 
+```
+```
+customEvents
+| where isnotnull(customDimensions.ProcessName)
+//| where customDimensions.ProcessName == 'ReceiveMessageFromServieBus'  
+| summarize count() by bin(timestamp, 1m),  Key = tostring(customDimensions.ProcessName) 
+| order by timestamp desc
+| render columnchart
+``` 
 ## Service Bus Pricing
 
 ![image](https://user-images.githubusercontent.com/15838780/153060922-c0052b81-c571-410e-b587-8aa83b633223.png)
