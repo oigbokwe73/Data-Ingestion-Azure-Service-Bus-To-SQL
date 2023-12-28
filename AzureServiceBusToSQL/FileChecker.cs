@@ -1,8 +1,8 @@
-using System.Collections.Specialized;
-using Microsoft.Extensions.Logging;
-using Xenhey.BPM.Core.Net8.Implementation;
-using Xenhey.BPM.Core.Net8;
 using Microsoft.Azure.Functions.Worker;
+using Microsoft.Extensions.Logging;
+using System.Collections.Specialized;
+using Xenhey.BPM.Core.Net8;
+using Xenhey.BPM.Core.Net8.Implementation;
 
 namespace AzureServiceBusToSQL
 {
