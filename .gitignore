@@ -365,3 +365,7 @@ FodyWeavers.xsd
 /AzureServiceBusToSQL/.vscode/settings.json
 /AzureServiceBusToSQL/.vscode/launch.json
 /AzureServiceBusToSQL/.vscode/extensions.json
+AzureServiceBusToSQL/Properties/serviceDependencies.json
+AzureServiceBusToSQL/Properties/serviceDependencies.training20231206 - Zip Deploy.json
+AzureServiceBusToSQL/Properties/ServiceDependencies/training20231122 - Zip Deploy1/profile.arm.json
+AzureServiceBusToSQL/Properties/ServiceDependencies/training20231206 - Zip Deploy/storage1.arm.json
