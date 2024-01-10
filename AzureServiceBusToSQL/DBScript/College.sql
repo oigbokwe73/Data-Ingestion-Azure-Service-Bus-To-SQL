@@ -14,6 +14,8 @@
     [Sales]     NVARCHAR (MAX) NULL,
     [Employees] NVARCHAR (MAX) NULL,
     [SICCode]    NVARCHAR (MAX) NULL,
-    [Industry]   NVARCHAR (MAX) NULL
+    [Industry]   NVARCHAR (MAX) NULL,
+    [CreatedDate] datetime default CURRENT_TIMESTAMP,
+    Id UNIQUEIDENTIFIER NOT NULL DEFAULT NEWID()
 );
 
