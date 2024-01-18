@@ -15,7 +15,7 @@
 			"IsEnable": "true",
 			"DataFlowProcessParameters": [
 				{
-					"Key": "connectodatabase",
+					"Key": "ConnectToDatabaseJSONResultSet",
 					"Value": "Yes"
 				},
 				{
@@ -29,22 +29,6 @@
 				{
 					"Key": "messageformat",
 					"Value": "application/json"
-				}
-			]
-		},
-		{
-			"Key": "MessageBuilderProcess",
-			"Type": "Xenhey.BPM.Core.Net8.Processes.MessageBuilderProcess",
-			"Async": "false",
-			"IsEnable": "true",
-			"DataFlowProcessParameters": [
-				{
-					"Key": "BuildArrayFromComplexObject",
-					"Value": "Yes"
-				},
-				{
-					"Key": "TableName",
-					"Value": "Table1"
 				}
 			]
 		}

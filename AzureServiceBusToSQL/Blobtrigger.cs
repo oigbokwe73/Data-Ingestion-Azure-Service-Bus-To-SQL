@@ -26,6 +26,7 @@ namespace AzureServiceBusToSQL
             nvc.Add("ContainerName", name);
             IOrchestrationService orchrestatorService = new ManagedOrchestratorService(nvc);
             var processFiles = orchrestatorService.Run(myBlob);
+            _logger.LogInformation(processFiles);
         }
     }
 }

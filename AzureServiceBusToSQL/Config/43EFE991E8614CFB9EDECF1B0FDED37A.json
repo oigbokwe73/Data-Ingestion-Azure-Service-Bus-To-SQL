@@ -12,96 +12,11 @@
 			"Key": "ConvertFlatJsonToStream",
 			"Type": "Xenhey.BPM.Core.Net8.Processes.MessageBuilderProcess",
 			"Async": "false",
-			"IsEnable": "true",
+			"IsEnable": "false",
 			"DataFlowProcessParameters": [
 				{
 					"Key": "ConvertStringToStream",
 					"Value": "yes"
-				}
-			]
-		},
-				{
-			"Key": "CovertCSVToJson",
-			"Type": "Xenhey.BPM.Core.Net8.Processes.CSVProcess",
-			"Async": "false",
-			"IsEnable": "false",
-			"DataFlowProcessParameters": [
-				{
-					"Key": "GetRecordsFromCSV",
-					"Value": "yes"
-				},
-				{
-					"Key": "messageformat",
-					"Value": "application/json"
-				},
-				{
-					"Key": "RootElement",
-					"Value": "transactions"
-				}
-			]
-		},
-
-		{
-			"Key": "CovertFlatJsonToArray",
-			"Type": "Xenhey.BPM.Core.Net8.Processes.MessageBuilderProcess",
-			"Async": "false",
-			"IsEnable": "false",
-			"DataFlowProcessParameters": [
-				{
-					"Key": "ReadJsonAsStream",
-					"Value": "yes"
-				},
-				{
-					"Key": "messageformat",
-					"Value": "application/json"
-				},
-				{
-					"Key": "RootElement",
-					"Value": "transactions"
-				}
-			]
-		},
-		{
-			"Key": "ConvertJsonToXml",
-			"Type": "Xenhey.BPM.Core.Net8.Processes.MessageBuilderProcess",
-			"Async": "false",
-			"IsEnable": "false",
-			"DataFlowProcessParameters": [
-				{
-					"Key": "ConvertJsonToXml",
-					"Value": "yes"
-				},
-				{
-					"Key": "messageformat",
-					"Value": "application/xml"
-				},
-				{
-					"Key": "RootElement",
-					"Value": "transactions"
-				}
-			]
-		},
-		{
-			"Key": "Write-To-Storage",
-			"Type": "Xenhey.BPM.Core.Net8.Processes.AzureTableStorageProcess",
-			"Async": "false",
-			"IsEnable": "false",
-			"DataFlowProcessParameters": [
-				{
-					"Key": "CreateRecordForAzureTableBatch",
-					"Value": "yes"
-				},
-				{
-					"Key": "BatchSize",
-					"Value": "100"
-				},
-				{
-					"Key": "StorageAccount",
-					"Value": "AzureWebJobsStorage"
-				},
-				{
-					"Key": "TableName",
-					"Value": "training20231206"
 				}
 			]
 		},
@@ -121,7 +36,7 @@
 				},
 				{
 					"Key": "BatchSize",
-					"Value": "201"
+					"Value": "750"
 				},
 				{
 					"Key": "FolderName",
@@ -142,6 +57,50 @@
 				{
 					"Key": "ContentType",
 					"Value": "csv/text"
+				}
+			]
+		},
+		{
+			"Key": "CreatePayloadFromHeaders",
+			"Type": "Xenhey.BPM.Core.Net8.Processes.HeaderInfoProcess",
+			"Async": "false",
+			"IsEnable": "true",
+			"DataFlowProcessParameters": [
+				{
+					"Key": "CreatePayloadFromHeaders",
+					"Value": "yes"
+				},
+				{
+					"Key": "Headers",
+					"Value": "[{\"Key\": \"ContainerName\",\"Value\": \"ContainerName\"}]"
+				},
+				{
+					"Key": "PropertyName",
+					"Value": "ID"
+				}
+			]
+		},
+		{
+			"Key": "RemoveFileFromStorage",
+			"Type": "Xenhey.BPM.Core.Net8.Processes.BlobStorageProcess",
+			"Async": "false",
+			"IsEnable": "true",
+			"DataFlowProcessParameters": [
+				{
+					"Key": "DeleteFromStorageWithExtInPayloadFileName",
+					"Value": "yes"
+				},
+				{
+					"Key": "StorageAccount",
+					"Value": "AzureWebJobsStorage"
+				},
+				{
+					"Key": "Container",
+					"Value": "pickup"
+				},
+				{
+					"Key": "FileName",
+					"Value": "ContainerName"
 				}
 			]
 		}
