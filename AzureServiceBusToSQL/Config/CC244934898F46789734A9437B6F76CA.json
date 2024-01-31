@@ -9,7 +9,7 @@
   "Type": "",
   "DataFlowProcess": [
     {
-      "Key": "EncodeMessages",
+      "Key": "EncodeRequestPayload",
       "Type": "Xenhey.BPM.Core.Net8.Processes.MessageBuilderProcess",
       "Async": "false",
       "IsEnable": "true",
