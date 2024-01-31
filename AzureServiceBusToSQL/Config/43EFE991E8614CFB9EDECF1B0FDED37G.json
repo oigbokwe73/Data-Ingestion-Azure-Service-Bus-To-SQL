@@ -1,36 +1,36 @@
 ﻿{
-	"Id": "ConnectToDatabaseToSearch",
-	"LineOfBusinessProcessData": [
-		{
-			"Key": "object",
-			"Type": "Xenhey.BPM.Core.Net8.Processes.ProcessData"
-		}
-	],
-	"Type": "",
-	"DataFlowProcess": [
-		{
-			"Key": "SearchDatabaseForResults",
-			"Type": "Xenhey.BPM.Core.Net8.Processes.ConnectToDBProcess",
-			"Async": "false",
-			"IsEnable": "true",
-			"DataFlowProcessParameters": [
-				{
-					"Key": "ConnectToDatabaseJSONResultSet",
-					"Value": "Yes"
-				},
-				{
-					"Key": "SearchTerm",
-					"Value": "search"
-				},
-				{
-					"Key": "connectionstring",
-					"Value": "DatabaseConnection"
-				},
-				{
-					"Key": "messageformat",
-					"Value": "application/json"
-				}
-			]
-		}
-	]
+  "Id": "ConnectToDatabaseToSearch",
+  "LineOfBusinessProcessData": [
+    {
+      "Key": "object",
+      "Type": "Xenhey.BPM.Core.Net8.Processes.ProcessData"
+    }
+  ],
+  "Type": "",
+  "DataFlowProcess": [
+    {
+      "Key": "SearchDatabaseForResults",
+      "Type": "Xenhey.BPM.Core.Net8.Processes.ConnectToDBProcess",
+      "Async": "false",
+      "IsEnable": "true",
+      "DataFlowProcessParameters": [
+        {
+          "Key": "ConnectToDatabaseJSONResultSet",
+          "Value": "Yes"
+        },
+        {
+          "Key": "SearchTerm",
+          "Value": "search"
+        },
+        {
+          "Key": "connectionstring",
+          "Value": "DatabaseConnection"
+        },
+        {
+          "Key": "messageformat",
+          "Value": "application/json"
+        }
+      ]
+    }
+  ]
 }
