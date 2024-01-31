@@ -52,7 +52,7 @@
 				},
 				{
 					"Key": "FileName",
-					"Value": "templatefie.txt"
+					"Value": "templatefie.liquid"
 				},
 				{
 					"Key": "Container",
@@ -63,7 +63,22 @@
 					"Value": "AzureWebJobsStorage"
 				}
 			]
+		},
+		{
+			"Key": "ReplaceContentTypeInHeader",
+			"Type": "Xenhey.BPM.Core.Net8.Processes.HeaderInfoProcess",
+			"Async": "false",
+			"IsEnable": "true",
+			"DataFlowProcessParameters": [
+				{
+					"Key": "ReplaceHeaders",
+					"Value": "yes"
+				},
+				{
+					"Key": "Headers",
+					"Value": "[{\"Key\": \"Content-Type\",\"Value\": \"text/html\"}]"
+				},
+			]
 		}
-
 	]
 }

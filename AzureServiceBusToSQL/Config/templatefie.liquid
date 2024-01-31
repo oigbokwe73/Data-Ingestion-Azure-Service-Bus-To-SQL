@@ -1,14 +1,6 @@
 ﻿[
 {% for college in data %}
     {
-        "University_Name": "{{ college.Company }}",
-        "Address": "{{ college.Address }}",
-        "City": "{{ college.City }}",
-        "State": "{{ college.State }}",
-        "Zip": "{{ college.Zip }}",
-		"County": "{{ college.County }}", 
-		"Website": {% if college.Website == ''%}"http://"{% else %} "{{college.Website}}" {% endif %},
-		"PhoneNumber": "{{ college.Phone }}"
-    }{% unless forloop.last %},{% endunless %}
+   }{% unless forloop.last %},{% endunless %}
 {% endfor %}
 ]
