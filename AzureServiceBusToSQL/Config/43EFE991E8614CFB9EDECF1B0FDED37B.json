@@ -1,84 +1,84 @@
 ﻿{
-	"Id": "SearchTableStorage",
-	"LineOfBusinessProcessData": [
-		{
-			"Key": "object",
-			"Type": "Xenhey.BPM.Core.Net8.Processes.ProcessData"
-		}
-	],
-	"Type": "",
-	"DataFlowProcess": [
-		{
-			"Key": "Azure_Table_Storage",
-			"Type": "Xenhey.BPM.Core.Net8.Processes.AzureTableStorageProcess",
-			"Async": "false",
-			"IsEnable": "true",
-			"DataFlowProcessParameters": [
-				{
-					"Key": "SimpleTableSearch",
-					"Value": "yes"
-				},
-				{
-					"Key": "QueryField",
-					"Value": "search"
-				},
-				{
-					"Key": "StorageAccount",
-					"Value": "AzureWebJobsStorage"
-				},
-				{
-					"Key": "TableName",
-					"Value": "training20240117"
-				},
-				{
-					"Key": "DefaultResult",
-					"Value": "No Records Found"
-				}
-			]
-		},
-		{
-			"Key": "TransFerDataTo Information",
-			"Type": "Xenhey.BPM.Core.Net8.Processes.TransformationProcess",
-			"Async": "false",
-			"IsEnable": "true",
-			"DataFlowProcessParameters": [
-				{
-					"Key": "TransformJSONPayload",
-					"Value": "yes"
-				},
-				{
-					"Key": "ManagedTemplateName",
-					"Value": "yes"
-				},
-				{
-					"Key": "FileName",
-					"Value": "templatefie.liquid"
-				},
-				{
-					"Key": "Container",
-					"Value": "config"
-				},
-				{
-					"Key": "StorageAccount",
-					"Value": "AzureWebJobsStorage"
-				}
-			]
-		},
-		{
-			"Key": "ReplaceContentTypeInHeader",
-			"Type": "Xenhey.BPM.Core.Net8.Processes.HeaderInfoProcess",
-			"Async": "false",
-			"IsEnable": "true",
-			"DataFlowProcessParameters": [
-				{
-					"Key": "ReplaceHeaders",
-					"Value": "yes"
-				},
-				{
-					"Key": "Headers",
-					"Value": "[{\"Key\": \"Content-Type\",\"Value\": \"text/html\"}]"
-				}
-			]
-		}
-	]
+  "Id": "SearchTableStorage",
+  "LineOfBusinessProcessData": [
+    {
+      "Key": "object",
+      "Type": "Xenhey.BPM.Core.Net8.Processes.ProcessData"
+    }
+  ],
+  "Type": "",
+  "DataFlowProcess": [
+    {
+      "Key": "Azure_Table_Storage",
+      "Type": "Xenhey.BPM.Core.Net8.Processes.AzureTableStorageProcess",
+      "Async": "false",
+      "IsEnable": "true",
+      "DataFlowProcessParameters": [
+        {
+          "Key": "SimpleTableSearch",
+          "Value": "yes"
+        },
+        {
+          "Key": "QueryField",
+          "Value": "search"
+        },
+        {
+          "Key": "StorageAccount",
+          "Value": "AzureWebJobsStorage"
+        },
+        {
+          "Key": "TableName",
+          "Value": "training20240117"
+        },
+        {
+          "Key": "DefaultResult",
+          "Value": "No Records Found"
+        }
+      ]
+    },
+    {
+      "Key": "TransFerDataTo Information",
+      "Type": "Xenhey.BPM.Core.Net8.Processes.TransformationProcess",
+      "Async": "false",
+      "IsEnable": "true",
+      "DataFlowProcessParameters": [
+        {
+          "Key": "TransformJSONPayload",
+          "Value": "yes"
+        },
+        {
+          "Key": "ManagedTemplateName",
+          "Value": "yes"
+        },
+        {
+          "Key": "FileName",
+          "Value": "templatefie.liquid"
+        },
+        {
+          "Key": "Container",
+          "Value": "config"
+        },
+        {
+          "Key": "StorageAccount",
+          "Value": "AzureWebJobsStorage"
+        }
+      ]
+    },
+    {
+      "Key": "ReplaceContentTypeInHeader",
+      "Type": "Xenhey.BPM.Core.Net8.Processes.HeaderInfoProcess",
+      "Async": "false",
+      "IsEnable": "true",
+      "DataFlowProcessParameters": [
+        {
+          "Key": "ReplaceHeaders",
+          "Value": "yes"
+        },
+        {
+          "Key": "Headers",
+          "Value": "[{\"Key\": \"Content-Type\",\"Value\": \"text/html\"}]"
+        }
+      ]
+    }
+  ]
 }

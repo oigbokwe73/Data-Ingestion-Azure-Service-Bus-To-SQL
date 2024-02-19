@@ -1,0 +1,36 @@
+graph TB
+    subgraph AzStorage
+        Blob["Azure Blob Container"]
+    end
+    subgraph AzureAIService
+        FR["Form Recognizer"]
+    end
+    subgraph SFTP
+        SF["Secure FTP"]
+    end
+    subgraph AzureFunctions
+        AF["Azure Function"]
+    end
+    subgraph AzureDB
+        DB["Azure Cosmos DB"]
+    end
+    subgraph AzureSearch
+        AS["Azure AI Search"]
+    end
+    subgraph AzureMonitor
+        AM["Azure Monitor"]
+        AI["Azure Application Insights"]
+    end
+
+    Blob -- "Stored documents " --> FR
+    FR -- "Extract Data" --> AF
+    AF -- "Trigger & Process" --> DB
+    DB -- "Store Extracted Data" --> AS
+    SF -- "Send PDF Files" --> Blob
+    AS -- "Index & Search" --> Blob
+    Blob -- "Monitor" --> AM
+    FR -- "Monitor" --> AM
+    AF -- "Monitor" --> AM
+    DB -- "Monitor" --> AM
+    AS -- "Monitor" --> AM
+
