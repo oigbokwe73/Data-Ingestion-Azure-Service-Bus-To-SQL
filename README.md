@@ -173,6 +173,7 @@ customEvents
 |Postman|https://www.postman.com/downloads/|Postman supports the Web or Desktop Version|
 |VsCode| https://visualstudio.microsoft.com/downloads/ |  Required extensions. Azure Functions, Azure Account
 |VS Studio Community Edition |https://visualstudio.microsoft.com/downloads/| Recommended. Nice intergration with Azure. software is free.
+|Liquid Template|https://liquidjs.com/tutorials/intro-to-liquid.html|
 
   ## Configuration-driven development
  
