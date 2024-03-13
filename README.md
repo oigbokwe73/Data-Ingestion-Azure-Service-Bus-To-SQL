@@ -98,6 +98,7 @@ By following these steps, you'll have a serverless API in Azure that uses Servic
 |FileName|Description|
 |:----|:----|
 |43EFE991E8614CFB9EDECF1B0FDED37A.json| **Upload File** Parse CSV file --> Write Batched Files To Storage|
+|99F77BEF300E4660A63A939ADD0BCF68.json| **File Parser** Parse CSV file --> File received from SFTP will use this process to parse files|
 |43EFE991E8614CFB9EDECF1B0FDED37D.json| **Upload File** Parse JSON/CSV Directly to NO SQL DB|
 |43EFE991E8614CFB9EDECF1B0FDED37C.json| **Service Bus Trigger for SQL DB** | Receive JSON payload and insert into SQL DB|
 |43EFE991E8614CFB9EDECF1B0FDED37F.json| **Service Bus Trigger for No SQL DB** | Receive JSON payload and insert into NO SQL DB|
@@ -173,6 +174,7 @@ customEvents
 |Postman|https://www.postman.com/downloads/|Postman supports the Web or Desktop Version|
 |VsCode| https://visualstudio.microsoft.com/downloads/ |  Required extensions. Azure Functions, Azure Account
 |VS Studio Community Edition |https://visualstudio.microsoft.com/downloads/| Recommended. Nice intergration with Azure. software is free.
+|Liquid Template|https://liquidjs.com/tutorials/intro-to-liquid.html|
 
   ## Configuration-driven development
  
