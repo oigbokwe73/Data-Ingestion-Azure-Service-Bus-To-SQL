@@ -1,0 +1,14 @@
+﻿[
+    {% for college in data %}
+     <tr>
+                <td>{{college.Company}}</td>
+                <td>{{college.Address}}</td>
+                <td>{{college.City}}</td>
+                <td>{{college.State}}</td>
+                <td>{{college.ZipCode}}</td>
+                <td>{{college.County}}</td>
+                <td>{{college.Website}}</td>
+            </tr>   
+      {% unless forloop.last %} {% endunless %}
+    {% endfor %}
+]

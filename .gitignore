@@ -369,3 +369,16 @@ AzureServiceBusToSQL/Properties/serviceDependencies.json
 AzureServiceBusToSQL/Properties/serviceDependencies.training20231206 - Zip Deploy.json
 AzureServiceBusToSQL/Properties/ServiceDependencies/training20231122 - Zip Deploy1/profile.arm.json
 AzureServiceBusToSQL/Properties/ServiceDependencies/training20231206 - Zip Deploy/storage1.arm.json
+AzureServiceBusToSQL/Properties/serviceDependencies.driverservice - Zip Deploy.json
+AzureServiceBusToSQL/Properties/serviceDependencies.driverservice - Zip Deploy1.json
+AzureServiceBusToSQL/Properties/serviceDependencies.json
+AzureServiceBusToSQL/Properties/serviceDependencies.training20240221 - Zip Deploy.json
+AzureServiceBusToSQL/Properties/ServiceDependencies/driverservice - Zip Deploy/appInsights1.arm.json
+AzureServiceBusToSQL/Properties/ServiceDependencies/driverservice - Zip Deploy/storage1.arm.json
+AzureServiceBusToSQL/Properties/ServiceDependencies/driverservice - Zip Deploy1/appInsights1.arm.json
+AzureServiceBusToSQL/Properties/ServiceDependencies/driverservice - Zip Deploy1/storage1.arm.json
+AzureServiceBusToSQL/Properties/ServiceDependencies/training20240131 - Zip Deploy/profile.arm.json
+AzureServiceBusToSQL/Properties/ServiceDependencies/training20240221 - Zip Deploy/appInsights1.arm.json
+AzureServiceBusToSQL/Properties/ServiceDependencies/training20240221 - Zip Deploy/storage1.arm.json
+AzureServiceBusToSQL/Properties/serviceDependencies.json
+AzureServiceBusToSQL/Properties/serviceDependencies.json
