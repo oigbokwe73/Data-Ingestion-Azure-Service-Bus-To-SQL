@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Simple Table Example</title>
+        <style>
+            table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+            th, td {
+                border: 1px solid black;
+                padding: 8px;
+                text-align: left;
+            }
+            th {
+                background-color: #f2f2f2;
+            }
+        </style>
+    </head>
+    <body>
+    
+        <h2>College/University Search Result Records ({{data.size}}) </h2>
+        <table>
+            <tr>
+                <th>University_Name</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>State</th>
+                <th>ZipCode</th>
+                <th>County</th>
+                <th>Website</th>
+            </tr>
+    {% for college in data %}
+     <tr>
+                <td>{{college.Company}}</td>
+                <td>{{college.Address}}</td>
+                <td>{{college.City}}</td>
+                <td>{{college.State}}</td>
+                <td>{{college.ZipCode}}</td>
+                <td>{{college.County}}</td>
+                <td>{{college.Website}}</td>
+            </tr>   
+      {% unless forloop.last %} {% endunless %}
+    {% endfor %}
+     </table>
+    </body>
+    </html>
+    
+    
