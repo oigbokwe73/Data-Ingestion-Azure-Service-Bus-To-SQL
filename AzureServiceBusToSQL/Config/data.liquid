@@ -1,14 +1,14 @@
 ﻿[
     {% for college in data %}
-     <tr>
-                <td>{{college.Company}}</td>
-                <td>{{college.Address}}</td>
-                <td>{{college.City}}</td>
-                <td>{{college.State}}</td>
-                <td>{{college.ZipCode}}</td>
-                <td>{{college.County}}</td>
-                <td>{{college.Website}}</td>
-            </tr>   
+     {
+        "Company" : "{{college.Company}}",
+         "Address" : "{{college.Address}}",
+         "City" : "{{college.City}}",
+         "State" : "{{college.State}}",
+         "ZipCode" : "{{college.ZipCode}}",
+         "County" : "{{college.County}}",
+         "Website" : "{{college.Website}}"
+     }
       {% unless forloop.last %} {% endunless %}
     {% endfor %}
 ]

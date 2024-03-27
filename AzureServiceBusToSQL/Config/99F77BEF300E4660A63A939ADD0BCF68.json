@@ -9,6 +9,18 @@
 	"Type": "",
 	"DataFlowProcess": [
 		{
+			"Key": "ConvertFlatJsonToStream",
+			"Type": "Xenhey.BPM.Core.Net8.Processes.MessageBuilderProcess",
+			"Async": "false",
+			"IsEnable": "true",
+			"DataFlowProcessParameters": [
+				{
+					"Key": "ConvertStringToStream",
+					"Value": "yes"
+				}
+			]
+		},
+		{
 			"Key": "CreateCSVBatchFilesForProcessing",
 			"Type": "Xenhey.BPM.Core.Net8.Processes.CSVProcess",
 			"Async": "false",
