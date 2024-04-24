@@ -137,8 +137,9 @@ By following these steps, you'll have a serverless API in Azure that uses Servic
 
 |Subscription Name|Description|
 |:----|:----|
-|nosqlmessage|Receive messages and store in NoSQL DB|
-|sqlmessage|Receive messages and store in SQL DB|
+|request|Create a Topic|
+|nosqlmessage|Create a Subscription|
+|sqlmessage|Create a Subscription|
 
 ## Create Azure Container Instance for SFTP
 > User the following link to create a Azure Container Instance(ACI for SFTP)
