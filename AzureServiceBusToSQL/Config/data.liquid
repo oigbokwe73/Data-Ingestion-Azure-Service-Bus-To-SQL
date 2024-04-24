@@ -9,6 +9,6 @@
          "County" : "{{college.County}}",
          "Website" : "{{college.Website}}"
      }
-      {% unless forloop.last %} {% endunless %}
+      {% if forloop.last == false %},{% endif %}
     {% endfor %}
 ]
