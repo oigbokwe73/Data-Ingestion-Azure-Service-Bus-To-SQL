@@ -9,6 +9,14 @@
 
 ## Session Recorded 
 
+[Session Video - 03/27/2024](https://pbsdatastore.blob.core.windows.net/training/TrainingInfo/video1308320042.mp4?sp=r&st=2024-04-03T21:53:43Z&se=2025-04-04T05:53:43Z&spr=https&sv=2022-11-02&sr=b&sig=tZD%2FHEvIY3zG2wPlMxs5eww3PAhZzUbJOswJxmWgyIw%3D)
+
+[Session Video - 01/18/2024](https://pbsdatastore.blob.core.windows.net/training/TrainingInfo/video1436973050.mp4?sp=r&st=2024-01-19T02:41:08Z&se=2025-01-19T10:41:08Z&spr=https&sv=2022-11-02&sr=b&sig=AWsFCE%2BGHAP4hBdiagVi2Xk3LNS%2B%2BIeQv1owOE3dJeE%3D)
+
+[Session Video - 10/25/2023](https://pbsdatastore.blob.core.windows.net/training/TrainingInfo/video1029088020.mp4?sp=r&st=2023-10-26T22:01:35Z&se=2024-10-27T06:01:35Z&spr=https&sv=2022-11-02&sr=b&sig=lpaBwJdyKzTLSs6cRggG4109o46Ycz9Lgi1vJegPxxY%3D)
+
+[Session Video - 10/11/2023](https://pbsdatastore.blob.core.windows.net/training/TrainingInfo/video1584605133.mp4?sp=r&st=2023-10-25T21:21:26Z&se=2024-10-26T05:21:26Z&spr=https&sv=2022-11-02&sr=b&sig=qi2vWGpXxx1IoTWPqY71q9hlRyQFpVq%2BDNu8w9vCR5k%3D)
+
 [Session Video - 11/15/2023](https://pbsdatastore.blob.core.windows.net/training/TrainingInfo/video1200836733.mp4?sp=r&st=2023-11-27T18:00:59Z&se=2024-11-28T02:00:59Z&spr=https&sv=2022-11-02&sr=b&sig=RVsUNFsr22S2LUGszi5GTk8J4bSnn%2B8uKqOLn7KPaFs%3D)
 
 [Session Video - 06/04/2023](https://storageaccountparknb028.blob.core.windows.net/training/traininginfo/video1910447954.mp4?sp=r&st=2023-04-16T02:33:29Z&se=2024-04-16T10:33:29Z&spr=https&sv=2021-12-02&sr=b&sig=YN7SnRVnsOXW0ybvhf9%2FLFImdiH%2BgFfPEZj5wMrf0Bc%3D)
@@ -18,16 +26,12 @@
 [Session Video - 08/24/2023](https://pbsdatastore.blob.core.windows.net/training/TrainingInfo/video1985794332.mp4?sp=r&st=2023-08-24T16:42:08Z&se=2024-08-25T00:42:08Z&spr=https&sv=2022-11-02&sr=b&sig=9B0W%2F%2BHHm%2BpUvwpNviRbjUahuwUAUtDCyDdpmUg6YOI%3D
 )
 
-[Session Video - 10/11/2023](https://pbsdatastore.blob.core.windows.net/training/TrainingInfo/video1584605133.mp4?sp=r&st=2023-10-25T21:21:26Z&se=2024-10-26T05:21:26Z&spr=https&sv=2022-11-02&sr=b&sig=qi2vWGpXxx1IoTWPqY71q9hlRyQFpVq%2BDNu8w9vCR5k%3D)
-
-[Session Video - 10/25/2023](https://pbsdatastore.blob.core.windows.net/training/TrainingInfo/video1029088020.mp4?sp=r&st=2023-10-26T22:01:35Z&se=2024-10-27T06:01:35Z&spr=https&sv=2022-11-02&sr=b&sig=lpaBwJdyKzTLSs6cRggG4109o46Ycz9Lgi1vJegPxxY%3D)
-
-[Session Video - 01/18/2024](https://pbsdatastore.blob.core.windows.net/training/TrainingInfo/video1436973050.mp4?sp=r&st=2024-01-19T02:41:08Z&se=2025-01-19T10:41:08Z&spr=https&sv=2022-11-02&sr=b&sig=AWsFCE%2BGHAP4hBdiagVi2Xk3LNS%2B%2BIeQv1owOE3dJeE%3D)
 
 
 
 
 
+\
 
 
 
@@ -97,8 +101,8 @@ By following these steps, you'll have a serverless API in Azure that uses Servic
 
 |FileName|Description|
 |:----|:----|
-|43EFE991E8614CFB9EDECF1B0FDED37A.json| **Upload File** Parse CSV file --> Write Batched Files To Storage|
-|99F77BEF300E4660A63A939ADD0BCF68.json| **File Parser** Parse CSV file --> File received from SFTP will use this process to parse files|
+|99F77BEF300E4660A63A939ADD0BCF68.json| **Upload File** Parse CSV file --> Write Batched Files To Storage|
+|43EFE991E8614CFB9EDECF1B0FDED37A.json| **File Parser** Parse CSV file --> File received from SFTP will use this process to parse files|
 |43EFE991E8614CFB9EDECF1B0FDED37D.json| **Upload File** Parse JSON/CSV Directly to NO SQL DB|
 |43EFE991E8614CFB9EDECF1B0FDED37C.json| **Service Bus Trigger for SQL DB** | Receive JSON payload and insert into SQL DB|
 |43EFE991E8614CFB9EDECF1B0FDED37F.json| **Service Bus Trigger for No SQL DB** | Receive JSON payload and insert into NO SQL DB|
@@ -133,8 +137,9 @@ By following these steps, you'll have a serverless API in Azure that uses Servic
 
 |Subscription Name|Description|
 |:----|:----|
-|nosqlmessage|Receive messages and store in NoSQL DB|
-|sqlmessage|Receive messages and store in SQL DB|
+|request|Create a Topic|
+|nosqlmessage|Create a Subscription|
+|sqlmessage|Create a Subscription|
 
 ## Create Azure Container Instance for SFTP
 > User the following link to create a Azure Container Instance(ACI for SFTP)
