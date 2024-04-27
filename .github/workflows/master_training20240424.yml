@@ -12,6 +12,7 @@ on:
 env:
   AZURE_FUNCTIONAPP_PACKAGE_PATH: 'AzureServiceBusToSQL' # set this to the path to your web app project, defaults to the repository root
   DOTNET_VERSION: '8.0.x' # set this to the dotnet version to use
+  BLOB_STORAGE_ACCOUNT_NAME: "training20240424"
 
 jobs:
   build-and-deploy:
@@ -41,3 +42,14 @@ jobs:
           slot-name: 'Production'
           package: '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/output'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_6B8DC420BDBD46F79B31B00C235AF3D0 }}
+      - name: Deploy to storage using CLI
+        uses: azure/CLI@v1
+        with:
+          azcliversion: latest
+          inlineScript: |
+            ls
+            # show azure account being used
+            az account show
+            az storage blob upload-batch -d 'config' --account-name ${{ env.BLOB_STORAGE_ACCOUNT_NAME } --account-key 00000000 -s './config' --pattern "*.*" 
+            
+          
