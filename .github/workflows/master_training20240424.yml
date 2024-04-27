@@ -43,10 +43,12 @@ jobs:
           package: '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/output'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_6B8DC420BDBD46F79B31B00C235AF3D0 }}
       - name: Deploy to storage using CLI
-        uses: azure/CLI@v1
+        uses: bacongobbler/azure-blob-storage-upload@main
         with:
-          azcliversion: latest
-          run: |
-            az storage blob upload-batch -d 'config' --account-name ${{ env.BLOB_STORAGE_ACCOUNT_NAME } --account-key 00000000 -s './config' --pattern '*.*' 
-            
+          source_dir: config
+          container_name: config
+          connection_string: ${{ secrets.ConnectionString }}
+          extra_args: '--pattern *.*'
+          # WARNING: this will overwrite existing blobs in your blob storage
+          overwrite: 'true'
           
