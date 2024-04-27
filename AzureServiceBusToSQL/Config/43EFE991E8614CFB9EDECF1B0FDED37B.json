@@ -40,7 +40,7 @@
       "Key": "TransFerDataTo Information",
       "Type": "Xenhey.BPM.Core.Net8.Processes.TransformationProcess",
       "Async": "false",
-      "IsEnable": "true",
+      "IsEnable": "false",
       "DataFlowProcessParameters": [
         {
           "Key": "TransformJSONPayload",
@@ -68,7 +68,7 @@
       "Key": "ReplaceContentTypeInHeader",
       "Type": "Xenhey.BPM.Core.Net8.Processes.HeaderInfoProcess",
       "Async": "false",
-      "IsEnable": "true",
+      "IsEnable": "false",
       "DataFlowProcessParameters": [
         {
           "Key": "ReplaceHeaders",
