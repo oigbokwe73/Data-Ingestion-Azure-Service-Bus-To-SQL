@@ -24,5 +24,5 @@ jobs:
       with:
         azcliversion: latest
         inlineScript: |
-          az storage blob upload-batch -d 'config' --account-name 'training20240424' --account-key 00000000 -s '../Config/' --pattern '*.*'
+          az storage blob upload-batch -d 'config' --account-name 'training20240424' --account-key 00000000 -s '/home/runner/work/Azure-Service-Bus-To-SQL/Azure-Service-Bus-To-SQL/Config/' --pattern '*.*'
           
