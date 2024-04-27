@@ -46,7 +46,7 @@ jobs:
         uses: azure/CLI@v1
         with:
           azcliversion: latest
-          inlineScript: |
+          run: |
             az storage blob upload-batch -d 'config' --account-name ${{ env.BLOB_STORAGE_ACCOUNT_NAME } --account-key 00000000 -s './config' --pattern '*.*' 
             
           
