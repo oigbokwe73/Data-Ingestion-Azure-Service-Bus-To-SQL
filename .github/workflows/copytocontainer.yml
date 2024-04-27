@@ -24,5 +24,5 @@ jobs:
       with:
         azcliversion: latest
         inlineScript: |
-          az storage blob upload-batch -d 'config' --account-name 'training20240424' --account-key 00000000 -s 'Config' --pattern '*.*'
+          az storage blob upload-batch -d 'config' --account-name 'training20240424' --account-key 00000000 -s 'config/' --pattern '*.*'
           
