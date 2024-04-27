@@ -10,20 +10,20 @@ on:
   workflow_dispatch:
 
 env:
-  AZURE_FUNCTIONAPP_PACKAGE_PATH: 'AzureServiceBusToSQL' # set this to the path to your web app project, defaults to the repository root
-  DOTNET_VERSION: '8.0.x' # set this to the dotnet version to use
   BLOB_STORAGE_ACCOUNT_NAME: 'training20240424'
 
 jobs:
-  upload:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: bacongobbler/azure-blob-storage-upload@main
-        with:
-          source_dir: './Config'
-          container_name: config
-          connection_string: ${{ secrets.ConnectionString }}
-          extra_args: '--pattern *.*'
-          # WARNING: this will overwrite existing blobs in your blob storage
-          overwrite: 'true'
+    - name: Azure Login
+      uses: azure/login@v2
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+    - name: Azure CLI script
+      uses: azure/cli@v2
+      with:
+        azcliversion: latest
+        inlineScript: |
+          az account show
+          az storage -h
