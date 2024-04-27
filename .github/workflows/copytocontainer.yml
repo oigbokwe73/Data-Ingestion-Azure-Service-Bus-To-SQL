@@ -21,7 +21,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: bacongobbler/azure-blob-storage-upload@main
         with:
-          source_dir: '/config'
+          source_dir: './Config'
           container_name: config
           connection_string: ${{ secrets.ConnectionString }}
           extra_args: '--pattern *.*'
