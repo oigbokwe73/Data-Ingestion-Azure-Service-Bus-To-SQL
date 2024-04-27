@@ -47,9 +47,6 @@ jobs:
         with:
           azcliversion: latest
           inlineScript: |
-            ls
-            # show azure account being used
-            az account show
-            az storage blob upload-batch -d 'config' --account-name ${{ env.BLOB_STORAGE_ACCOUNT_NAME } --account-key 00000000 -s './config' --pattern "*.*" 
+            az storage blob upload-batch -d 'config' --account-name ${{ env.BLOB_STORAGE_ACCOUNT_NAME } --account-key 00000000 -s './config' --pattern '*.*' 
             
           
