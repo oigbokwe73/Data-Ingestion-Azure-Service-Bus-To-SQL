@@ -2,7 +2,6 @@
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
 name: Build and deploy dotnet core app to Azure Function App - training20240424
-
 on:
   push:
     branches:
@@ -14,10 +13,12 @@ env:
   DOTNET_VERSION: '8.0.x' # set this to the dotnet version to use
   BLOB_STORAGE_ACCOUNT_NAME: 'training20240424'
 
+  
+stages:
+- stage: build-and-deploy 
 jobs:
   build-and-deploy:
-    runs-on: windows-latest
-    
+    runs-on: windows-latest    
     steps:
       - name: 'Checkout GitHub Action'
         uses: actions/checkout@v4
@@ -42,4 +43,18 @@ jobs:
           slot-name: 'Production'
           package: '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/output'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_6B8DC420BDBD46F79B31B00C235AF3D0 }}
+- stage: Copy Storage Files           
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-18.04
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v1
+
+    - name: Azure CLI script
+      uses: azure/cli@v2
+      with:
+        azcliversion: latest
+        inlineScript: |
+          az storage blob upload-batch --destination 'config' --account-name 'training20240424' --connection-string ${{ secrets.ConnectionString }} --source './AzureServiceBusToSQL/Config'           
           overwrite: 'true'
