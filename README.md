@@ -156,10 +156,6 @@ customEvents
 | order by timestamp desc
 | render columnchart
 ``` 
-## Service Bus Pricing
-
-![image](https://user-images.githubusercontent.com/15838780/153060922-c0052b81-c571-410e-b587-8aa83b633223.png)
-
   
   
 ## Products
