@@ -8,7 +8,7 @@
   ],
   "Type": "",
   "DataFlowProcess": [
-		  {
+    {
       "Key": "ReadFileConvertToJsonforSQLDb",
       "Type": "Xenhey.BPM.Core.Net8.Processes.CSVProcess",
       "Async": "false",
@@ -18,13 +18,13 @@
           "Key": "ReadCSVAsPlainText",
           "Value": "yes"
         },
-  			{
+        {
           "Key": "messageformat",
           "Value": "application/json"
-        } 
+        }
       ]
     },
-   {
+    {
       "Key": "ReceiveMessageFromServieBus",
       "Type": "Xenhey.BPM.Core.Net8.Processes.ConnectToDBProcess",
       "Async": "false",
@@ -38,11 +38,11 @@
           "Key": "DatabaseTableName",
           "Value": "College"
         },
-         {
+        {
           "Key": "ConnectionString",
           "Value": "DatabaseConnection"
         },
-       {
+        {
           "Key": "datatable",
           "Value": "College"
         }

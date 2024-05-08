@@ -44,29 +44,29 @@
         }
       ]
     },
-		{
-			"Key": "Write-To-Storage",
-			"Type": "Xenhey.BPM.Core.Net8.Processes.AzureTableStorageProcess",
-			"Async": "false",
-			"IsEnable": "true",
-			"DataFlowProcessParameters": [
-				{
-					"Key": "CreateRecordForAzureTableBatch",
-					"Value": "yes"
-				},
-				{
-					"Key": "BatchSize",
-					"Value": "100"
-				},
-				{
-					"Key": "StorageAccount",
-					"Value": "AzureWebJobsStorage"
-				},
-				{
-					"Key": "TableName",
-					"Value": "training20240424"
-				}
-			]
-		}
+    {
+      "Key": "Write-To-Storage",
+      "Type": "Xenhey.BPM.Core.Net8.Processes.AzureTableStorageProcess",
+      "Async": "false",
+      "IsEnable": "true",
+      "DataFlowProcessParameters": [
+        {
+          "Key": "CreateRecordForAzureTableBatch",
+          "Value": "yes"
+        },
+        {
+          "Key": "BatchSize",
+          "Value": "100"
+        },
+        {
+          "Key": "StorageAccount",
+          "Value": "AzureWebJobsStorage"
+        },
+        {
+          "Key": "TableName",
+          "Value": "training20240508"
+        }
+      ]
+    }
   ]
 }

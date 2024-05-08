@@ -24,30 +24,31 @@
         }
       ]
     },
-		{
-			"Key": "SearchDatabaseForResults",
-			"Type": "Xenhey.BPM.Core.Net8.Processes.ConnectToDBProcess",
-			"Async": "false",
-			"IsEnable": "true",
-			"DataFlowProcessParameters": [
-				{
-					"Key": "connectodatabase",
-					"Value": "Yes"
-				},
-				{
-					"Key": "SearchTerm",
-					"Value": "search"
-				},
-				{
-					"Key": "connectionstring",
-					"Value": "DatabaseConnection"
-				},
-				{
-					"Key": "messageformat",
-					"Value": "application/json"
-				}
-			]
-		},    {
+    {
+      "Key": "SearchDatabaseForResults",
+      "Type": "Xenhey.BPM.Core.Net8.Processes.ConnectToDBProcess",
+      "Async": "false",
+      "IsEnable": "true",
+      "DataFlowProcessParameters": [
+        {
+          "Key": "connectodatabase",
+          "Value": "Yes"
+        },
+        {
+          "Key": "SearchTerm",
+          "Value": "search"
+        },
+        {
+          "Key": "connectionstring",
+          "Value": "DatabaseConnection"
+        },
+        {
+          "Key": "messageformat",
+          "Value": "application/json"
+        }
+      ]
+    },
+    {
       "Key": "FormatResultSet",
       "Type": "Xenhey.BPM.Core.Net8.Processes.MessageBuilderProcess",
       "Async": "false",
