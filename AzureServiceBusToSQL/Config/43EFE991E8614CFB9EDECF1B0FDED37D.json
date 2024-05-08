@@ -9,6 +9,18 @@
   "Type": "",
   "DataFlowProcess": [
     {
+			"Key": "ConvertStringToStream",
+			"Type": "Xenhey.BPM.Core.Net8.Processes.MessageBuilderProcess",
+			"Async": "false",
+			"IsEnable": "true",
+			"DataFlowProcessParameters": [
+				{
+					"Key": "ConvertStringToStream",
+					"Value": "yes"
+				}
+			]
+		},
+    {
       "Key": "ReadJsonAsStream",
       "Type": "Xenhey.BPM.Core.Net8.Processes.MessageBuilderProcess",
       "Async": "false",
@@ -17,26 +29,6 @@
         {
           "Key": "ReadJsonAsStream",
           "Value": "yes"
-        },
-        {
-          "Key": "messageformat",
-          "Value": "application/json"
-        }
-      ]
-    },
-    {
-      "Key": "Read-Uploaded-File",
-      "Type": "Xenhey.BPM.Core.Net8.Processes.CSVProcess",
-      "Async": "false",
-      "IsEnable": "false",
-      "DataFlowProcessParameters": [
-        {
-          "Key": "GetRecordsFromCSV",
-          "Value": "yes"
-        },
-        {
-          "Key": "RootElement",
-          "Value": "Transactions"
         },
         {
           "Key": "messageformat",
