@@ -9,12 +9,9 @@
 
 ## Session Recorded 
 
+[Session Video - 05/08/2024](https://pbsdatastore.blob.core.windows.net/training/TrainingInfo/video1501623587.mp4?sp=r&st=2024-05-10T01:06:58Z&se=2025-05-10T09:06:58Z&spr=https&sv=2022-11-02&sr=b&sig=y%2FD%2BQ8QBKbnPPXFuWF%2FmgJ8tcxCclbArrdDW7yI83nk%3D)
+
 [Session Video - 04/25/2024](https://pbsdatastore.blob.core.windows.net/training/TrainingInfo/video1206045664.mp4?sp=r&st=2024-04-26T12:49:32Z&se=2025-04-26T20:49:32Z&spr=https&sv=2022-11-02&sr=b&sig=SVmCe1zYFaXeBw1hR%2BkSZLoxG5WmsRyL2wekK3mV2i8%3D)
-
-
-
-
-[Session Video - 05/08/2024](https://pbsdatastore.blob.core.windows.net/training/TrainingInfo/video1501623587.mp4?sp=r&st=2024-05-10T01:01:44Z&se=2025-05-10T09:01:44Z&spr=https&sv=2022-11-02&sr=b&sig=RczEIPOJ4UavXzNRsb%2BvdQ2SmK5Kn2zyws9z2BUGOmo%3D)
 
 [Session Video - 03/27/2024](https://pbsdatastore.blob.core.windows.net/training/TrainingInfo/video1308320042.mp4?sp=r&st=2024-04-03T21:53:43Z&se=2025-04-04T05:53:43Z&spr=https&sv=2022-11-02&sr=b&sig=tZD%2FHEvIY3zG2wPlMxs5eww3PAhZzUbJOswJxmWgyIw%3D)
 
@@ -22,7 +19,6 @@
 
 
 
-)
 
 
 Set Up Steps 
