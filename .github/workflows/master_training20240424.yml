@@ -40,18 +40,11 @@ jobs:
           slot-name: 'Production'
           package: '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/output'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_6B8DC420BDBD46F79B31B00C235AF3D0 }}
-- stage: Copy Storage Files           
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-18.04
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v1
+      - name: 'Azure CLI script'
+        uses: azure/cli@v2
+        with:
+          azcliversion: latest
+          inlineScript: |
+            az storage blob upload-batch --destination 'config' --account-name 'training20240424' --connection-string ${{ secrets.ConnectionString }} --source './AzureServiceBusToSQL/Config' 
 
-    - name: Azure CLI script
-      uses: azure/cli@v2
-      with:
-        azcliversion: latest
-        inlineScript: |
-          az storage blob upload-batch --destination 'config' --account-name 'training20240424' --connection-string ${{ secrets.ConnectionString }} --source './AzureServiceBusToSQL/Config' 
           
