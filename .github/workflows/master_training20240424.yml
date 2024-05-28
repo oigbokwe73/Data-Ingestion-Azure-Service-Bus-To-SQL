@@ -56,5 +56,5 @@ jobs:
       with:
         azcliversion: latest
         inlineScript: |
-          az storage blob upload-batch --destination 'config' --account-name 'training20240424' --connection-string ${{ secrets.ConnectionString }} --source './AzureServiceBusToSQL/Config'           
-          overwrite: 'true'
+          az storage blob upload-batch --destination 'config' --account-name 'training20240424' --connection-string ${{ secrets.ConnectionString }} --source './AzureServiceBusToSQL/Config' 
+          
