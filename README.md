@@ -188,8 +188,8 @@ customEvents
 
 5. **Driving Insights and Innovation**: Data enables AI to uncover hidden patterns and insights that might not be evident to human analysts. These insights can drive innovation, optimize processes, and create new opportunities across various industries.
 
-Would you like a more detailed explanation on any of these points?
-  
+  ![image](https://github.com/oigbokwe73/Azure-Service-Bus-To-SQL/assets/15838780/c0728d14-597e-4177-b67f-d12b9b28960b)
+
   ## Contact
   
 For questions related to this project, can be reached via email :- support@xenhey.com
