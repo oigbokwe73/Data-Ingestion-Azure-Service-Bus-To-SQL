@@ -9,26 +9,16 @@
 
 ## Session Recorded 
 
+[Session Video - 05/08/2024](https://pbsdatastore.blob.core.windows.net/training/TrainingInfo/video1501623587.mp4?sp=r&st=2024-05-10T01:06:58Z&se=2025-05-10T09:06:58Z&spr=https&sv=2022-11-02&sr=b&sig=y%2FD%2BQ8QBKbnPPXFuWF%2FmgJ8tcxCclbArrdDW7yI83nk%3D)
+
 [Session Video - 04/25/2024](https://pbsdatastore.blob.core.windows.net/training/TrainingInfo/video1206045664.mp4?sp=r&st=2024-04-26T12:49:32Z&se=2025-04-26T20:49:32Z&spr=https&sv=2022-11-02&sr=b&sig=SVmCe1zYFaXeBw1hR%2BkSZLoxG5WmsRyL2wekK3mV2i8%3D)
-
-
 
 [Session Video - 03/27/2024](https://pbsdatastore.blob.core.windows.net/training/TrainingInfo/video1308320042.mp4?sp=r&st=2024-04-03T21:53:43Z&se=2025-04-04T05:53:43Z&spr=https&sv=2022-11-02&sr=b&sig=tZD%2FHEvIY3zG2wPlMxs5eww3PAhZzUbJOswJxmWgyIw%3D)
 
 [Session Video - 01/18/2024](https://pbsdatastore.blob.core.windows.net/training/TrainingInfo/video1436973050.mp4?sp=r&st=2024-01-19T02:41:08Z&se=2025-01-19T10:41:08Z&spr=https&sv=2022-11-02&sr=b&sig=AWsFCE%2BGHAP4hBdiagVi2Xk3LNS%2B%2BIeQv1owOE3dJeE%3D)
 
-[Session Video - 10/25/2023](https://pbsdatastore.blob.core.windows.net/training/TrainingInfo/video1029088020.mp4?sp=r&st=2023-10-26T22:01:35Z&se=2024-10-27T06:01:35Z&spr=https&sv=2022-11-02&sr=b&sig=lpaBwJdyKzTLSs6cRggG4109o46Ycz9Lgi1vJegPxxY%3D)
 
-[Session Video - 10/11/2023](https://pbsdatastore.blob.core.windows.net/training/TrainingInfo/video1584605133.mp4?sp=r&st=2023-10-25T21:21:26Z&se=2024-10-26T05:21:26Z&spr=https&sv=2022-11-02&sr=b&sig=qi2vWGpXxx1IoTWPqY71q9hlRyQFpVq%2BDNu8w9vCR5k%3D)
 
-[Session Video - 11/15/2023](https://pbsdatastore.blob.core.windows.net/training/TrainingInfo/video1200836733.mp4?sp=r&st=2023-11-27T18:00:59Z&se=2024-11-28T02:00:59Z&spr=https&sv=2022-11-02&sr=b&sig=RVsUNFsr22S2LUGszi5GTk8J4bSnn%2B8uKqOLn7KPaFs%3D)
-
-[Session Video - 06/04/2023](https://storageaccountparknb028.blob.core.windows.net/training/traininginfo/video1910447954.mp4?sp=r&st=2023-04-16T02:33:29Z&se=2024-04-16T10:33:29Z&spr=https&sv=2021-12-02&sr=b&sig=YN7SnRVnsOXW0ybvhf9%2FLFImdiH%2BgFfPEZj5wMrf0Bc%3D)
-
-[Session Video - 07/05/2023](https://pbsdatastore.blob.core.windows.net/training/TrainingInfo/video1944747398.mp4?sp=r&st=2023-07-19T22:57:55Z&se=2024-07-20T06:57:55Z&spr=https&sv=2022-11-02&sr=b&sig=hfuhIKhzVAnYPH8dJckzKVx%2BqMUqaSf6alYkfeniNb0%3D)
-
-[Session Video - 08/24/2023](https://pbsdatastore.blob.core.windows.net/training/TrainingInfo/video1985794332.mp4?sp=r&st=2023-08-24T16:42:08Z&se=2024-08-25T00:42:08Z&spr=https&sv=2022-11-02&sr=b&sig=9B0W%2F%2BHHm%2BpUvwpNviRbjUahuwUAUtDCyDdpmUg6YOI%3D
-)
 
 
 Set Up Steps 
@@ -184,8 +174,22 @@ customEvents
 
 5. Domain-Specific Customization: Configuration-driven development enables domain-specific customization by providing options and settings tailored to specific use cases. This empowers non-technical users or administrators to configure the application according to their specific requirements without the need for coding expertise
 
-  
-  
+
+
+  ## Data is crucial for AI for several reasons:
+
+1. **Training Machine Learning Models**: AI systems, particularly those based on machine learning, require large amounts of data to learn and make accurate predictions. The quality and quantity of data directly influence the performance of the AI models.
+
+2. **Improving Accuracy and Performance**: High-quality data helps improve the accuracy and performance of AI systems. With more data, AI can recognize patterns and make better decisions, leading to more reliable and effective applications.
+
+3. **Enabling Personalization**: AI systems use data to personalize user experiences. For example, recommendation systems for streaming services or e-commerce sites rely on user data to suggest content or products that align with individual preferences.
+
+4. **Continuous Learning and Adaptation**: AI systems need data to continuously learn and adapt to changing environments and new information. This ability to update and improve over time is essential for maintaining the relevance and accuracy of AI applications.
+
+5. **Driving Insights and Innovation**: Data enables AI to uncover hidden patterns and insights that might not be evident to human analysts. These insights can drive innovation, optimize processes, and create new opportunities across various industries.
+
+  ![image](https://github.com/oigbokwe73/Azure-Service-Bus-To-SQL/assets/15838780/c0728d14-597e-4177-b67f-d12b9b28960b)
+
   ## Contact
   
 For questions related to this project, can be reached via email :- support@xenhey.com
