@@ -2,7 +2,7 @@
 # Azure Service Bus To SQL
 
 
-## Event-Driven Architecture Diagram
+## Event-Driven Microservice Architecture Diagram
 
 ![image](https://user-images.githubusercontent.com/15838780/226928604-4340b682-0e13-44bc-b239-6b91a29f678a.png)
 
