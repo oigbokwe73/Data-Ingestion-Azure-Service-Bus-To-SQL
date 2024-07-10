@@ -15,7 +15,7 @@
     <PackageReference Include="Microsoft.Azure.Functions.Worker.Extensions.Http.AspNetCore" Version="1.1.1" />
     <PackageReference Include="Microsoft.Azure.Functions.Worker.Extensions.ServiceBus" Version="5.14.1" />
     <PackageReference Include="Microsoft.Azure.Functions.Worker.Extensions.Timer" Version="4.3.0" />
-    <PackageReference Include="Xenhey.BPM.Core.Net8" Version="1.0.20" />
+    <PackageReference Include="Xenhey.BPM.Core.Net8" Version="1.0.37" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="DBScript\College.Designer.cs">

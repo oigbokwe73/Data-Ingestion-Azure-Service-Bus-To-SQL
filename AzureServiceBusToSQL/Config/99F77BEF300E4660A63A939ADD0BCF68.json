@@ -12,11 +12,67 @@
 			"Key": "ConvertStringToStream",
 			"Type": "Xenhey.BPM.Core.Net8.Processes.MessageBuilderProcess",
 			"Async": "false",
-			"IsEnable": "true",
+			"IsEnable": "false",
 			"DataFlowProcessParameters": [
 				{
 					"Key": "ConvertStringToStream",
 					"Value": "yes"
+				}
+			]
+		},
+		{
+			"Key": "ReadStreamToText",
+			"Type": "Xenhey.BPM.Core.Net8.Processes.MessageBuilderProcess",
+			"Async": "false",
+			"IsEnable": "false",
+			"DataFlowProcessParameters": [
+				{
+					"Key": "ReadStreamToText",
+					"Value": "yes"
+				}
+			]
+		},
+		{
+			"Key": "ConvertCSVToJson",
+			"Type": "Xenhey.BPM.Core.Net8.Processes.CSVProcess",
+			"Async": "false",
+			"IsEnable": "false",
+			"DataFlowProcessParameters": [
+				{
+					"Key": "ReadCSVAsPlainText",
+					"Value": "yes"
+				},
+				{
+					"Key": "messageformat",
+					"Value": "application/json"
+				}
+			]
+		},
+		{
+			"Key": "TransformRequest",
+			"Type": "Xenhey.BPM.Core.Net8.Processes.TransformationProcess",
+			"Async": "false",
+			"IsEnable": "true",
+			"DataFlowProcessParameters": [
+				{
+					"Key": "TransformJSONPayloadArray",
+					"Value": "yes"
+				},
+				{
+					"Key": "ManagedTemplateName",
+					"Value": "yes"
+				},
+				{
+					"Key": "FileName",
+					"Value": "data.liquid"
+				},
+				{
+					"Key": "Container",
+					"Value": "config"
+				},
+				{
+					"Key": "StorageAccount",
+					"Value": "AzureWebJobsStorage"
 				}
 			]
 		},
