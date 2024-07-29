@@ -6,8 +6,9 @@
 
 ![image](https://user-images.githubusercontent.com/15838780/226928604-4340b682-0e13-44bc-b239-6b91a29f678a.png)
 
+## Data Ingestion Services in Azure
 
-![image](https://github.com/user-attachments/assets/534397ef-cf79-417f-bca5-bd49b24260bd)
+![image](https://github.com/user-attachments/assets/a12cc2e2-e261-4b68-bb89-830d5ab2208d)
 
 
 
