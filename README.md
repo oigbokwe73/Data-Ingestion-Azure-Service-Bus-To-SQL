@@ -7,6 +7,29 @@
 ![image](https://user-images.githubusercontent.com/15838780/226928604-4340b682-0e13-44bc-b239-6b91a29f678a.png)
 
 
+
+Here's a comparison table highlighting the key features, strengths, and use cases for Azure Data Factory (ADF), Azure Databricks, and Azure Synapse Analytics:
+
+| **Feature**                            | **Azure Data Factory (ADF)**                           | **Azure Databricks**                                 | **Azure Synapse Analytics**                         |
+|----------------------------------------|--------------------------------------------------------|------------------------------------------------------|----------------------------------------------------|
+| **Purpose**                            | Data integration, ETL, and data orchestration          | Big data analytics, data engineering, and machine learning | Analytics, data warehousing, and big data processing |
+| **Key Components**                     | Pipelines, Dataflows, Linked Services, Datasets        | Workspaces, Notebooks, Clusters, Jobs               | Dedicated SQL Pool, Serverless SQL Pool, Spark Pool, Data Integration |
+| **Data Integration**                   | Extensive connectors for various data sources          | Built-in integration with many data sources via notebooks | Integrated data ingestion and transformation       |
+| **Data Processing**                    | ETL/ELT processing using dataflows and pipelines       | Advanced data processing and analytics with Apache Spark | Unified analytics, SQL-based data processing, Spark, and pipelines |
+| **Programming Languages**              | JSON for pipeline definitions, Dataflow expressions    | Scala, Python, R, SQL                               | T-SQL, Python, Scala, .NET                          |
+| **Scalability**                        | Automatically scalable                                 | Highly scalable with auto-scaling clusters           | Scalable from small to very large workloads         |
+| **Compute Management**                 | Managed compute for data movement and transformation   | Customizable and managed Spark clusters              | Managed pools for SQL and Spark, auto-scaling       |
+| **Integration with Azure Services**    | Deep integration with Azure services like Azure SQL, Blob Storage | Strong integration with Azure storage, SQL, and AI services | Comprehensive integration with Azure ecosystem     |
+| **Data Movement**                      | Copy data activity for moving data across sources      | Supports data movement through Spark jobs            | Integrated data movement and transformation         |
+| **Orchestration**                      | Advanced scheduling, event-based triggers, and monitoring | Workflow management via jobs and notebooks           | Unified data and pipeline orchestration             |
+| **Machine Learning**                   | Limited ML capabilities                                | Advanced ML with integrated MLflow and Spark MLlib   | Integrated ML capabilities with Synapse Studio      |
+| **User Interface**                     | GUI for pipeline design and monitoring                 | Notebooks for interactive development and visualization | Unified web-based interface for SQL, Spark, and pipelines |
+| **Security**                           | Built-in security features, VNET support, managed identity | Secure workspace, role-based access control (RBAC)  | Comprehensive security features, RBAC, encryption   |
+| **Use Cases**                          | ETL/ELT processes, data migration, data integration    | Data engineering, big data analytics, machine learning workflows | Advanced analytics, data warehousing, big data processing, and data integration |
+| **Cost Structure**                     | Pay-as-you-go based on pipeline runs, data movement    | Pay-as-you-go based on compute and storage usage     | Pay-as-you-go for different pools, storage, and compute |
+
+
+
 ## Session Recorded 
 
 [Session Video - 06/19/2024](https://pbsdatastore.blob.core.windows.net/training/TrainingInfo/video1255086730.mp4?sp=r&st=2024-07-11T01:29:46Z&se=2025-07-11T09:29:46Z&spr=https&sv=2022-11-02&sr=b&sig=Ug0Sj0Z9CcPWANVw8bNUyBPqFz6sXipVlz%2Fp7UpL8F4%3D)
