@@ -10,8 +10,8 @@
 
 Here's a comparison table highlighting the key features, strengths, and use cases for Azure Data Factory (ADF), Azure Databricks, and Azure Synapse Analytics:
 
-| **Feature**                            | **Azure Data Factory (ADF)**                           | **Azure Databricks**                                 | **Azure Synapse Analytics**                         |
-|----------------------------------------|--------------------------------------------------------|------------------------------------------------------|----------------------------------------------------|
+| **Feature**                            | **Azure Data Factory (ADF)**                           | **Azure Databricks**                                 | **Azure Synapse Analytics**                         | **Data Inagestion As A Service ** |
+|----------------------------------------|--------------------------------------------------------|------------------------------------------------------|----------------------------------------------------| Data integration, ETL, and data orchestration|
 | **Purpose**                            | Data integration, ETL, and data orchestration          | Big data analytics, data engineering, and machine learning | Analytics, data warehousing, and big data processing |
 | **Key Components**                     | Pipelines, Dataflows, Linked Services, Datasets        | Workspaces, Notebooks, Clusters, Jobs               | Dedicated SQL Pool, Serverless SQL Pool, Spark Pool, Data Integration |
 | **Data Integration**                   | Extensive connectors for various data sources          | Built-in integration with many data sources via notebooks | Integrated data ingestion and transformation       |
