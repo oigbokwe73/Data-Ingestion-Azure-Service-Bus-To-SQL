@@ -29,6 +29,20 @@ Here's a comparison table highlighting the key features, strengths, and use case
 | **Use Cases**                          | ETL/ELT processes, data migration, data integration    | Data engineering, big data analytics, machine learning workflows | Advanced analytics, data warehousing, big data processing, and data integration | ETL/ELT processes, data migration, data integration    |
 | **Cost Structure**                     | Pay-as-you-go based on pipeline runs, data movement    | Pay-as-you-go based on compute and storage usage     | Pay-as-you-go for different pools, storage, and compute | Pay-as-you-go for different dedicated pools, storage, and compute |
 
+## ADF Ingestion Sequence Diagram
+
+![image](https://github.com/user-attachments/assets/da5933f8-e73a-454b-aebf-26161436abbf)
+
+## Azure Data Bricks Ingestion Sequence Diagram
+
+![image](https://github.com/user-attachments/assets/25952409-c26b-4856-9fb5-8cfd65e2ccea)
+
+
+## Azure Synapse Analytics Ingestion Sequence Diagram
+
+![image](https://github.com/user-attachments/assets/dc121b63-0e58-49ff-ba89-8807e0eb8dfd)
+
+
 
 
 ## Session Recorded 
