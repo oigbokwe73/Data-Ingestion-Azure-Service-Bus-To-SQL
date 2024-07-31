@@ -29,8 +29,6 @@ Here's a comparison table highlighting the key features, strengths, and use case
 | **Use Cases**                          | ETL/ELT processes, data migration, data integration    | Data engineering, big data analytics, machine learning workflows | Advanced analytics, data warehousing, big data processing, and data integration | ETL/ELT processes, data migration, data integration    |
 | **Cost Structure**                     | Pay-as-you-go based on pipeline runs, data movement    | Pay-as-you-go based on compute and storage usage     | Pay-as-you-go for different pools, storage, and compute | Pay-as-you-go for different dedicated pools, storage, and compute |
 
-This table should provide a clear comparison of the three services, highlighting their unique strengths and appropriate use cases for different data management and analytics scenarios.
-
 
 
 ## Session Recorded 
