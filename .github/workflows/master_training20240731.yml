@@ -49,6 +49,9 @@ jobs:
           app-name: 'training20240731'
           slot-name: 'Production'
           package: '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/output'
+          
+      - name: 'Checkout GitHub Action'
+        uses: actions/checkout@v4
 
       - name: Upload files to Azure Storage
         uses: azure/setup-cli@v2        
