@@ -9,6 +9,8 @@
 
 ## Session Recorded 
 
+[Session Video - 06/19/2024](https://pbsdatastore.blob.core.windows.net/training/TrainingInfo/video1255086730.mp4?sp=r&st=2024-07-11T01:29:46Z&se=2025-07-11T09:29:46Z&spr=https&sv=2022-11-02&sr=b&sig=Ug0Sj0Z9CcPWANVw8bNUyBPqFz6sXipVlz%2Fp7UpL8F4%3D)
+
 [Session Video - 05/08/2024](https://pbsdatastore.blob.core.windows.net/training/TrainingInfo/video1501623587.mp4?sp=r&st=2024-05-10T01:06:58Z&se=2025-05-10T09:06:58Z&spr=https&sv=2022-11-02&sr=b&sig=y%2FD%2BQ8QBKbnPPXFuWF%2FmgJ8tcxCclbArrdDW7yI83nk%3D)
 
 [Session Video - 04/25/2024](https://pbsdatastore.blob.core.windows.net/training/TrainingInfo/video1206045664.mp4?sp=r&st=2024-04-26T12:49:32Z&se=2025-04-26T20:49:32Z&spr=https&sv=2022-11-02&sr=b&sig=SVmCe1zYFaXeBw1hR%2BkSZLoxG5WmsRyL2wekK3mV2i8%3D)
@@ -16,6 +18,50 @@
 [Session Video - 03/27/2024](https://pbsdatastore.blob.core.windows.net/training/TrainingInfo/video1308320042.mp4?sp=r&st=2024-04-03T21:53:43Z&se=2025-04-04T05:53:43Z&spr=https&sv=2022-11-02&sr=b&sig=tZD%2FHEvIY3zG2wPlMxs5eww3PAhZzUbJOswJxmWgyIw%3D)
 
 [Session Video - 01/18/2024](https://pbsdatastore.blob.core.windows.net/training/TrainingInfo/video1436973050.mp4?sp=r&st=2024-01-19T02:41:08Z&se=2025-01-19T10:41:08Z&spr=https&sv=2022-11-02&sr=b&sig=AWsFCE%2BGHAP4hBdiagVi2Xk3LNS%2B%2BIeQv1owOE3dJeE%3D)
+
+
+## Data Ingestion Services in Azure 
+
+
+Here's a comparison table highlighting the key features, strengths, and use cases for Azure Data Factory (ADF), Azure Databricks, Azure Synapse Analytics and Custom Data Ingestion Service
+
+| **Feature**                            | **Azure Data Factory (ADF)**                           | **Azure Databricks**                                 | **Azure Synapse Analytics**                         |  **Custom Data Ingestion Service**                         |
+|----------------------------------------|--------------------------------------------------------|------------------------------------------------------|----------------------------------------------------|----------------------------------------------------|
+| **Purpose**                            | Data integration, ETL, and data orchestration          | Big data analytics, data engineering, and machine learning | Analytics, data warehousing, and big data processing |Data integration, ETL, and data orchestration |
+| **Key Components**                     | Pipelines, Dataflows, Linked Services, Datasets        | Workspaces, Notebooks, Clusters, Jobs               | Dedicated SQL Pool, Serverless SQL Pool, Spark Pool, Data Integration |Dedicated SQL Pool, Serverless SQL Workflow, DataFlow. DataSets Linkservice :- api |
+| **Data Integration**                   | Extensive connectors for various data sources          | Built-in integration with many data sources via notebooks | Integrated data ingestion and transformation       |Connectors to Azure Table Storage, Azure SQL |
+| **Data Processing**                    | ETL/ELT processing using dataflows and pipelines       | Advanced data processing and analytics with Apache Spark | Unified analytics, SQL-based data processing, Spark, and pipelines |ETL/ELT processing using Orchestration  WorkFlow(JSON) sand pipelines |
+| **Programming Languages**              | JSON for pipeline definitions, Dataflow expressions    | Scala, Python, R, SQL                               | T-SQL, Python, Scala, .NET                          |T-SQL,  .NET                          |
+| **Scalability**                        | Automatically scalable                                  | Highly scalable with auto-scaling clusters           | Scalable from small to very large workloads         |Scalable from small to very large workloads |         
+| **Compute Management**                 | Managed compute for data movement and transformation   | Customizable and managed Spark clusters              | Managed pools for SQL and Spark, auto-scaling       | Managed pools for  Azure functions and SQL, auto-scaling       |
+| **Integration with Azure Services**    | Deep integration with Azure services like Azure SQL, Blob Storage | Strong integration with Azure storage, SQL, and AI services | Comprehensive integration with Azure ecosystem     |Deep integration with Azure services like Azure SQL, Blob Storage |
+| **Data Movement**                      | Copy data activity for moving data across sources      | Supports data movement through Spark jobs            | Integrated data movement and transformation         | Copy data, move,slice and transform data across azure resources      | 
+| **Orchestration**                      | Advanced scheduling, event-based triggers, and monitoring | Workflow management via jobs and notebooks           | Unified data and pipeline orchestration             | event-based triggers, and monitoring, Workflow management             |
+| **Machine Learning**                   | Limited ML capabilities                                | Advanced ML with integrated MLflow and Spark MLlib   | Integrated ML capabilities with Synapse Studio      |Integrated ML capabilities with c# .NET|
+| **User Interface**                     | GUI for pipeline design and monitoring                 | Notebooks for interactive development and visualization | Unified web-based interface for SQL, Spark, and pipelines | Web-based interface for SQL|
+| **Security**                           | Built-in security features, VNET support, managed identity | Secure workspace, role-based access control (RBAC)  | Comprehensive security features, RBAC, encryption   | Built-in security features, VNET support, managed identity, RBAC |
+| **Use Cases**                          | ETL/ELT processes, data migration, data integration    | Data engineering, big data analytics, machine learning workflows | Advanced analytics, data warehousing, big data processing, and data integration | ETL/ELT processes, data migration, data integration    |
+| **Cost Structure**                     | Pay-as-you-go based on pipeline runs, data movement    | Pay-as-you-go based on compute and storage usage     | Pay-as-you-go for different pools, storage, and compute | Pay-as-you-go for different dedicated pools, storage, and compute |
+
+## ADF Ingestion Sequence Diagram
+
+![image](https://github.com/user-attachments/assets/da5933f8-e73a-454b-aebf-26161436abbf)
+
+## Azure Data Bricks Ingestion Sequence Diagram
+
+![image](https://github.com/user-attachments/assets/25952409-c26b-4856-9fb5-8cfd65e2ccea)
+
+
+## Azure Synapse Analytics Ingestion Sequence Diagram
+
+![image](https://github.com/user-attachments/assets/dc121b63-0e58-49ff-ba89-8807e0eb8dfd)
+
+
+
+
+
+
+
 
 
 
