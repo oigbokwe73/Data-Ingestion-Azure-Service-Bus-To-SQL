@@ -55,7 +55,7 @@ jobs:
           package: '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/output'
        
       - name: Upload files to Azure Storage
-        uses: azure/setup-cli@v2
+        shell: pwsh
            run:|
             echo "Uploading files to Azure Storage Account..."
             az storage blob upload-batch -d ${{ env.containerName}} --account-name ${{ env.storageAccount }} -s ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/config
