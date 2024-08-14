@@ -53,15 +53,9 @@ jobs:
           app-name: 'training20240731'
           slot-name: 'Production'
           package: '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/output'
-
-      - name: 'upload files into azure'
-        uses: azure/setup-cli@v2
-        with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_18E5630069584F8F830AE186B70BC090 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_1A000E7EE04343ECA8E3649E60233997 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_4FE267218AE94C09BF3FA8EAA824D42F }}
-        
+       
       - name: Upload files to Azure Storage
+        uses: azure/setup-cli@v2
            run:|
             echo "Uploading files to Azure Storage Account..."
             az storage blob upload-batch -d ${{ env.containerName}} --account-name ${{ env.storageAccount }} -s ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/config
