@@ -13,8 +13,8 @@ env:
   AZURE_FUNCTIONAPP_PACKAGE_PATH: './AzureServiceBusToSQL' # set this to the path to your web app project, defaults to the repository root
   DOTNET_VERSION: '8.0.x' # set this to the dotnet version to use
   azureSubscription: 'Azure subscription 1'  # Azure service connection name
-  resourceGroup: 'training20240731'
-  storageAccount: 'training20240731'
+  RESOURCEGROUP: 'training20240731'
+  STRORAGEACCOUNT: 'training20240731'
   CONTAINERNAME: 'config'
 
 jobs:
@@ -58,5 +58,5 @@ jobs:
         uses: azure/setup-cli@v2        
            run:|
             echo "Uploading files to Azure Storage Account..."
-            az storage blob upload-batch -d ${{ env.CONTAINERNAME}} --account-name ${{ env.STORAGEACCOUNT }} -s './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/config'
+            az storage blob upload-batch -d '${{ env.CONTAINERNAME}}' --account-name ${{ env.STORAGEACCOUNT }} -s './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/config'
           
