@@ -54,9 +54,4 @@ jobs:
           slot-name: 'Production'
           package: '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/output'
        
-      - name: Upload files to Azure Storage
-        uses: azure/setup-cli@v2        
-           run:|
-            echo "Uploading files to Azure Storage Account..."
-            az storage blob upload-batch -d '${{ env.CONTAINERNAME}}' --account-name ${{ env.STORAGEACCOUNT }} -s './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/config'
           
