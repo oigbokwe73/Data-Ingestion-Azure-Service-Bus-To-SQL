@@ -15,7 +15,7 @@ env:
   azureSubscription: 'Azure subscription 1'  # Azure service connection name
   resourceGroup: 'training20240731'
   storageAccount: 'training20240731'
-  containerName: 'config'
+  CONTAINERNAME: 'config'
 
 jobs:
   build-and-deploy:
@@ -58,5 +58,5 @@ jobs:
         uses: azure/setup-cli@v2        
            run:|
             echo "Uploading files to Azure Storage Account..."
-            az storage blob upload-batch -d ${{ env.containerName}} --account-name ${{ env.storageAccount }} -s './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/config'
+            az storage blob upload-batch -d ${{ env.CONTAINERNAME}} --account-name ${{ env.STORAGEACCOUNT }} -s './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/config'
           
