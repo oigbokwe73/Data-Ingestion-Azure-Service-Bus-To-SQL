@@ -1,44 +1,35 @@
-# Docs for the Azure Web Apps Deploy action: https://github.com/azure/functions-action
-# More GitHub Actions for Azure: https://github.com/Azure/actions
-
-name: Build and deploy dotnet core app to Azure Function App - training20240731
+name: Upload to Azure Storage
 
 on:
   push:
     branches:
-      - master
-  workflow_dispatch:
-
-env:
-  AZURE_FUNCTIONAPP_PACKAGE_PATH: './AzureServiceBusToSQL' # set this to the path to your web app project, defaults to the repository root
-  DOTNET_VERSION: '8.0.x' # set this to the dotnet version to use
+      - master  # Trigger the workflow on push to the main branch
+  workflow_dispatch:  # Allow manual triggering of the workflow
 
 jobs:
-  build-and-deploy:
+  upload-to-azure:
     runs-on: windows-latest
-    permissions:
-      id-token: write #This is required for requesting the JWT
 
     steps:
-      - name: 'Checkout GitHub Action'
-        uses: actions/checkout@v4
+    - name: Checkout repository
+      uses: actions/checkout@v2
 
-      - name: Set up Azure CLI
-        uses: azure/setup-cli@v2   
-        with:
-          version: latest
+    - name: Set up Azure CLI
+      uses: azure/setup-cli@v2
+      with:
+        version: latest
 
-      - name: Login to Azure
-        uses: azure/login@v2
-        with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_18E5630069584F8F830AE186B70BC090 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_1A000E7EE04343ECA8E3649E60233997 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_4FE267218AE94C09BF3FA8EAA824D42F }}
-          
-      - name: Upload files to Azure Storage
-           run:|
-            echo "Uploading files to Azure Storage Account..."
-            az storage blob upload-batch -d 'config' --account-name 'training20240731' -s '././AzureServiceBusToSQL/config'
-          
-       
-          
+    - name: Login to Azure
+      run: |
+        az login --service-principal -u ${{ secrets.AZURE_CLIENT_ID }} -p ${{ secrets.AZURE_CLIENT_SECRET }} --tenant ${{ secrets.AZURE_TENANT_ID }}
+
+    - name: Upload files to Azure Storage
+      run: |
+        az storage blob upload-batch -d '$web' --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }} --account-key ${{ secrets.AZURE_STORAGE_ACCOUNT_KEY }} -s .
+
+    env:
+      AZURE_STORAGE_ACCOUNT_NAME: ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }}
+      AZURE_STORAGE_ACCOUNT_KEY: ${{ secrets.AZURE_STORAGE_ACCOUNT_KEY }}
+      AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+      AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
+      AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
