@@ -50,14 +50,5 @@ jobs:
           slot-name: 'Production'
           package: '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/output'
           
-      - name: 'Checkout GitHub Action'
-        uses: actions/checkout@v4
-
-      - name: Upload files to Azure Storage
-        uses: azure/setup-cli@v2        
-           run:|
-            echo "Uploading files to Azure Storage Account..."
-            az storage blob upload-batch -d 'config' --account-name 'training20240731' -s '././AzureServiceBusToSQL/config'
-           
        
           
