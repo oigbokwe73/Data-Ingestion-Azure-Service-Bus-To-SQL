@@ -27,5 +27,13 @@ jobs:
           
       - name: Set up Azure CLI
         uses: Azure/cli@v2.0.0
+        with:
+          inlineScript: |
+            az storage blob upload-batch \
+            --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }} \
+            --account-key ${{ secrets.AZURE_STORAGE_ACCOUNT_KEY }} \
+            --source ./your-local-folder \
+            --destination ${{ secrets.AZURE_STORAGE_CONTAINER_NAME }}
+
             
           
