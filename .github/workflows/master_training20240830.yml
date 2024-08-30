@@ -42,19 +42,6 @@ jobs:
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_A6244A728DA148E8858A64F34ABB7D0D }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_4844BD43655F4ECA9FE9AA32324B7833 }}
           
-      - name: Set up Azure CLI
-        uses: azure/CLI@v1
-        with:
-          azcliversion: '2.40.0'  # Specify the version of Azure CLI
-            
-      - name: Upload files to Azure Storage
-        run: |
-         az storage blob upload-batch \
-          --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }} \
-          --account-key ${{ secrets.AZURE_STORAGE_ACCOUNT_KEY }} \
-          --source ./AzureServiceBusToSQL/config \
-          --destination ${{ secrets.AZURE_STORAGE_CONTAINER_NAME }}    
-
       - name: 'Run Azure Functions Action'
         uses: Azure/functions-action@v1
         id: fa
