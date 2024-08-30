@@ -14,7 +14,7 @@ env:
   DOTNET_VERSION: '8.0.x' # set this to the dotnet version to use
 
 jobs:
-  build-and-deploy:
+  build-and-deploy1:
     runs-on: windows-latest
     permissions:
       id-token: write #This is required for requesting the JWT
@@ -62,4 +62,33 @@ jobs:
           app-name: 'training20240830'
           slot-name: 'Production'
           package: '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/output'
+  build-and-deploy2:
+    runs-on:  ubuntu-latest
+    permissions:
+      id-token: write #This is required for requesting the JWT
+
+    steps:
+      - name: 'Checkout GitHub Action'
+        uses: actions/checkout@v4
+    
+      - name: Login to Azure
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_2607E41FB02C4860B248ABE4785E2B15 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_A6244A728DA148E8858A64F34ABB7D0D }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_4844BD43655F4ECA9FE9AA32324B7833 }}
+          
+      - name: Set up Azure CLI
+        uses: azure/CLI@v1
+        with:
+          azcliversion: '2.40.0'  # Specify the version of Azure CLI
+            
+      - name: Upload files to Azure Storage
+        run: |
+         az storage blob upload-batch \
+          --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }} \
+          --account-key ${{ secrets.AZURE_STORAGE_ACCOUNT_KEY }} \
+          --source ./AzureServiceBusToSQL/config \
+          --destination ${{ secrets.AZURE_STORAGE_CONTAINER_NAME }}    
+
           
