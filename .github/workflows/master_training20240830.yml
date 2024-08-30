@@ -15,7 +15,7 @@ env:
 
 jobs:
   build-deploy-function-app:
-    if: false
+    if: true
     runs-on: windows-latest
     permissions:
       id-token: write #This is required for requesting the JWT
