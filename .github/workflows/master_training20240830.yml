@@ -59,10 +59,6 @@ jobs:
       - name: 'Checkout GitHub Action'
         uses: actions/checkout@v3
         
-      - name: Set up Azure CLI
-        uses: azure/CLI@v1
-        with:
-         azcliversion: '2.40.0'  # Specify the version of Azure CLI
          
       - name: Login to Azure
         uses: azure/login@v1
