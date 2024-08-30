@@ -51,7 +51,7 @@ jobs:
           slot-name: 'Production'
           package: '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/output'
   build-and-deploy-config-files:
-     runs-on:  linux
+     runs-on:  ubuntu-latest
      permissions:
       id-token: write #This is required for requesting the JWT
       
@@ -66,14 +66,23 @@ jobs:
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_A6244A728DA148E8858A64F34ABB7D0D }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_4844BD43655F4ECA9FE9AA32324B7833 }}
           
+      - name: Retrieve Storage Account Key using Managed Identity
+        uses: Azure/cli@v1
+        with:
+          inlineScript: |
+            ACCOUNT_KEY=$(az storage account keys list \
+            --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }} \
+            --query "[0].value" \
+            --output tsv)
+            echo "ACCOUNT_KEY=${ACCOUNT_KEY}" >> $GITHUB_ENV
+          
       - name: Set up Azure CLI
         uses: Azure/cli@v1
         with:
-          azcliversion: '2.40.0'  # Specify the version of Azure CLI
           inlineScript: |
             az storage blob upload-batch \
             --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }} \
+            --account-key $AZURE_STORAGE_KEY \
             --source ./AzureServiceBusToSQL/Config \
             --destination ${{ secrets.AZURE_STORAGE_CONTAINER_NAME }} \
-            --auth-mode login \  
             --overwrite true
