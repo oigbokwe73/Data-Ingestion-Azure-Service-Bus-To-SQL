@@ -69,6 +69,7 @@ jobs:
       - name: Set up Azure CLI
         uses: Azure/cli@v1
         with:
+          azcliversion: '2.40.0'  # Specify the version of Azure CLI
           inlineScript: |
             az storage blob upload-batch \
             --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }} \
