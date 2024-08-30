@@ -9,11 +9,9 @@ on:
       - master
 
 jobs:
-  build-and-deploy2:
+  build:
     runs-on:  ubuntu-latest
-    permissions:
-      id-token: write #This is required for requesting the JWT
-
+   
     steps:
       - name: 'Checkout GitHub Action'
         uses: actions/checkout@v4
