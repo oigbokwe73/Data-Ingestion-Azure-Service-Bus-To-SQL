@@ -74,7 +74,7 @@ jobs:
             ACCOUNT_KEY=$(az storage account keys list --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }} --resource-group 'training20240830' --query [0].value --output tsv)
             echo "ACCOUNT_KEY=${ACCOUNT_KEY}" >> $GITHUB_ENV
           
-      - name: Set up Azure CLI
+      - name: Write config Files To Storage Account Container
         uses: Azure/cli@v1
         with:
           inlineScript: |
