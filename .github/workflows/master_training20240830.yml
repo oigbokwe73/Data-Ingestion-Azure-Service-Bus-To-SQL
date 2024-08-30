@@ -74,4 +74,5 @@ jobs:
             --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }} \
             --source ./AzureServiceBusToSQL/Config \
             --destination ${{ secrets.AZURE_STORAGE_CONTAINER_NAME }} \
+            --auth-mode login \  
             --overwrite true
