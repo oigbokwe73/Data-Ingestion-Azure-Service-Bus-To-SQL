@@ -71,7 +71,7 @@ jobs:
         uses: Azure/cli@v1
         with:
           inlineScript: |
-            ACCOUNT_KEY=$(az storage account keys list --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }} --query [0].value --output tsv)
+            ACCOUNT_KEY=$(az storage account keys list --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }} --resource-group 'training20240830' --query [0].value --output tsv)
           
       - name: Set up Azure CLI
         uses: Azure/cli@v1
