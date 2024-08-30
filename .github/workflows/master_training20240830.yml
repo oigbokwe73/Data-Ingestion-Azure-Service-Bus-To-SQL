@@ -70,8 +70,5 @@ jobs:
         with:
           azcliversion: '2.40.0'  # Specify the version of Azure CLI
             
-      - name: Upload files to Azure Storage
-        run: |
-         az storage blob upload-batch  --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }} --account-key ${{ secrets.AZURE_STORAGE_ACCOUNT_KEY }} --source './AzureServiceBusToSQL/config' --destination ${{ secrets.AZURE_STORAGE_CONTAINER_NAME }}    
-
+      
           
