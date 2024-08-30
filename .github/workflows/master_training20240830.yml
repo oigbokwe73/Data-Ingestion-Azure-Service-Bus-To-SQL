@@ -26,9 +26,6 @@ jobs:
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_4844BD43655F4ECA9FE9AA32324B7833 }}
           
       - name: Set up Azure CLI
-        uses: azure/CLI@v1
-        with:
-          azcliversion: '2.40.0'  # Specify the version of Azure CLI
+        uses: Azure/cli@v2.0.0
             
-      
           
