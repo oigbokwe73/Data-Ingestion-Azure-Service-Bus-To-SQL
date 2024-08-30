@@ -75,7 +75,7 @@ jobs:
          az storage blob upload-batch \
           --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }} \
           --account-key ${{ secrets.AZURE_STORAGE_ACCOUNT_KEY }} \
-          --source './AzureServiceBusToSQL/config' \
+          --source ./AzureServiceBusToSQL \
           --destination ${{ secrets.AZURE_STORAGE_CONTAINER_NAME }}    
 
           
