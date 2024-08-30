@@ -14,7 +14,8 @@ env:
   DOTNET_VERSION: '8.0.x' # set this to the dotnet version to use
 
 jobs:
-  build-and-deploy1:
+  build-deploy-function-app:
+    if: false
     runs-on: windows-latest
     permissions:
       id-token: write #This is required for requesting the JWT
@@ -49,7 +50,7 @@ jobs:
           app-name: 'training20240830'
           slot-name: 'Production'
           package: '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/output'
-  build-and-deploy2:
+  build-and-deploy-config-files:
      runs-on:  ubuntu-latest
      permissions:
       id-token: write #This is required for requesting the JWT
