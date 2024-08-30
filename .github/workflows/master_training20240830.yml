@@ -68,8 +68,9 @@ jobs:
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_4844BD43655F4ECA9FE9AA32324B7833 }}
           
       - name: Retrieve Storage Account Key using Managed Identity
-        id: get-key
-        run: |
+        uses: Azure/cli@v1
+        with:
+          inlineScript: |
             ACCOUNT_KEY=$(az storage account keys list \
             --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }} \
             --query "[0].value" \
