@@ -7,6 +7,8 @@ on:
   push:
     branches:
       - master
+  workflow_dispatch:
+
 env:
   AZURE_FUNCTIONAPP_PACKAGE_PATH: './AzureServiceBusToSQL' # set this to the path to your web app project, defaults to the repository root
   DOTNET_VERSION: '8.0.x' # set this to the dotnet version to use
@@ -57,10 +59,6 @@ jobs:
       - name: 'Checkout GitHub Action'
         uses: actions/checkout@v3
         
-      - name: Set up Azure CLI
-        uses: azure/CLI@v1
-        with:
-          azcliversion: '2.40.0'  # Specify the version of Azure CLI
          
       - name: Login to Azure
         uses: azure/login@v1
@@ -73,11 +71,7 @@ jobs:
         uses: Azure/cli@v1
         with:
           inlineScript: |
-            ACCOUNT_KEY=$(az storage account keys list \
-            --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }} \
-            --query "[0].value" \
-            --output tsv)
-            echo "ACCOUNT_KEY=${ACCOUNT_KEY}" >> $GITHUB_ENV
+            ACCOUNT_KEY=$(az storage account keys list --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }} --query [0].value --output tsv)
           
       - name: Set up Azure CLI
         uses: Azure/cli@v1
