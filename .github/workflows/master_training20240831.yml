@@ -83,7 +83,6 @@ jobs:
             --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }} \
             --account-key $ACCOUNT_KEY \
             --source ./AzureServiceBusToSQL/Config \
-            --destination ${{ secrets.AZURE_STORAGE_CONTAINER_NAME }} \
-            --overwrite true
+            --destination ${{ secrets.AZURE_STORAGE_CONTAINER_NAME }} 
           
           
