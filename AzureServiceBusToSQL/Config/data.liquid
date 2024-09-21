@@ -10,6 +10,11 @@
          "Phone" : "{{college.Phone}}",
          "Website" : "{{college.Website}}",
          "Contact" : "{{college.Contact}}",
+         {% if college.Title %}
+            "Title" : "{{college.Title}}"
+          {% else %}
+          "Title" : "TITLE NEEDS TO BE PRESENT"
+          {% endif %}
          "Title" : "{{college.Title}}",
          "DirectPhone" : "{{college.DirectPhone}}",
          "Email" : "{{college.Email}}",
