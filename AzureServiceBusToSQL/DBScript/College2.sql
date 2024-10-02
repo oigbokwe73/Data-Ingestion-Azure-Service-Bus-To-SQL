@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[College] (
+﻿CREATE TABLE [dbo].[College2] (
     [OBJECTID]   NVARCHAR (MAX) NULL,
     [IPEDSID]    NVARCHAR (MAX) NULL,
     [NAME]       NVARCHAR (MAX) NULL,

@@ -45,7 +45,7 @@
       ]
     },
     {
-      "Key": "CreatePayloadFromHeaders",
+      "Key": "NumberOfFailedTranfers",
       "Type": "Xenhey.BPM.Core.Net8.Processes.HeaderInfoProcess",
       "Async": "false",
       "IsEnable": "true",
