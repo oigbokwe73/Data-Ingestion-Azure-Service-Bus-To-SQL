@@ -25,7 +25,7 @@
       ]
     },
     {
-      "Key": "ReceiveMessageFromServieBus",
+      "Key": "ReceiveMessageFromServieBusWriteToAzureSQL",
       "Type": "Xenhey.BPM.Core.Net8.Processes.ConnectToDBProcess",
       "Async": "false",
       "IsEnable": "true",

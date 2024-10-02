@@ -48,7 +48,7 @@
       "Key": "NumberOfFailedTranfers",
       "Type": "Xenhey.BPM.Core.Net8.Processes.HeaderInfoProcess",
       "Async": "false",
-      "IsEnable": "true",
+      "IsEnable": "false",
       "DataFlowProcessParameters": [
         {
           "Key": "CreatePayloadFromHeaders",
@@ -68,7 +68,7 @@
       "Key": "RemoveFileFromStorage",
       "Type": "Xenhey.BPM.Core.Net8.Processes.BlobStorageProcess",
       "Async": "false",
-      "IsEnable": "true",
+      "IsEnable": "false",
       "DataFlowProcessParameters": [
         {
           "Key": "DeleteFromStorageWithExtInPayloadFileName",

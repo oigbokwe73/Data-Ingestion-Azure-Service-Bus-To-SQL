@@ -25,7 +25,7 @@
 			]
 		},
 		{
-			"Key": "Write-To-Storage",
+			"Key": "WriteToAzureNoTableStore",
 			"Type": "Xenhey.BPM.Core.Net8.Processes.AzureTableStorageProcess",
 			"Async": "false",
 			"IsEnable": "true",
