@@ -9,6 +9,8 @@
 
 ## Session Recorded 
 
+[Session Video - 10/16/2024](https://pbsdatastore.blob.core.windows.net/training/TrainingInfo/video1527880342.mp4?sp=r&st=2024-10-22T15:12:48Z&se=2025-10-22T23:12:48Z&spr=https&sv=2022-11-02&sr=b&sig=h0J%2B99Qdn4NP%2BgFo1ny%2Bc2Vb3HOCEbq7pvQBWGHqMC8%3D)
+
 [Session Video - 06/19/2024](https://pbsdatastore.blob.core.windows.net/training/TrainingInfo/video1255086730.mp4?sp=r&st=2024-07-11T01:29:46Z&se=2025-07-11T09:29:46Z&spr=https&sv=2022-11-02&sr=b&sig=Ug0Sj0Z9CcPWANVw8bNUyBPqFz6sXipVlz%2Fp7UpL8F4%3D)
 
 [Session Video - 05/08/2024](https://pbsdatastore.blob.core.windows.net/training/TrainingInfo/video1501623587.mp4?sp=r&st=2024-05-10T01:06:58Z&se=2025-05-10T09:06:58Z&spr=https&sv=2022-11-02&sr=b&sig=y%2FD%2BQ8QBKbnPPXFuWF%2FmgJ8tcxCclbArrdDW7yI83nk%3D)
