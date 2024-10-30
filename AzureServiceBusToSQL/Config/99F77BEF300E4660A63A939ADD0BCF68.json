@@ -12,7 +12,7 @@
 			"Key": "ConvertStringToStream",
 			"Type": "Xenhey.BPM.Core.Net8.Processes.MessageBuilderProcess",
 			"Async": "false",
-			"IsEnable": "false",
+			"IsEnable": "true",
 			"DataFlowProcessParameters": [
 				{
 					"Key": "ConvertStringToStream",
@@ -80,7 +80,7 @@
 			"Key": "CreateCSVBatchFilesForProcessing",
 			"Type": "Xenhey.BPM.Core.Net8.Processes.CSVProcess",
 			"Async": "false",
-			"IsEnable": "false",
+			"IsEnable": "true",
 			"DataFlowProcessParameters": [
 				{
 					"Key": "StorageAccount",
