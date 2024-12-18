@@ -1,4 +1,50 @@
+### Use Case: Central Database for College Contact Information Management
 
+#### **Objective**:
+To create a centralized database that stores and manages all contact information for a college, ensuring secure and seamless ingestion of data via APIs and SFTP, automated processing, and efficient storage in an Azure SQL Database.
+
+---
+
+### **Actors**:
+1. **College Administrators**: Upload or update contact information via APIs or SFTP.
+2. **Integration System**: Handles data ingestion, processing, and storage.
+3. **End Users**: Faculty, staff, and students querying contact information.
+
+
+### **Benefits**:
+1. **Centralization**: Consolidates all contact information into a single source of truth.
+2. **Flexibility**: Supports multiple data ingestion methods (API and SFTP).
+3. **Automation**: Reduces manual effort with automated triggers and workflows.
+4. **Scalability**: Easily scales to handle increasing volumes of contact data.
+5. **Security**: Ensures secure access to APIs and SFTP endpoints using  API keys 
+6. **Real-time Reporting**: Enables real-time updates and analysis of contact information.
+
+---
+
+### **Mermaid Diagram**:
+```mermaid
+graph TD
+    A[College Administrators] -->|API Upload| B[Azure Function App]
+    A -->|SFTP Upload| C[Azure Storage Account]
+    C -->|File Upload Event| D[Azure Event Grid]
+    B -->|Data Ingested| E[Azure Service Bus Queue]
+    D --> E
+    E -->|Message Trigger| F[Azure Function App]
+    F -->|Data Transformation| G[Azure SQL Database]
+    G -->|Query| H[End Users/Applications]
+    G -->|Data Visualization| I[Power BI]
+```
+
+---
+
+### **Example Scenario**:
+1. An administrator uploads a CSV file containing new student contacts via SFTP.
+2. Azure Storage triggers an Event Grid notification when the file is uploaded.
+3. Event Grid sends a message to the Service Bus queue.
+4. The Function App processes the file, validates the data, and inserts it into the SQL Database.
+5. Faculty members access the updated contact list via a web portal via and api integrated with the Azure SQL Database.
+
+This solution ensures a robust, scalable, and automated system for managing college contact information effectively.
 #  Data Ingestion into Azure Service Bus To SQL
 
 
@@ -9,7 +55,7 @@
 
 ## Session Recorded 
 
-[Session Video - 10/16/2024](https://pbsdatastore.blob.core.windows.net/training/TrainingInfo/video1527880342.mp4?sp=r&st=2024-10-22T15:12:48Z&se=2025-10-22T23:12:48Z&spr=https&sv=2022-11-02&sr=b&sig=h0J%2B99Qdn4NP%2BgFo1ny%2Bc2Vb3HOCEbq7pvQBWGHqMC8%3D)
+[Session Video - 10/16/2024](https://www.youtube.com/watch?v=TxTaZnDtsUM)
 
 
 
@@ -201,7 +247,7 @@ customEvents
 
   ## Configuration-driven development
  
- "Configuration-driven development," refers to an approach in software development where the behavior and functionality of an application are primarily controlled through configuration files, rather than writing code. It focuses on separating application logic from configuration parameters, allowing developers to easily modify the behavior of the software without the need for extensive code changes.  [Xenhey.BPM.Core.Net6](https://www.nuget.org/packages/Xenhey.BPM.Core.Net6) offers a orchrestration pipeline using configuration to drive the execution of business logic, providing a tailored solution for each Line Of Business(LOB). The following are some benefits. 
+ "Configuration-driven development," refers to an approach in software development where the behavior and functionality of an application are primarily controlled through configuration files, rather than writing code. It focuses on separating application logic from configuration parameters, allowing developers to easily modify the behavior of the software without the need for extensive code changes.  [Xenhey.BPM.Core.Net6](https://www.nuget.org/packages/Xenhey.BPM.Core.Net8) offers a orchrestration pipeline using configuration to drive the execution of business logic, providing a tailored solution for each Line Of Business(LOB). The following are some benefits. 
 
  1. Flexibility: By using configuration files, developers can easily tweak and adjust the application's behavior without modifying the underlying code. It allows for quick customization and adaptation to different scenarios or client requirements.
 
@@ -214,20 +260,6 @@ customEvents
 5. Domain-Specific Customization: Configuration-driven development enables domain-specific customization by providing options and settings tailored to specific use cases. This empowers non-technical users or administrators to configure the application according to their specific requirements without the need for coding expertise
 
 
-
-  ## Data is crucial for AI for several reasons:
-
-1. **Training Machine Learning Models**: AI systems, particularly those based on machine learning, require large amounts of data to learn and make accurate predictions. The quality and quantity of data directly influence the performance of the AI models.
-
-2. **Improving Accuracy and Performance**: High-quality data helps improve the accuracy and performance of AI systems. With more data, AI can recognize patterns and make better decisions, leading to more reliable and effective applications.
-
-3. **Enabling Personalization**: AI systems use data to personalize user experiences. For example, recommendation systems for streaming services or e-commerce sites rely on user data to suggest content or products that align with individual preferences.
-
-4. **Continuous Learning and Adaptation**: AI systems need data to continuously learn and adapt to changing environments and new information. This ability to update and improve over time is essential for maintaining the relevance and accuracy of AI applications.
-
-5. **Driving Insights and Innovation**: Data enables AI to uncover hidden patterns and insights that might not be evident to human analysts. These insights can drive innovation, optimize processes, and create new opportunities across various industries.
-
-  ![image](https://github.com/oigbokwe73/Azure-Service-Bus-To-SQL/assets/15838780/c0728d14-597e-4177-b67f-d12b9b28960b)
 
   ## Contact
   
