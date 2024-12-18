@@ -28,7 +28,7 @@
         },
         {
           "Key": "TableName",
-          "Value": "training20241120"
+          "Value": "training20241218"
         },
         {
           "Key": "DefaultResult",
@@ -36,6 +36,22 @@
         }
       ]
     },
+    {
+      "Key": "RetriveRecordsByBatchID",
+      "Type": "Xenhey.BPM.Core.Net8.Processes.MessageBuilderProcess",
+      "Async": "false",
+      "IsEnable": "true",
+      "DataFlowProcessParameters": [
+        {
+          "Key": "RemovePropertiesFromPayload",
+          "Value": "yes"
+        },
+        {
+          "Key": "filters",
+          "Value": "[{\"Key\": \"PartitionKey\"},{\"Key\": \"RowKey\"},{\"Key\": \"Timestamp\"}]"
+        }
+      ]
+    },    
     {
       "Key": "TransFerDataTo Information",
       "Type": "Xenhey.BPM.Core.Net8.Processes.TransformationProcess",
