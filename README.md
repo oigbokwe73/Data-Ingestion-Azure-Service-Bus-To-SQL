@@ -10,59 +10,13 @@ To create a centralized database that stores and manages all contact information
 2. **Integration System**: Handles data ingestion, processing, and storage.
 3. **End Users**: Faculty, staff, and students querying contact information.
 
----
-
-### **High-Level Workflow**:
-1. **Data Ingestion**:
-   - **API**: Administrators can upload data using a secure API endpoint.
-   - **SFTP**: Data files (e.g., CSV or JSON) can be uploaded to an Azure Storage Account.
-
-2. **Trigger**:
-   - Azure Storage Account detects new files via Azure Event Grid.
-   - Event triggers a message to an Azure Service Bus queue.
-
-3. **Processing**:
-   - Azure Function App is triggered by the Service Bus queue message.
-   - Function reads the uploaded data, performs validation, and transforms it into a format suitable for Azure SQL Database.
-
-4. **Storage**:
-   - Transformed data is stored in an Azure SQL Database.
-
-5. **Consumption**:
-   - Users access the data via applications or reporting tools (e.g., Power BI) connected to the Azure SQL Database.
-
----
-
-### **Azure Components**:
-1. **Azure API Management (APIM)**:
-   - Provides a secure interface for data upload via APIs.
-   
-2. **Azure Storage Account**:
-   - Stores uploaded files via SFTP.
-
-3. **Azure Event Grid**:
-   - Detects file uploads and triggers downstream processes.
-
-4. **Azure Service Bus**:
-   - Acts as a reliable messaging queue between the ingestion and processing stages.
-
-5. **Azure Function App**:
-   - Processes incoming data, performs transformations, and integrates it into the Azure SQL Database.
-
-6. **Azure SQL Database**:
-   - Central repository for storing and managing contact information.
-
-7. **Power BI**:
-   - Visualizes data for reporting and analysis.
-
----
 
 ### **Benefits**:
 1. **Centralization**: Consolidates all contact information into a single source of truth.
 2. **Flexibility**: Supports multiple data ingestion methods (API and SFTP).
 3. **Automation**: Reduces manual effort with automated triggers and workflows.
 4. **Scalability**: Easily scales to handle increasing volumes of contact data.
-5. **Security**: Ensures secure access to APIs and SFTP endpoints.
+5. **Security**: Ensures secure access to APIs and SFTP endpoints using  API keys 
 6. **Real-time Reporting**: Enables real-time updates and analysis of contact information.
 
 ---
