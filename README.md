@@ -42,7 +42,7 @@ graph TD
 2. Azure Storage triggers an Event Grid notification when the file is uploaded.
 3. Event Grid sends a message to the Service Bus queue.
 4. The Function App processes the file, validates the data, and inserts it into the SQL Database.
-5. Faculty members access the updated contact list via a web portal integrated with the Azure SQL Database.
+5. Faculty members access the updated contact list via a web portal via and api integrated with the Azure SQL Database.
 
 This solution ensures a robust, scalable, and automated system for managing college contact information effectively.
 #  Data Ingestion into Azure Service Bus To SQL
@@ -55,7 +55,7 @@ This solution ensures a robust, scalable, and automated system for managing coll
 
 ## Session Recorded 
 
-[Session Video - 10/16/2024](https://pbsdatastore.blob.core.windows.net/training/TrainingInfo/video1527880342.mp4?sp=r&st=2024-10-22T15:12:48Z&se=2025-10-22T23:12:48Z&spr=https&sv=2022-11-02&sr=b&sig=h0J%2B99Qdn4NP%2BgFo1ny%2Bc2Vb3HOCEbq7pvQBWGHqMC8%3D)
+[Session Video - 10/16/2024]([https://www.youtube.com/watch?v=TxTaZnDtsUM)])
 
 
 
