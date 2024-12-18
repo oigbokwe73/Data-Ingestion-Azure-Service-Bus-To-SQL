@@ -247,7 +247,7 @@ customEvents
 
   ## Configuration-driven development
  
- "Configuration-driven development," refers to an approach in software development where the behavior and functionality of an application are primarily controlled through configuration files, rather than writing code. It focuses on separating application logic from configuration parameters, allowing developers to easily modify the behavior of the software without the need for extensive code changes.  [Xenhey.BPM.Core.Net6](https://www.nuget.org/packages/Xenhey.BPM.Core.Net6) offers a orchrestration pipeline using configuration to drive the execution of business logic, providing a tailored solution for each Line Of Business(LOB). The following are some benefits. 
+ "Configuration-driven development," refers to an approach in software development where the behavior and functionality of an application are primarily controlled through configuration files, rather than writing code. It focuses on separating application logic from configuration parameters, allowing developers to easily modify the behavior of the software without the need for extensive code changes.  [Xenhey.BPM.Core.Net6](https://www.nuget.org/packages/Xenhey.BPM.Core.Net8) offers a orchrestration pipeline using configuration to drive the execution of business logic, providing a tailored solution for each Line Of Business(LOB). The following are some benefits. 
 
  1. Flexibility: By using configuration files, developers can easily tweak and adjust the application's behavior without modifying the underlying code. It allows for quick customization and adaptation to different scenarios or client requirements.
 
@@ -260,20 +260,6 @@ customEvents
 5. Domain-Specific Customization: Configuration-driven development enables domain-specific customization by providing options and settings tailored to specific use cases. This empowers non-technical users or administrators to configure the application according to their specific requirements without the need for coding expertise
 
 
-
-  ## Data is crucial for AI for several reasons:
-
-1. **Training Machine Learning Models**: AI systems, particularly those based on machine learning, require large amounts of data to learn and make accurate predictions. The quality and quantity of data directly influence the performance of the AI models.
-
-2. **Improving Accuracy and Performance**: High-quality data helps improve the accuracy and performance of AI systems. With more data, AI can recognize patterns and make better decisions, leading to more reliable and effective applications.
-
-3. **Enabling Personalization**: AI systems use data to personalize user experiences. For example, recommendation systems for streaming services or e-commerce sites rely on user data to suggest content or products that align with individual preferences.
-
-4. **Continuous Learning and Adaptation**: AI systems need data to continuously learn and adapt to changing environments and new information. This ability to update and improve over time is essential for maintaining the relevance and accuracy of AI applications.
-
-5. **Driving Insights and Innovation**: Data enables AI to uncover hidden patterns and insights that might not be evident to human analysts. These insights can drive innovation, optimize processes, and create new opportunities across various industries.
-
-  ![image](https://github.com/oigbokwe73/Azure-Service-Bus-To-SQL/assets/15838780/c0728d14-597e-4177-b67f-d12b9b28960b)
 
   ## Contact
   
