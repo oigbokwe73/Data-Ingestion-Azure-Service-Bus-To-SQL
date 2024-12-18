@@ -70,7 +70,7 @@ To create a centralized database that stores and manages all contact information
 ### **Mermaid Diagram**:
 ```mermaid
 graph TD
-    A[College Administrators] -->|API Upload| B[Azure API Management]
+    A[College Administrators] -->|API Upload| B[Azure Function App]
     A -->|SFTP Upload| C[Azure Storage Account]
     C -->|File Upload Event| D[Azure Event Grid]
     B -->|Data Ingested| E[Azure Service Bus Queue]
