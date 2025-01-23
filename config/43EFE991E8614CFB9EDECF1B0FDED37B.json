@@ -28,7 +28,7 @@
         },
         {
           "Key": "TableName",
-          "Value": "training20250108"
+          "Value": "training20250122"
         },
         {
           "Key": "DefaultResult",
@@ -53,7 +53,7 @@
       ]
     },    
     {
-      "Key": "TransFerDataTo Information",
+      "Key": "TransFerDataToInformation",
       "Type": "Xenhey.BPM.Core.Net8.Processes.TransformationProcess",
       "Async": "false",
       "IsEnable": "false",
