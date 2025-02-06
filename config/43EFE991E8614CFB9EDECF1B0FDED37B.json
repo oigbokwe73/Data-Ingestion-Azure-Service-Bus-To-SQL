@@ -51,7 +51,7 @@
           "Value": "[{\"Key\": \"PartitionKey\"},{\"Key\": \"RowKey\"},{\"Key\": \"Timestamp\"}]"
         }
       ]
-    },    
+    },
     {
       "Key": "TransFerDataToInformation",
       "Type": "Xenhey.BPM.Core.Net8.Processes.TransformationProcess",

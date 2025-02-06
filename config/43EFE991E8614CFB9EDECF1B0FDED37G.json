@@ -18,7 +18,7 @@
           "Key": "ConnectToDatabaseJSONResultSet",
           "Value": "Yes"
         },
-        { 
+        {
           "Key": "SearchTerm",
           "Value": "search"
         },
@@ -32,7 +32,7 @@
         }
       ]
     },
-		  {
+    {
       "Key": "TransformDBResults",
       "Type": "Xenhey.BPM.Core.Net8.Processes.TransformationProcess",
       "Async": "false",
@@ -76,6 +76,5 @@
         }
       ]
     }
-
   ]
 }

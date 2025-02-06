@@ -9,17 +9,17 @@
   "Type": "",
   "DataFlowProcess": [
     {
-			"Key": "ConvertStringToStream",
-			"Type": "Xenhey.BPM.Core.Net8.Processes.MessageBuilderProcess",
-			"Async": "false",
-			"IsEnable": "true",
-			"DataFlowProcessParameters": [
-				{
-					"Key": "ConvertStringToStream",
-					"Value": "yes"
-				}
-			]
-		},
+      "Key": "ConvertStringToStream",
+      "Type": "Xenhey.BPM.Core.Net8.Processes.MessageBuilderProcess",
+      "Async": "false",
+      "IsEnable": "true",
+      "DataFlowProcessParameters": [
+        {
+          "Key": "ConvertStringToStream",
+          "Value": "yes"
+        }
+      ]
+    },
     {
       "Key": "ReadJsonAsStream",
       "Type": "Xenhey.BPM.Core.Net8.Processes.MessageBuilderProcess",
