@@ -65,7 +65,7 @@ jobs:
             --destination ${{ env.AZURE_STORAGE_CONTAINER }} \
             --source ${{ env.SOURCE_FOLDER }} \
             --pattern "*" \
-            --auth-mode login
+            --auth-mode 
               
   
           
