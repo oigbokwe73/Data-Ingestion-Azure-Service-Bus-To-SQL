@@ -12,6 +12,10 @@ on:
 env:
   AZURE_FUNCTIONAPP_PACKAGE_PATH: '.' # set this to the path to your web app project, defaults to the repository root
   DOTNET_VERSION: '8.0.x' # set this to the dotnet version to use
+  AZURE_STORAGE_ACCOUNT: 'training20250205'
+  AZURE_STORAGE_CONTAINER: 'config'
+  SOURCE_FOLDER: './config'  # Change this to your folder path
+
 
 jobs:
   build-and-deploy:
@@ -50,4 +54,18 @@ jobs:
           app-name: 'training20250205'
           slot-name: 'Production'
           package: '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/output'
+          
+      - name: Azure CLI Action
+        uses: Azure/cli@v2.1.0
+        with:
+         inlineScript: |
+          echo "Uploading files to Azure Storage Container..."
+          az storage blob upload-batch \
+            --account-name $(AZURE_STORAGE_ACCOUNT) \
+            --destination $(AZURE_STORAGE_CONTAINER) \
+            --source $(SOURCE_FOLDER) \
+            --pattern "*" \
+            --auth-mode login
+              
+  
           
