@@ -64,8 +64,7 @@ jobs:
             --account-name ${{ env.AZURE_STORAGE_ACCOUNT }} \
             --destination ${{ env.AZURE_STORAGE_CONTAINER }} \
             --source ${{ env.SOURCE_FOLDER }} \
-            --pattern "*" \
-            --auth-mode 
+            --pattern "*" 
               
   
           
