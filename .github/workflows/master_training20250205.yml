@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/azure/functions-action
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy dotnet core app to Azure Function App - training20250205
+name: Build and deploy dotnet core app to Azure Function App - training20250219
 
 on:
   push:
@@ -12,7 +12,7 @@ on:
 env:
   AZURE_FUNCTIONAPP_PACKAGE_PATH: '.' # set this to the path to your web app project, defaults to the repository root
   DOTNET_VERSION: '8.0.x' # set this to the dotnet version to use
-  AZURE_STORAGE_ACCOUNT: 'training20250205'
+  AZURE_STORAGE_ACCOUNT: 'training20250219'
   AZURE_STORAGE_CONTAINER: 'config'
   SOURCE_FOLDER: './config'  # Change this to your folder path
 
@@ -51,7 +51,7 @@ jobs:
         uses: Azure/functions-action@v1
         id: fa
         with:
-          app-name: 'training20250205'
+          app-name: 'training20250219'
           slot-name: 'Production'
           package: '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/output'
           
