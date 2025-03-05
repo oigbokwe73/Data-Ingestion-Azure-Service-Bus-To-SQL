@@ -54,7 +54,7 @@ This solution ensures a robust, scalable, and automated system for managing coll
 
 
 ## Session Recorded 
-
+[Session Video - 02/2025](https://www.youtube.com/playlist?list=PL0VzuNmHIvGw_MlH-U8yxyjlKGWEmEQyn)
 [Session Video - 01/2025](https://www.youtube.com/playlist?list=PL0VzuNmHIvGw_MlH-U8yxyjlKGWEmEQyn)
 
 
