@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/azure/functions-action
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy dotnet core app to Azure Function App - training20250305
+name: Build and deploy dotnet core app to Azure Function App - training20250402
 
 on:
   push:
@@ -39,15 +39,15 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_6ED0EFE010004FFBB079C2B61257F76A }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_23007E867FBF4BB5974FE5F36BC8DFDD }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_79D74BAED09C4324B0C6BBA4DA4B3C03 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_7A2957326ED9415FB3A243014788BA14 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_0A768CBFCBB1460384E65DCF200AEF4C }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_6B365958066747FDAC9382F8E609FB3C }}
 
       - name: 'Run Azure Functions Action'
         uses: Azure/functions-action@v1
         id: fa
         with:
-          app-name: 'training20250305'
+          app-name: 'training20250402'
           slot-name: 'Production'
           package: '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/output'
           
