@@ -191,7 +191,7 @@ By following these steps, you'll have a serverless API in Azure that uses Servic
 
 |ContainerName|Description|
 |:----|:----|
-|config|Location for the configuration files|
+|config|Location for the configuration files. Only Required for Managed Storage|
 |pickup|Thes are files that are copied from the SFTP share and dropped in the pickup container |
 |processed|These are files the have been parsed and dropped in th processed container|
 
