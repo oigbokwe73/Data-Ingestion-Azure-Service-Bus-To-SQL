@@ -49,7 +49,7 @@ namespace AzureServiceBusToSQL
         {
             get
             {
-                return new ManagedOrchestratorService(nvc);
+                return new RemoteOrchrestratorService(nvc);
             }
         }
 

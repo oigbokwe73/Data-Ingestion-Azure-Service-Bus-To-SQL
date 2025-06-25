@@ -23,7 +23,7 @@ namespace AzureServiceBusToSQL
             _logger.LogInformation("C# HTTP trigger function processed a request.");
             string ApiKeyName = "x-api-key";
             //Ge file and update database information.
-            nvc.Add(ApiKeyName, "3FB620B0E0FD4E8F93C9E4D839D00E1E");
+            nvc.Add(ApiKeyName, "C51F7629130B448AB4430D1260360C1E");
             string requestBody = "{\"ProcessStarted\" : \"Yes\" }";
             var uploadFile = orchrestatorService.Run(requestBody);
             _logger.LogInformation(uploadFile);
@@ -33,7 +33,7 @@ namespace AzureServiceBusToSQL
         {
             get
             {
-                return new ManagedOrchestratorService(nvc);
+                return new RemoteOrchrestratorService(nvc);
             }
         }
     }

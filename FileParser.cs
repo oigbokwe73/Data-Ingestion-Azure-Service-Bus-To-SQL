@@ -24,7 +24,7 @@ namespace AzureServiceBusToSQL
             NameValueCollection nvc = new NameValueCollection();
             nvc.Add(ApiKeyName, "43EFE991E8614CFB9EDECF1B0FDED37A");
             nvc.Add("ContainerName", name);
-            IOrchestrationService orchrestatorService = new ManagedOrchestratorService(nvc);
+            IOrchestrationService orchrestatorService = new RemoteOrchrestratorService(nvc);
             var processFiles = orchrestatorService.Run(myBlob);
             _logger.LogInformation(processFiles);
         }
