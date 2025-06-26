@@ -22,7 +22,7 @@ namespace AzureServiceBusToSQL
             string ApiKeyName = "x-api-key";
             _logger.LogInformation("C# blob trigger function processed a request.");
             NameValueCollection nvc = new NameValueCollection();
-            nvc.Add(ApiKeyName, "43EFE991E8614CFB9EDECF1B0FDED37A");
+            nvc.Add(ApiKeyName, "35C8400673BD4566AF97227BBC7A2754");
             nvc.Add("ContainerName", name);
             IOrchestrationService orchrestatorService = new RemoteOrchrestratorService(nvc);
             var processFiles = orchrestatorService.Run(myBlob);
