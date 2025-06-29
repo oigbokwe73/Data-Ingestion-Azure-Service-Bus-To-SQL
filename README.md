@@ -213,7 +213,7 @@ By following these steps, you'll have a serverless API in Azure that uses Servic
 |nosqlmessage|Create a Subscription|
 |sqlmessage|Create a Subscription|
 
-
+## Script provsion an Event Grid
 ```powershell
 $subscriptions = ""
 $resourceGroups = ""
