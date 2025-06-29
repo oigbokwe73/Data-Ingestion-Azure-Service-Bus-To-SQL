@@ -33,12 +33,6 @@ public class Filedroptrigger
     {
         string ApiKeyName = "x-api-key";
         _logger.LogInformation($"Received event: {eventGridEvent.EventType}");
-
-        if (eventGridEvent.EventType != "Microsoft.Storage.BlobCreated")
-        {
-            _logger.LogWarning("Event is not a BlobCreated event. Skipping.");
-            return;
-        }
         NameValueCollection nvc = new NameValueCollection
         {
             { ApiKeyName, "2484F9382E974133A216F8E39BF4C389" }

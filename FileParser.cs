@@ -33,15 +33,9 @@ public class FileParser
     {
         string ApiKeyName = "x-api-key";
         _logger.LogInformation($"Received event: {eventGridEvent.EventType}");
-
-        if (eventGridEvent.EventType != "Microsoft.Storage.BlobCreated")
-        {
-            _logger.LogWarning("Event is not a BlobCreated event. Skipping.");
-            return;
-        }
         NameValueCollection nvc = new NameValueCollection
         {
-            { ApiKeyName, "2484F9382E974133A216F8E39BF4C389" }
+            { ApiKeyName, "35C8400673BD4566AF97227BBC7A2754" }
         };
         var input = JsonConvert.SerializeObject(eventGridEvent);
         IOrchestrationService orchrestatorService = new RemoteOrchrestratorService(nvc);
