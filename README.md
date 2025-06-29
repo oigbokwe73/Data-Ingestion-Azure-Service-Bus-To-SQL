@@ -213,6 +213,24 @@ By following these steps, you'll have a serverless API in Azure that uses Servic
 |nosqlmessage|Create a Subscription|
 |sqlmessage|Create a Subscription|
 
+
+```powershell
+$subscriptions = ""
+$resourceGroups = ""
+$storageAccounts = ""
+$functionAppName = ""
+$function = ""
+$containerName = ""
+az eventgrid event-subscription create `
+  --name blob-monitor-subscription `
+  --source-resource-id "/subscriptions/$subscriptions/resourceGroups/$resourceGroups/providers/Microsoft.Storage/storageAccounts/$storageAccounts" `
+  --included-event-types Microsoft.Storage.BlobCreated  `
+  --endpoint-type azurefunction `
+  --endpoint "/subscriptions/4501a4d3-74c8-4703-9948-8c405a64daf0/resourceGroups/training20250625/providers/Microsoft.Web/sites/$functionAppName/functions/$function" `
+  --advanced-filter data.blobType StringContains BlockBlob `
+  --advanced-filter subject StringBeginsWith "/blobServices/default/containers/$containerName/"
+
+```
 ## Create Azure Container Instance for SFTP
 > User the following link to create a Azure Container Instance(ACI for SFTP)
 > 
