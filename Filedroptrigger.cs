@@ -28,7 +28,7 @@ public class Filedroptrigger
         _logger.LogInformation($"Received event: {eventGridEvent.EventType}");
         NameValueCollection nvc = new NameValueCollection
         {
-            { ApiKeyName, "35C8400673BD4566AF97227BBC7A2754" }
+            { ApiKeyName, "2484F9382E974133A216F8E39BF4C389" }
         };
         var input = JsonConvert.SerializeObject(eventGridEvent);
         IOrchestrationService orchrestatorService = new RemoteOrchrestratorService(nvc);
