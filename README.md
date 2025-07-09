@@ -156,7 +156,7 @@ By following these steps, you'll have a serverless API in Azure that uses Servic
 |Key|Value | Comment|
 |:----|:----|:----|
 |AzureWebJobsStorage|[CONNECTION STRING]|RECOMMENDATION :  store in AzureKey Vault.|
-|ConfigurationPath| [CONFIGURATION FOLDER PATH] |Folder is optional
+|ConfigurationPath| [CONFIGURATION FOLDER PATH] |Folder is optional if remote config is been used.
 |ApiStore| [Remote Configuration Store]  | Connect to your remote config store
 |ApiKeyName|[API KEY NAME]|Will be passed in the header  :  the file name of the config.
 |AppName| [APPLICATION NAME]| This is the name of the Function App, used in log analytics|
