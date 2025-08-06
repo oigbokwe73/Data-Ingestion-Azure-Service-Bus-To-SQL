@@ -1,8 +1,7 @@
 ### Use Case: Central Database for College Contact Information Management
 
 #### **Objective**:
-To create a centralized database that stores and manages all contact information for a college, ensuring secure and seamless ingestion of data via APIs and SFTP, automated processing, and efficient storage in an Azure SQL Database.
-
+Design and implement a centralized database solution to securely store and manage all contact information for a college, enabling seamless data ingestion via APIs and SFTP. The solution will support automated processing, efficient storage in Azure SQL Database, and integration with AI-powered search capabilities to provide intelligent, real-time access to contact data.
 ---
 
 ### **Actors**:
@@ -183,8 +182,7 @@ By following these steps, you'll have a serverless API in Azure that uses Servic
 |[FC8AFFD1677A443D9D2A962A79246372.json](https://www.xenhey.com/api/store/FC8AFFD1677A443D9D2A962A79246372)| **Search SQL DB. Return resultset** |
 |[C51F7629130B448AB4430D1260360C1E.json](https://www.xenhey.com/api/store/C51F7629130B448AB4430D1260360C1E)| **Copy File from SFTP into the pickup folder** |
 |[68AA07F5193441878BFCD5CB372B25FB.json](https://www.xenhey.com/api/store/68AA07F5193441878BFCD5CB372B25FB)| **Create a new Record in NoSQL Database** |
-|[31D9DA704F294BFBB9923CDFB7F0AEE6.json](https://www.xenhey.com/api/store/31D9DA704F294BFBB9923CDFB7F0AEE6)| Encode Payload Request |
-|[9FDDE695D3534F91A3859825BC576857.json](https://www.xenhey.com/api/store/9FDDE695D3534F91A3859825BC576857)| Get reports from DB  |
+|[31D9DA704F294BFBB9923CDFB7F0AEE6.json](https://www.xenhey.com/api/store/21B8411B3EA24285B52F24B1D968B68A)| **AI Search using Chat GPT Natual Language Processor** |
 
 
 > Create the following blob containers and share in azure storage
@@ -213,6 +211,8 @@ By following these steps, you'll have a serverless API in Azure that uses Servic
 |nosqlmessage|Create a Subscription|
 |sqlmessage|Create a Subscription|
 
+## Upgrade Storage 
+Update storage account to ADLS the run the following script 
 ## Script provsion an Event Grid
 ```powershell
 $subscriptions = ""
