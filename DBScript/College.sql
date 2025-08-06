@@ -19,3 +19,22 @@
     Id UNIQUEIDENTIFIER NOT NULL DEFAULT NEWID()
 );
 
+
+ALTER TABLE [dbo].[College]
+ADD CONSTRAINT PK_College PRIMARY KEY (id);
+
+
+
+-- Step 1: Create a full-text catalog (optional but recommended)
+CREATE FULLTEXT CATALOG MyFullTextCollegeCatalog
+    AS DEFAULT;
+GO
+
+CREATE FULLTEXT INDEX ON [dbo].[College]
+(
+    Title LANGUAGE 1033  -- 1033 = English
+)
+KEY INDEX PK_College -- Replace with your actual PRIMARY KEY index name
+ON MyFullTextCollegeCatalog;
+GO
+
