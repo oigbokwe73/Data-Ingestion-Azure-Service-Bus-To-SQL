@@ -54,7 +54,8 @@ This solution ensures a robust, scalable, and automated system for managing coll
 ![image](https://user-images.githubusercontent.com/15838780/226928604-4340b682-0e13-44bc-b239-6b91a29f678a.png)
 
 
-## Session Recorded 
+## Session Recorded
+**[Session Video - 07/2025](https://youtu.be/7WbroQM4kGM))**
 **[Session Video - 04/2025](https://youtu.be/JTrQYz6uTYY)**
 
 
