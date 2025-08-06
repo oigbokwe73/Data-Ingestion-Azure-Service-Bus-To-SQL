@@ -1,4 +1,4 @@
-### Use Case: Central Database for College Contact Information Management
+### Use Case: Central Database for College Contact Information Management System
 
 #### **Objective**:
 
