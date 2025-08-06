@@ -3,6 +3,7 @@
 #### **Objective**:
 
 Design and implement a centralized database solution to securely store and manage all contact information for colleges in US, enabling seamless data ingestion via APIs and SFTP. The solution will support automated processing, efficient storage in Azure SQL Database, and integration with AI-powered search capabilities to provide intelligent, real-time access to contact data.
+
 ---
 
 ### **Actors**:
