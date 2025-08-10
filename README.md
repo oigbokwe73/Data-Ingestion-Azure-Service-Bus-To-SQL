@@ -32,8 +32,7 @@ graph TD
     D --> E
     E -->|Message Trigger| F[Azure Function App]
     F -->|Data Transformation| G[Azure SQL Database]
-    G -->|Query| H[End Users/Applications]
-    G -->|Data Visualization| I[Power BI]
+    G -->|Query and AI Search| H[End Users/Applications]
 ```
 
 ---
