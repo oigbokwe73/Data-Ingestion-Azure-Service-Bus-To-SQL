@@ -219,11 +219,13 @@ Update storage account to Azure Data Lake Storage(ADLS) then run the following s
 ## Script provsion an Event Grid
 ```powershell
 $subscriptions = ""
-$resourceGroups = ""
-$storageAccounts = ""
-$functionAppName = ""
-$function = ""
-$containerName = ""
+$resourceGroups = "training20250820"
+$storageAccounts = "training20250820"
+$functionAppName = "training20250820"
+$function = "Filedroptrigger"
+$function1 = "FileParser"
+$containerName = "processed"
+$containerName1 = "pickup"
 az eventgrid event-subscription create `
   --name blob-monitor-processed `
   --source-resource-id "/subscriptions/$subscriptions/resourceGroups/$resourceGroups/providers/Microsoft.Storage/storageAccounts/$storageAccounts" `
@@ -232,7 +234,16 @@ az eventgrid event-subscription create `
   --endpoint "/subscriptions/$subscriptions/resourceGroups/$resourceGroups/providers/Microsoft.Web/sites/$functionAppName/functions/$function" `
   --advanced-filter data.blobType StringContains BlockBlob `
   --advanced-filter subject StringBeginsWith "/blobServices/default/containers/$containerName/"
-```
+
+
+  az eventgrid event-subscription create `
+  --name stp `
+  --source-resource-id "/subscriptions/$subscriptions/resourceGroups/$resourceGroups/providers/Microsoft.Storage/storageAccounts/$storageAccounts" `
+  --included-event-types Microsoft.Storage.BlobCreated  `
+  --endpoint-type azurefunction `
+  --endpoint "/subscriptions/$subscriptions/resourceGroups/$resourceGroups/providers/Microsoft.Web/sites/$functionAppName/functions/$function1" `
+  --advanced-filter data.blobType StringContains BlockBlob `
+  --advanced-filter subject StringBeginsWith "/blobServices/default/containers/$containerName1/"```
 ## Create Azure Container Instance for SFTP
 > User the following link to create a Azure Container Instance(ACI for SFTP)
 > 
