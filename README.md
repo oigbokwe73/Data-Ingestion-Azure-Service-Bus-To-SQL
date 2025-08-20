@@ -244,6 +244,7 @@ az eventgrid event-subscription create `
   --endpoint "/subscriptions/$subscriptions/resourceGroups/$resourceGroups/providers/Microsoft.Web/sites/$functionAppName/functions/$function1" `
   --advanced-filter data.blobType StringContains BlockBlob `
   --advanced-filter subject StringBeginsWith "/blobServices/default/containers/$containerName1/"```
+```
 ## Create Azure Container Instance for SFTP
 > User the following link to create a Azure Container Instance(ACI for SFTP)
 > 
