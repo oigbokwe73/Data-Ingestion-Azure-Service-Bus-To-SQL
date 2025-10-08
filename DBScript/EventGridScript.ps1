@@ -15,7 +15,6 @@ az eventgrid event-subscription create `
   --subject-begins-with "/blobServices/default/containers/$containerName/"  `
   --subject-ends-with ".csv"  `
   --max-delivery-attempts 1  `
-  --event-ttl 60  `
 
 
   az eventgrid event-subscription create `
