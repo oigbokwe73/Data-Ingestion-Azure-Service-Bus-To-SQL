@@ -65,6 +65,77 @@ This solution ensures a robust, scalable, and automated system for managing coll
 
 
 
+Here’s a **clean, architecture-focused bulleted list** describing each component and its role in the solution, keeping it concise and implementation-ready:
+
+* **Azure Function App**
+
+  * Exposes REST endpoints for **search**, **reporting**, and **data access**
+  * Supports **traditional keyword search** and **Natural Language Search**
+  * Integrates with **ChatGPT-4o** to translate user questions into structured queries
+  * Acts as the orchestration layer between data stores and analytics services
+
+* **Azure Service Bus**
+
+  * Receives ingestion messages triggered by file arrivals or upstream systems
+  * Decouples producers from consumers for reliable, scalable ingestion
+  * Supports retry, dead-lettering, and ordered message processing
+
+* **Azure SQL Database**
+
+  * Stores ingested data using a **predefined relational schema**
+  * Optimized for reporting, filtering, aggregations, and Power BI consumption
+  * Enforces data integrity, constraints, and indexing strategies
+
+* **Azure Table Storage**
+
+  * Stores ingested data in a **schema-less (NoSQL) format**
+  * Used for raw, semi-structured, or evolving datasets
+  * Enables fast key-based lookups at low cost
+
+* **Azure Storage Account (File Share)**
+
+  * Receives inbound files via **SFTP**
+  * Serves as the landing zone for batch and external partner data
+  * Triggers ingestion workflows via storage events
+
+* **Event-Driven Ingestion**
+
+  * Storage events (file create/update) trigger Azure Functions
+  * Functions publish messages to Service Bus for downstream processing
+  * Enables scalable, asynchronous, near-real-time ingestion
+
+* **Azure Application Insights**
+
+  * Captures API request counts, response times, and failure rates
+  * Tracks Function execution health and dependency performance
+  * Enables fast troubleshooting and operational visibility
+
+* **Natural Language Search (ChatGPT-4o Integration)**
+
+  * Users submit free-form questions via API
+  * ChatGPT-4o interprets intent and generates structured query logic
+  * Results returned from SQL or Table Storage through the same API
+
+* **Azure Container Instances (ACI)**
+
+  * Hosts a **secure SFTP server**
+  * Isolated, ephemeral compute with no VM management overhead
+  * Integrates with Azure Storage File Shares for persistence
+
+* **Azure Log Analytics**
+
+  * Centralizes ingestion, processing, and pipeline telemetry
+  * Displays near-real-time **ingestion progress charts**
+  * Supports KQL queries for operational dashboards and alerts
+
+If you want, I can also:
+
+* Add a **Mermaid architecture diagram**
+* Provide **KQL queries** for ingestion dashboards
+* Show a **REST API contract** for search + NLP
+* Map this to **Azure CAF / Well-Architected Framework** principles
+
+
 ## Data Ingestion Services in Azure 
 
 
