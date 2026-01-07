@@ -65,7 +65,7 @@ This solution ensures a robust, scalable, and automated system for managing coll
 
 
 
-Here’s a **clean, architecture-focused bulleted list** describing each component and its role in the solution, keeping it concise and implementation-ready:
+## What topics will be covered in the session
 
 * **Azure Function App**
 
