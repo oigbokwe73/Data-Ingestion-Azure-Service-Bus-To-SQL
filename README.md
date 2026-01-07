@@ -219,9 +219,9 @@ Update storage account to Azure Data Lake Storage(ADLS) then run the following s
 ## Script provsion an Event Grid
 ```powershell
 $subscriptions = ""
-$resourceGroups = "training20250820"
-$storageAccounts = "training20250820"
-$functionAppName = "training20250820"
+$resourceGroups = "training20260107"
+$storageAccounts = "training20260107"
+$functionAppName = "training20260107"
 $function = "Filedroptrigger"
 $function1 = "FileParser"
 $containerName = "processed"
