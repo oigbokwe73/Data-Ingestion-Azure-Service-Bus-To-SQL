@@ -71,9 +71,8 @@ This solution ensures a robust, scalable, and automated system for managing coll
 
   * Exposes REST endpoints for **search**, **reporting**, and **data access**
   * Supports **traditional keyword search** and **Natural Language Search**
-  * Integrates with **ChatGPT-4o** to translate user questions into structured queries
-  * Acts as the orchestration layer between data stores and analytics services
-
+  * Integrates with **ChatGPT-4o** to translate natural language questions into structured queries
+ 
 * **Azure Service Bus**
 
   * Receives ingestion messages triggered by file arrivals or upstream systems
@@ -90,7 +89,6 @@ This solution ensures a robust, scalable, and automated system for managing coll
 
   * Stores ingested data in a **schema-less (NoSQL) format**
   * Used for raw, semi-structured, or evolving datasets
-  * Enables fast key-based lookups at low cost
 
 * **Azure Storage Account (File Share)**
 
@@ -128,12 +126,6 @@ This solution ensures a robust, scalable, and automated system for managing coll
   * Displays near-real-time **ingestion progress charts**
   * Supports KQL queries for operational dashboards and alerts
 
-If you want, I can also:
-
-* Add a **Mermaid architecture diagram**
-* Provide **KQL queries** for ingestion dashboards
-* Show a **REST API contract** for search + NLP
-* Map this to **Azure CAF / Well-Architected Framework** principles
 
 
 ## Data Ingestion Services in Azure 
