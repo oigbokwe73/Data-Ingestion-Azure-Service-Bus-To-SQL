@@ -27,13 +27,10 @@ namespace AzureServiceBusToSQL
             HttpRequest req)
         {
             _req = req;
-
-            _logger.LogInformation("C# HTTP trigger function processed a request.");
-            string requestBody = await new StreamReader(_req.Body).ReadToEndAsync();
+            _logger.LogInformation("C# HTTP trigger function processed a request.");            
             _req.Headers.ToList().ForEach(item => { nvc.Add(item.Key, item.Value.FirstOrDefault()); });
-            var results = orchrestatorService.Run(requestBody);
+            var results = orchrestatorService.Run(_req.Body);
             return resultSet(results);
-
         }
 
         private ActionResult resultSet(string reponsePayload)
