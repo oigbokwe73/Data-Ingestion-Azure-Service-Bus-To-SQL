@@ -6,6 +6,9 @@ using System.Collections.Specialized;
 using Xenhey.BPM.Core.Net8.Implementation;
 using Xenhey.BPM.Core.Net8;
 using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using System.Linq;
 
 namespace AzureServiceBusToSQL
 {
