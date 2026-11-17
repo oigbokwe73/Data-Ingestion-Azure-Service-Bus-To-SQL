@@ -32,7 +32,7 @@ namespace AzureServiceBusToSQL
             string ApiKeyName = "x-api-key";
             _logger.LogInformation("C# HTTP trigger function processed a request.");
             string requestBody = input;
-            nvc.Add(ApiKeyName, "CE7B884B5A484F29B109AB58FCCFA1DA");
+            nvc.Add(ApiKeyName, "B44CBDDB3AE14913A2B0AD98193CFDC3");
             var results = orchrestatorService.ReturnFile(requestBody);
             return resultSet(results);
         }
